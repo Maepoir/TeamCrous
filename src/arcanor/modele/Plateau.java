@@ -135,6 +135,7 @@ public class Plateau {
           ret [7][1] = -1;
       }
 
+//      Return -1 dans le tableau si le pion ne peut pas aller dans cette direction
       return ret ;
   }
 

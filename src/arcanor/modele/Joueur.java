@@ -43,7 +43,7 @@ public class Joueur {
    *      nom = p.getNom();
   */
   public String getNom(){
-    String ret = "";
+    String ret = this.nom;
     return ret;
   }
   /**
@@ -56,7 +56,7 @@ public class Joueur {
    *      p.setNom("SIMON");
   */
   public void setNom(String nom){
-
+    this.nom = nom;
   }
   /**
    * Role : Cette méthode permet de récupérer la couleur des pions
@@ -68,7 +68,7 @@ public class Joueur {
    *      col = p.getColor();
   */
   public Color getColor(){
-    Color ret = new Color(255,255,255);
+    Color ret = this.couleur;
     return ret;
   }
   /**
@@ -81,7 +81,7 @@ public class Joueur {
    *      p.setColor(  new Color( 0,0,0) );
   */
   public void  setColor (Color couleur){
-
+    this.couleur = couleur;
   }
 
   /**
@@ -96,7 +96,7 @@ public class Joueur {
    *      col = p.getALaMain();
   */
   public boolean getALaMain(){
-    boolean ret =true;
+    boolean ret = this.aLaMain;
     return ret;
   }
 
@@ -112,11 +112,13 @@ public class Joueur {
    *      col = p.getALaMain();
   */
   public void setAlaMain(boolean aLaMain){
-
+    this.aLaMain = aLaMain
   }
 
   /** Rôle : permet d'acceder à l'attribut mesPions en dehors de la classe Joueur
   * @return la liste des pions du joueur */
-
+  public Pion[] getMesPions (){
+    return this.mesPions;
+  }
 
 }

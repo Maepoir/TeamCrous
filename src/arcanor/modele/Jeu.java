@@ -12,42 +12,71 @@ public class Jeu{
   public final int MODEDIFFICILE =2;
 
   private Plateau lePlateau;
+  //la liste de joueurs
   private Joueur[] arrayJoueur;
+
+  //le fichier de sauvegarde de la partie
+  private Sauvegarde sauvegardeur;
   //correspond au mode de jeu choisi
   private int modeJeu;
+  //permet de sauvegarder le temps de jeu des joueurs
   private long tempsJeu;
+  // détermine si le jeu doit s'afficher en mode graphique ou console
+  private boolean modeGraphique;
+
+  //fenêtre de jeu graphique
+  private JeuFen jeuG;
+  //affichage du jeu sur console
+  private JeuTxt jeuC;
+
   /**
    * Role : Cette methode permet de creer un objet Jeu
    */
-  public Jeu(){
-
+  public Jeu(boolean modeGraphique){
+    this.modeGraphique = modeGraphique;
   }
+
   /**
    * Role : Cette methode permet de sauvegarder une partie
    * @param path chemin pour la sauvegarde
    */
    public void sauvegarderJeu(String path){
-
+     this.sauvegardeur = new Sauvegarde(this.lePlateau, this.arrayJoueur, this.modeJeu, this.tempsJeu, this.modeGraphique);
+     this.sauvegardeur.sauvegarder(path);
    }
+
    /**
     * Role : Cette methode permet de charger une partie
     * @param path chemin de la sauvegarde
     */
   public void chargerJeu(String path){
+    if(Sauvegarde != null){
+      this.sauvegardeur.charger(path);
+    }
+    else{System.out.print("chargement impossible, aucune sauvegarde effectuée.");}
+  }
 
-  }
   /**
-  * Role : Cette methode permet de changer l'affichage d'un pion
-  * @param lePion le pio npour lequel il faut changer l'affichage
+  * Role : Cette methode permet de changer l'affichage d'un pion (mode triche)
+  * @param lePion le pion pour lequel il faut changer l'affichage
   */
-  public void changerAffichagePion(Pion lePion){
+  public void changerAffichagePion(Pion lePion, boolean affichage){
+    lePion.setAfficherManger(affichage);
   }
+
   /**
   * Role : Cette methode permet de changer la main d'un joueur pour la donner à
   * l'autre
   */
-
   public void changerMain(){
+    if(this.arrayJoueur.get(0).getALaMain()){
+      this.arrayJoueur.get(1).setALaMain(true);
+      this.arrayJoueur.get(0).setALaMain(false);
+    }
+    else{
+      this.arrayJoueur.get(0).setALaMain(true);
+      this.arrayJoueur.get(1).setALaMain(false);
+    }
   }
 
   /**
@@ -55,51 +84,60 @@ public class Jeu{
   * @return temps de jeu
   */
   public long getTempsJeu(){
-    long ret = 1;
+    long ret = this.tempsJeu;
     return ret;
   }
+
   /**
    * Role : Cette methode permet de modifier le temps de jeu
    * @param tempsJeu le temps de jeu que l'on souhaite modifier
   */
   public void setTempsJeu(long tempsJeu){
-
+    this.tempsJeu = tempsJeu;
   }
+
   /**
    * Role : Cette methode permet de recuperer le mode de jeu
    * @return le mode de jeu choisi par l'utilisateur
    */
    public int getModeJeu(){
-     int ret =0;
+     int ret = this.modeJeu;
      return ret;
    }
+
    /**
     * Role : Cette methode permet de modifier le mode de jeu
     * @param modeJeu le choix de mode de jeu de l'utilisateur
     */
     public void setModeJeu(int modeJeu){
-
+      this.modeJeu = modeJeu;
     }
+
   /**
   * Role : permet la génération du menu de jeu graphiquement ou via console
   */
    public void menu(){
-
+     if(!this.modeGraphique){
+       this.jeuC.getMenuTxt().display();
+     }
    }
+
     /**
     * Role : permet de mettre à jour l'affichage du plateau suite aux déplacements
     * des pions
     */
     public void rafraichirPlateau(){
-
+      if(!this.modeGraphique){
+        this.jeuC.getPlateauTxt().display();
+      }
     }
-
 
     /**
      * Role : permet de lancer un tutoriel pour apprendre au joueur à jouer à
      * Arcanor
      */
        public void tutoriel(){
-
+         String tuto = "";
+         System.out.println(tuto);
        }
 }

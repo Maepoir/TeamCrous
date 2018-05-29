@@ -43,20 +43,20 @@ public class Jeu{
 
   /**
    * Role : Cette methode permet de sauvegarder une partie
-   * @param path chemin pour la sauvegarde
+   * @param chemin chemin pour la sauvegarde
    */
-   public void sauvegarderJeu(String path){
+   public void sauvegarderJeu(String chemin){
      this.sauvegardeur = new Sauvegarde(this.lePlateau, this.arrayJoueur, this.modeJeu, this.tempsJeu, this.modeGraphique);
-     this.sauvegardeur.sauvegarder(path);
+     this.sauvegardeur.sauvegarder(chemin);
    }
 
    /**
     * Role : Cette methode permet de charger une partie
-    * @param path chemin de la sauvegarde
+    * @param chemin chemin de la sauvegarde
     */
-  public void chargerJeu(String path){
+  public void chargerJeu(String chemin){
     if(this.sauvegardeur != null){
-      this.sauvegardeur.charger(path);
+      this.sauvegardeur.charger(chemin);
     }
     else{System.out.print("chargement impossible, aucune sauvegarde effectuée.");}
   }

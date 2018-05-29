@@ -112,7 +112,7 @@ public class Joueur {
    *      col = p.getALaMain();
   */
   public void setAlaMain(boolean aLaMain){
-    this.aLaMain = aLaMain
+    this.aLaMain = aLaMain;
   }
 
   /** Rôle : permet d'acceder à l'attribut mesPions en dehors de la classe Joueur

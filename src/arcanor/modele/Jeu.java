@@ -55,7 +55,7 @@ public class Jeu{
     * @param path chemin de la sauvegarde
     */
   public void chargerJeu(String path){
-    if(Sauvegarde != null){
+    if(this.sauvegardeur != null){
       this.sauvegardeur.charger(path);
     }
     else{System.out.print("chargement impossible, aucune sauvegarde effectuée.");}

@@ -1,7 +1,6 @@
 package arcanor.modele;
-
-import arcanor.Sauvegarde;
-
+import arcanor.*;
+import java.util.*;
 /**
  * Role :  Cette classe permet de modeliser le jeu d'Arcanor
  * @author S.Bay ,M.Racine,M.Poiré G.Renault
@@ -28,9 +27,9 @@ public class Jeu{
   private boolean modeGraphique;
 
   //fenêtre de jeu graphique
-  private JeuFen jeuG;
+  //private JeuFen jeuG;
   //affichage du jeu sur console
-  private JeuTxt jeuC;
+  //private JeuTxt jeuC;
 
   /**
    * Role : Cette methode permet de creer un objet Jeu
@@ -43,18 +42,24 @@ public class Jeu{
    * Role : Cette methode permet de sauvegarder une partie
    * @param path chemin pour la sauvegarde
    */
-   public void sauvegarderJeu(String path){
+   public void sauvegarderJeu(String chemin){
      this.sauvegardeur = new Sauvegarde(this.lePlateau, this.arrayJoueur, this.modeJeu, this.tempsJeu, this.modeGraphique);
-     this.sauvegardeur.sauvegarder(path);
+     this.sauvegardeur.sauvegarder(chemin);
    }
 
    /**
     * Role : Cette methode permet de charger une partie
     * @param path chemin de la sauvegarde
     */
-  public void chargerJeu(String path){
-    if(Sauvegarde != null){
-      this.sauvegardeur.charger(path);
+  public void chargerJeu(String chemin){
+    ArrayList chargement;
+    if(this.sauvegardeur != null){
+      chargement = this.sauvegardeur.charger(chemin);
+      this.lePlateau = (Plateau)(chargement.get(0));
+      this.arrayJoueur = (Joueur[])chargement.get(1);
+      this.modeJeu = (int)(chargement.get(2));
+      this.tempsJeu = (long)(chargement.get(3));
+      this.modeGraphique = (boolean)(chargement.get(4));
     }
     else{System.out.print("chargement impossible, aucune sauvegarde effectuée.");}
   }
@@ -121,7 +126,7 @@ public class Jeu{
   */
    public void menu(){
      if(!this.modeGraphique){
-       this.jeuC.getMenuTxt().display();
+       //this.jeuC.getMenuTxt().display();
      }
    }
 
@@ -131,7 +136,7 @@ public class Jeu{
     */
     public void rafraichirPlateau(){
       if(!this.modeGraphique){
-        this.jeuC.getPlateauTxt().display();
+        //this.jeuC.getPlateauTxt().display();
       }
     }
 

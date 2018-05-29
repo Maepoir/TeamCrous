@@ -7,7 +7,7 @@ package arcanor.modele;
 public class Plateau {
 
   //la grille de jeu
-  private Pion[][] lePlateau;
+  protected Pion[][] lePlateau;
 
   /**
    * Role : Cette méthode permet de créer un objet Plateau

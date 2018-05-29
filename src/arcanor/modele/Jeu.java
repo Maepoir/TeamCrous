@@ -1,6 +1,8 @@
 package arcanor.modele;
 
 import arcanor.Sauvegarde;
+import arcanor.iu.console.JeuTxt;
+import arcanor.iu.graphique.JeuFen;
 
 /**
  * Role :  Cette classe permet de modeliser le jeu d'Arcanor

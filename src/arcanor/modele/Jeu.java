@@ -123,7 +123,7 @@ public class Jeu{
   */
    public void menu(){
      if(!this.modeGraphique){
-       this.jeuC.getMenuTxt().display();
+//       this.jeuC.getMenuTxt().display();
      }
    }
 
@@ -133,7 +133,7 @@ public class Jeu{
     */
     public void rafraichirPlateau(){
       if(!this.modeGraphique){
-        this.jeuC.getPlateauTxt().display();
+//        this.jeuC.getPlateauTxt().display();
       }
     }
 

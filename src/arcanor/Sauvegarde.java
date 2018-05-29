@@ -25,7 +25,7 @@ public class Sauvegarde implements java.io.Serializable{
     }
 
     /** Rôle : créer un fichier de sauvegarde en format binaire
-    * @param path le nom du fichier qui va contenir la sauvegarde */
+    * @param chemin le nom du fichier qui va contenir la sauvegarde */
     public void sauvegarder(String chemin){
       try{
         ObjectOutputStream fichier = new ObjectOutputStream(new FileOutputStream(chemin));
@@ -44,7 +44,7 @@ public class Sauvegarde implements java.io.Serializable{
     /** Rôle : permet d'importer un fichier de sauvegarde en format de binaire
     * pour permettre à l'utilisateur de charger une partie sauvegardée et de
     * reprendre le jeu.
-    * @param path le nom du fichier à charger */
+    * @param chemin le nom du fichier à charger */
     public ArrayList charger(String chemin){
       ArrayList liste = new ArrayList();
       try{

@@ -1,5 +1,7 @@
 package arcanor;
+import arcanor.modele.*;
 import java.io.*;
+import java.util.*;
 /**
  * Rôle :  Cette classe permet de modéliser une sauvegarde au cours de partie
  * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
@@ -43,11 +45,11 @@ public class Sauvegarde implements java.io.Serializable{
     * pour permettre à l'utilisateur de charger une partie sauvegardée et de
     * reprendre le jeu.
     * @param path le nom du fichier à charger */
-    public void charger(String chemin){
+    public ArrayList charger(String chemin){
       ArrayList liste = new ArrayList();
       try{
         ObjectInputStream fichier = new ObjectInputStream(new FileInputStream(chemin));
-        Object o = fichier.readObject;
+        Object o = fichier.readObject();
         while(o != null){
           liste.add(o);
           o = fichier.readObject();
@@ -57,6 +59,9 @@ public class Sauvegarde implements java.io.Serializable{
       catch(IOException e){
         System.out.println(e.getMessage());
       }
-
+      catch(ClassNotFoundException c){
+        System.out.println(c.getMessage());
+      }
+      return liste;
     }
 }

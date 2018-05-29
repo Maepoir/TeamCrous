@@ -10,7 +10,7 @@ public class Plateau {
   private Pion[][] lePlateau;
 
   /**
-   * Role : Cette méthode permet de créer un objet Joueur
+   * Role : Cette méthode permet de créer un objet Plateau
    */
   public Plateau(){
       this.lePlateau = new Pion[8][7];
@@ -43,7 +43,7 @@ public class Plateau {
    */
   public void deplacerPion(Pion lePion , int x, int y){
     this.lePlateau [x][y] = lePion;
-    lePion.setCoordonnees(x,y);
+    lePion.setXY(x,y);
   }
 
   /**

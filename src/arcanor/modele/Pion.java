@@ -12,7 +12,7 @@ package arcanor.modele;
     private final int TAILLE;
 
     /** C'est le Pion  mangé par le pion */
-    private Pion aMange;
+    private Pion aManger;
 
     /** Booléen qui permet de déterminer si le pion est mangé  */
     private boolean estManger;
@@ -36,10 +36,10 @@ package arcanor.modele;
               int taille = 3;
               Pion p = new Pion(taille);
     */
-    public Pion (int taille, boolean estMange, Pion aMange, int x, int y, Joueur leJoueur){
+    public Pion (int taille, boolean estManger, Pion aManger, int x, int y, Joueur leJoueur){
       this.TAILLE = taille;
-      this.estManger = estMange;
-      this.aMange = aMange;
+      this.estManger = estManger;
+      this.aManger = aManger;
       this.x = x;
       this.y = y;
       this.leJoueur = leJoueur;
@@ -54,44 +54,44 @@ package arcanor.modele;
     *         pion qui a été mangé la fonction retourne null
     */
     public Pion getAMange(){
-      Pion ret = this.aMange;
+      Pion ret = this.aManger;
       return ret;
     }
 
     /**
      * Role : Ajoute le pion qui a été mangé
-     * @param aMange le pion qui a été mangé
+     * @param aManger le pion qui a été mangé
      * Cas d'utilisation :
      *        Pion p = new Pion(3);
-     *        Pion aMange = new Pion(2);
-     *        p.setAMange(aMange);
+     *        Pion aManger = new Pion(2);
+     *        p.setAMange(aManger);
      */
-    public void setAMange(Pion aMange){
-      this.aMange = aMange;
+    public void setAMange(Pion aManger){
+      this.aManger = aManger;
     }
 
     /** Role : Vérifie si ce pion a été mangé par un autre Pion
      * Cas d'utilisation :
      *        Pion p = new Pion(42);
-     *        boolean estmange = p.getEstMange(estMange);
+     *        boolean estmange = p.getEstMange(estManger);
      * @return true : le pion a été mangé
      *         false : le pion n'as as été mangé
     */
     public boolean getEstMange(){
-      boolean ret = this.estMange;
+      boolean ret = this.estManger;
       return ret;
     }
 
     /**
      * Role : Met a jour l'état du pion (mangé ou pas)
-     * @param estMange true : le pion a été mangé
+     * @param estManger true : le pion a été mangé
      *                 false : le pion n'a pas été mangé
      * Cas d'utilisation :
      *      Pion p = new Pion(42);
      *      p.setEstMange(true)
     */
-    public void setEstMange(boolean estMange){
-      this.estMange = estMange;
+    public void setEstMange(boolean estManger){
+      this.estManger = estManger;
     }
 
     /**
@@ -110,13 +110,13 @@ package arcanor.modele;
 
      /**
       * Role : Met a jour l'état de l'affichage du pion
-      * @param afficheManger valeur de l'affichage du pion
+      * @param afficherManger valeur de l'affichage du pion
       * Cas d'utilisation :
       *      Pion p = new Pion(42);
       *      afficherManger = p.setAfficherManger(true);
      */
      public void setAfficherManger(boolean afficherManger){
-       this.afficherManger = afficheManger;
+       this.afficherManger = afficherManger;
      }
 
      /** permet de déterminer à qui appartient le pion.
@@ -149,7 +149,7 @@ package arcanor.modele;
      /** permet de modifier l'emplacement du pion sur le plateau
      * @param x l'abcisse du pion
      * @param y l'ordonnée du pion */
-     public int setXY(int x, int y){
+     public void setXY(int x, int y){
        this.x = x;
        this.y = y;
      }

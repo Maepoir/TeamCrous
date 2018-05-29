@@ -111,7 +111,7 @@ public class Joueur {
    *      Joueur p = new Joueur (nom,col );
    *      col = p.getALaMain();
   */
-  public void setAlaMain(boolean aLaMain){
+  public void setALaMain(boolean aLaMain){
     this.aLaMain = aLaMain;
   }
 

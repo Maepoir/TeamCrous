@@ -69,13 +69,13 @@ public class Jeu{
   * l'autre
   */
   public void changerMain(){
-    if(this.arrayJoueur.get(0).getALaMain()){
-      this.arrayJoueur.get(1).setALaMain(true);
-      this.arrayJoueur.get(0).setALaMain(false);
+    if(this.arrayJoueur[0].getALaMain()){
+      this.arrayJoueur[1].setALaMain(true);
+      this.arrayJoueur[0].setALaMain(false);
     }
     else{
-      this.arrayJoueur.get(0).setALaMain(true);
-      this.arrayJoueur.get(1).setALaMain(false);
+      this.arrayJoueur[0].setALaMain(true);
+      this.arrayJoueur[1].setALaMain(false);
     }
   }
 

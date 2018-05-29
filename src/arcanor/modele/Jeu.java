@@ -1,4 +1,7 @@
 package arcanor.modele;
+
+import arcanor.Sauvegarde;
+
 /**
  * Role :  Cette classe permet de modeliser le jeu d'Arcanor
  * @author S.Bay ,M.Racine,M.Poiré G.Renault

@@ -13,9 +13,7 @@ public class PlateauTxt {
               if (plateau.getPion(i,j) == null) {
                   System.out.println("\t ");
               }
-              else (plateau.getPion(i,j).getLeJoueur()){
 
-              }
           }
       }
   }

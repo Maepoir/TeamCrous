@@ -1,26 +1,33 @@
 package test;
+
 import static org.junit.Assert.*;
+import arcanor.modele.Pion;
 import org.junit.Test;
 
 public class TestPion {
   @Test
   public final void testEstMange(){
-    fail("Not yet implemented");
-    Pion pionArcanor = new Pion(3);
+    Pion pionArcanor = new Pion(2, false, null, 0, 0, null);
     pionArcanor.setEstMange(false);
-    this.assertFalse( pionArcanor.getEstMange());
-    pionArcanor.setAMange(true);
-    this.assertTrue( pionArcanor.getEstMange());
+    assertFalse( pionArcanor.getEstMange());
+    pionArcanor.setEstMange(true);
+    assertTrue( pionArcanor.getEstMange());
 
   }
+
   @Test
   public final void testAMange(){
-    fail("Not yet implemented");
-    Pion pionArcanor = new Pion(3);
-    Pion pionMange = new Pion(2);
-    pionArcanor.setAMange(pionMange);
-    this.assertEquals(pionMange,pionArcanor.getAMange());
+      Pion pionArcanor = new Pion(2, false, null, 0, 0, null);
+      Pion pionMange = new Pion(1, true, null, 0, 0, null);
+      pionArcanor.setAMange(pionMange);
+      assertEquals(pionMange,pionArcanor.getAMange());
   }
+
+  @Test
+  public final void testPosition(){
+      
+  }
+
 
 
 }

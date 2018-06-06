@@ -1,6 +1,11 @@
 package test;
+
 import static org.junit.Assert.*;
+
+import arcanor.modele.Joueur;
 import org.junit.Test;
+
+import java.awt.*;
 
 public class TestJoueur {
   @Test
@@ -8,14 +13,15 @@ public class TestJoueur {
     // Cas Normal : le nom entré est une chaine remplie
     Color color = new Color(255,255,255);
     Joueur joueur = new Joueur("RENAULT",color,true);
-    String nom = joueur.setNom("Pomme");
-    this.assertEquals(nom,joueur.getNom());
+    joueur.setNom("Pomme");
+    String nom = "Pomme";
+    assertEquals(nom,joueur.getNom());
 
     // Cas Limite : le nom entré est une chaine remplie
-    Color color = new Color(255,255,255);
-    Joueur joueur = new Joueur("",color,true);
-    String nom = joueur.setNom("Pomme");
-    this.assertEquals(nom,joueur.getNom());
+    color = new Color(255,255,255);
+    joueur = new Joueur("",color,true);
+    joueur.setNom("Pomme");
+    assertEquals(nom,joueur.getNom());
 
   }
   @Test
@@ -25,7 +31,7 @@ public class TestJoueur {
     Joueur joueur = new Joueur("RENAULT",color,true);
     color = new Color(0,0,0);
     joueur.setColor(color);
-    this.assertEquals(color,joueur.getColor());
+    assertEquals(color,joueur.getColor());
 
 
   }
@@ -33,10 +39,10 @@ public class TestJoueur {
   public void testALaMain(){
     Color color = new Color(255,255,255);
     Joueur joueur = new Joueur("RENAULT",color,true);
-    joueur.setAlaMain(true);
-    this.assertTrue( joueur.getALaMain() );
-    joueur.setAlaMain(false);
-    this.assertFalse( joueur.getALaMain() );
+    joueur.setALaMain(true);
+    assertTrue( joueur.getALaMain() );
+    joueur.setALaMain(false);
+    assertFalse( joueur.getALaMain() );
   }
 
 }

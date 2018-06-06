@@ -61,7 +61,7 @@ public class Plateau {
    * @param lePion le pion que l'on veut deplacer
    * @return les coordonnées de déplacements possibles
   */
-  private int[][] deplacementPossibles(Pion lePion){
+  public int[][] deplacementPossibles(Pion lePion){
       int [][] ret = new int[8][2];
 //      Solution 1
       if(lePion.getX()+1<8 && lePion.getY()+1<7) {

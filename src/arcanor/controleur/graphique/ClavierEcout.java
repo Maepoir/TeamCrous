@@ -4,4 +4,18 @@ import java.awt.event.*;
   * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet */
 public class ClavierEcout implements KeyListener {
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }

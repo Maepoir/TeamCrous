@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8543929a-2f63-48a1-aa1d-dea73a472cf0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/arcanor/modele/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/modele/Plateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/TestPlateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestPlateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/console/ConnexionTxt.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/console/ConnexionTxt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/console/MenuTxt.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/console/MenuTxt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/console/PlateauTxt.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/console/PlateauTxt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/Case.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/Case.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/ChoixJoueurPan.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/ChoixJoueurPan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/Connexion.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/Connexion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/DebutPan.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/DebutPan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/InfoBarre.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/InfoBarre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuBarre.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuBarre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuFen.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuFen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/ModePan.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/ModePan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/Pion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/Plateau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/modele/IA.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/IA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Plateau.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +53,7 @@
       <file leaf-file-name="TestPlateau.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/TestPlateau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
+            <state relative-caret-position="218">
               <caret line="80" column="23" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
             </state>
           </provider>
@@ -289,12 +302,12 @@
       <option name="presentableId" value="Default" />
       <updated>1527596171121</updated>
       <workItem from="1527596176913" duration="4755000" />
-      <workItem from="1528292670344" duration="4157000" />
+      <workItem from="1528292670344" duration="4507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11359000" />
+    <option name="totallyTimeSpent" value="11709000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -409,6 +422,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -520,6 +536,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -612,6 +631,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -772,7 +794,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/TestPlateau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
+        <state relative-caret-position="218">
           <caret line="80" column="23" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
         </state>
       </provider>

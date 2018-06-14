@@ -24,13 +24,12 @@ import java.util.Scanner;
        boolean mode = false;
 
        while(!rep.trim().equals("oui") && !rep.trim().equals("non")){
-           rep = sc.nextLine();
+         System.out.println("saisie incorrecte !")
+         rep = sc.nextLine();
        }
-
-       if(rep.trim().equals("oui")){
-           mode = true;
-       }
-
-       new Jeu (mode);
+       if(rep.trim().equals("oui")){mode = true;}
+       Jeu jeu = new Jeu (mode);
+       //commentaire car méthode non écrite, elle permettra de lancer la partie
+       //jeu.start();
    }
  }

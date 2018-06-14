@@ -25,7 +25,12 @@ public class TestPion {
 
   @Test
   public final void testPosition(){
-
+      Pion pionArcanor = new Pion(2, false, null, 0, 0, null);
+      assertEquals(0,pionArcanor.getX());
+      assertEquals(0,pionArcanor.getY());
+      pionArcanor.setXY(1,2);
+      assertEquals(1,pionArcanor.getX());
+      assertEquals(2,pionArcanor.getY());
   }
 
 

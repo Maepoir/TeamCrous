@@ -1,8 +1,7 @@
 package arcanor.modele;
-
+import java.util.*;
 import arcanor.Sauvegarde;
-import arcanor.iu.console.JeuTxt;
-import arcanor.iu.graphique.JeuFen;
+import arcanor.*;
 
 /**
  * Role :  Cette classe permet de modeliser le jeu d'Arcanor
@@ -14,7 +13,7 @@ public class Jeu{
   //les différents mode de jeu
   public final int MODEFACILE = 0;
   public final int MODENORMAL = 1;
-  public final int MODEDIFFICILE =2;
+  public final int MODEDIFFICILE = 2;
 
   private Plateau lePlateau;
   //la liste de joueurs
@@ -30,12 +29,13 @@ public class Jeu{
   private boolean modeGraphique;
 
   //fenêtre de jeu graphique
-  private JeuFen jeuG;
+  //private JeuFen jeuG;
   //affichage du jeu sur console
-  private JeuTxt jeuC;
+  //private JeuTxt jeuC;
 
   /**
    * Role : Cette methode permet de creer un objet Jeu
+   * @param modeGraphique le mode d'affichage du jeu choisi
    */
   public Jeu(boolean modeGraphique){
     this.modeGraphique = modeGraphique;
@@ -55,8 +55,20 @@ public class Jeu{
     * @param chemin chemin de la sauvegarde
     */
   public void chargerJeu(String chemin){
+    ArrayList <Object> list = new ArrayList<Object>();
     if(this.sauvegardeur != null){
-      this.sauvegardeur.charger(chemin);
+      list = this.sauvegardeur.charger(chemin);
+      if(list != null){
+        this.lePlateau = (Plateau)(list.get(0));
+        this.arrayJoueur = (Joueur[])(list.get(1));
+        this.modeJeu = (int)(list.get(2));
+        this.tempsJeu = (long)(list.get(3));
+        this.modeGraphique = (boolean)(list.get(4));
+      }
+      else{
+        System.out.println("fichier introuvable, création d'une nouvelle partie");
+        Partie partie = new Partie();
+      }
     }
     else{System.out.print("chargement impossible, aucune sauvegarde effectuée.");}
   }
@@ -123,7 +135,7 @@ public class Jeu{
   */
    public void menu(){
      if(!this.modeGraphique){
-//       this.jeuC.getMenuTxt().display();
+//       this.jeuC.getMenuTxt().afficher();
      }
    }
 
@@ -143,6 +155,6 @@ public class Jeu{
      */
        public void tutoriel(){
          String tuto = "";
-         System.out.println(tuto);
+         System.out.println("tuto");
        }
 }

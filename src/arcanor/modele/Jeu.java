@@ -32,9 +32,9 @@ public class Jeu{
    * Role : Cette methode permet de creer un objet Jeu
    * @param modeGraphique le mode d'affichage du jeu choisi
    */
-  public Jeu(boolean modeGraphique){
+  /**public Jeu(boolean modeGraphique){
     this.modeGraphique = modeGraphique;
-  }
+  }*/
 
   /** Role : permet de créer un objet Jeu avec des paramètres précis
   * @param joueur1 le premier Joueur
@@ -141,13 +141,13 @@ public class Jeu{
   /**
   * Role : permet la génération du menu de jeu graphiquement ou via console
   */
-   public void menu(){
+   /**public void menu(){
      if(!this.modeGraphique){
        MenuTxt menu = new MenuTxt();
        menu.afficherMenu();
      }
    }
-
+*/
     /**
     * Role : permet de mettre à jour l'affichage du plateau suite aux déplacements
     * des pions

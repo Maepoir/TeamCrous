@@ -4,7 +4,6 @@ package arcanor.modele;
  * contre laquelle le joueur peu jouer lorsqu'il est seul.
  * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
  */
-import java.awt.Color;
 public class IA extends Joueur{
 
    //représente la difficulté de l'ordinateur
@@ -16,15 +15,15 @@ public class IA extends Joueur{
    * @param couleur couleur des pions
    * @param aLaMain true si le joueur  a la main
    */
-   public IA ( String nom , Color couleur ,boolean aLaMain, int niveau){
+   public IA (String nom, Couleur couleur, boolean aLaMain, int niveau){
      super(nom,couleur,aLaMain);
      this.difficulte = niveau;
    }
 
    /** Rôle : permet de lancer une partie contre l'intelligence
    * artificielle du jeu. */
-   public void jouer (){
-
+   public void jouer(){
+     System.out.println("jouer IA");
    }
 
    /** Rôle : permet d'accéder au niveau de difficulté de l'intelligence
@@ -38,7 +37,7 @@ public class IA extends Joueur{
    /** Rôle : permet de modifier le niveau de l'IA
    * @param difficulte le nouveau niveau de difficulte */
    public void setDifficulte (int difficulte){
-
+     this.difficulte = difficulte;
    }
 
 

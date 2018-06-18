@@ -3,7 +3,7 @@ package arcanor.modele;
  * Rôle : Cette classe permet de modéliser un joueur du jeu Arcanor
  * @author S.Bay, M.Racine, M.Poiré, G.Renault
 */
-public class Joueur {
+public abstract class Joueur {
   // Le nom du joueur
   private String nom;
 
@@ -119,5 +119,7 @@ public class Joueur {
   public Pion[] getMesPions (){
     return this.mesPions;
   }
+
+  public abstract void jouer();
 
 }

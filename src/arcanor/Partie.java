@@ -24,7 +24,7 @@ import java.util.Scanner;
        boolean mode = false;
 
        while(!rep.trim().equals("oui") && !rep.trim().equals("non")){
-         System.out.println("saisie incorrecte !")
+         System.out.println("saisie incorrecte !");
          rep = sc.nextLine();
        }
        if(rep.trim().equals("oui")){mode = true;}

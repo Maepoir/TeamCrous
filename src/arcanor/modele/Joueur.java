@@ -3,13 +3,12 @@ package arcanor.modele;
  * Rôle : Cette classe permet de modéliser un joueur du jeu Arcanor
  * @author S.Bay, M.Racine, M.Poiré, G.Renault
 */
-import java.awt.Color;
 public class Joueur {
   // Le nom du joueur
   private String nom;
 
   // La couleur associé au joueur
-  private Color couleur ;
+  private Couleur couleur ;
 
   // L'ensemble des pions du joueur
   private Pion[] mesPions ;
@@ -28,7 +27,7 @@ public class Joueur {
    *      Color col = new Color( 255,255,255);
    *      Joueur p = new Joueur (nom,col );
   */
-  public Joueur ( String nom , Color couleur ,boolean aLaMain ){
+  public Joueur (String nom, Couleur couleur, boolean aLaMain){
     this.nom = nom ;
     this.couleur = couleur;
     this.aLaMain = aLaMain;
@@ -67,8 +66,8 @@ public class Joueur {
    *      Joueur p = new Joueur (nom,col );
    *      col = p.getColor();
   */
-  public Color getColor(){
-    Color ret = this.couleur;
+  public Couleur getColor(){
+    Couleur ret = this.couleur;
     return ret;
   }
   /**
@@ -80,7 +79,7 @@ public class Joueur {
    *      Joueur p = new Joueur (nom,col );
    *      p.setColor(  new Color( 0,0,0) );
   */
-  public void  setColor (Color couleur){
+  public void  setColor (Couleur couleur){
     this.couleur = couleur;
   }
 

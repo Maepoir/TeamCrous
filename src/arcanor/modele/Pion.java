@@ -140,7 +140,7 @@ package arcanor.modele;
      }
 
      /** permet de connaitre les coordonnées du pion sur le plateau de jeu
-     * @return l'ordonnée du pion */
+     * @return l'ordonnée du pion*/
      public int getY(){
        int ret = this.y;
        return ret;
@@ -152,5 +152,13 @@ package arcanor.modele;
      public void setXY(int x, int y){
        this.x = x;
        this.y = y;
+     }
+
+    /**
+     * permet de connaitre la taille du pion
+     * @return taille du pion
+     */
+     public int getTAILLE(){
+         return this.TAILLE;
      }
 }

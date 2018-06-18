@@ -16,7 +16,7 @@ public class Plateau {
       this.lePlateau = new Pion[8][7];
   }
 
-  public void initializePions (Joueur j1, Joueur j2){
+  public void initPions (Joueur j1, Joueur j2){
 
 //    Initialisation des pions du joueur 1
       this.lePlateau[0][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, j1), 0, 0, j1);

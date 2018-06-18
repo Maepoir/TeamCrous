@@ -24,7 +24,7 @@ public class TestPlateau {
     Plateau plat = new Plateau();
     plat.manger(p1,p2);
     assertEquals(p2 , p1.getAMange() );
-    assertEquals(p1 , p2.getEstMange() );
+    assertEquals(p1.getAMange().equals(p2) , p2.getEstMange() );
   }
   @Test
   public void testDeplacementsPossibles(){
@@ -34,7 +34,7 @@ public class TestPlateau {
     int[][] deplacements;
     int[][] resultat = new int[4][2];
     resultat[0][0] = 3;
-    resultat[0][1] = 2;
+    resultat[0][1] = 3;
     resultat[1][0] = 1;
     resultat[1][1] = 2;
     resultat[2][0] = 2;

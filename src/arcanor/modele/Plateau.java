@@ -8,6 +8,8 @@ public class Plateau {
 
   //la grille de jeu
   public Pion[][] lePlateau;
+  private Joueur j1;
+  private Joueur j2;
 
   /**
    * Role : Cette méthode permet de créer un objet Plateau
@@ -17,6 +19,9 @@ public class Plateau {
   }
 
   public void initPions (Joueur j1, Joueur j2){
+
+      this.j1 = j1;
+      this.j2 = j2;
 
       for(int i = 0; i < this.lePlateau.length; i++){
           for(int j = 0; j < this.lePlateau[0].length;j++){
@@ -142,7 +147,7 @@ public class Plateau {
       }
 
 //      Return -1 dans le tableau si le pion ne peut pas aller dans cette direction
-      return ret ;
+      return ret;
   }
 
     /**
@@ -153,5 +158,16 @@ public class Plateau {
      */
   public Pion getPion(int x ,int y){
     return this.lePlateau[x][y];
+  }
+
+  public boolean verifVictoire (Joueur j){
+      boolean ret = false;
+      int score = 0;
+      if(j.equals(j1)){
+          for(int i = 0; i < this.lePlateau.length; i ++){
+              
+          }
+      }
+      return ret;
   }
 }

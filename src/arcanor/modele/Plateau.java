@@ -18,6 +18,12 @@ public class Plateau {
 
   public void initPions (Joueur j1, Joueur j2){
 
+      for(int i = 0; i < this.lePlateau.length; i++){
+          for(int j = 0; j < this.lePlateau[0].length;j++){
+              this.lePlateau [i] [j] = null;
+          }
+      }
+
 //    Initialisation des pions du joueur 1
       this.lePlateau[0][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, j1), 0, 0, j1);
       this.lePlateau[1][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, j1), 0, 0, j1);

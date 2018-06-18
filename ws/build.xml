@@ -6,6 +6,7 @@
     <property name="lib.dir"     value="lib"/>
     <property name="report.dir"  value="junitReport"/>
     <property name="main-class"  value="arcanor.Partie"/>
+    <property name="javadoc.dir" value="javadoc"/>
 
     <path id="classpath">
         <fileset dir="${lib.dir}" includes="**/*.jar"/>
@@ -33,23 +34,25 @@
     
     <target name="test" depends="compile">
         <mkdir dir="${report.dir}"/>
-        <junit printsummary="yes" haltonfailure="yes" showoutput="yes">
-            <classpath>
-                <path refid="classpath"/>
-                <path location="${class.dir}"/>
-            </classpath>
+        <junit printsummary="yes" haltonfailure="no" showoutput="yes">
+            <classpath refid="classpath"/>
+            <classpath location="${class.dir}"/>
 
             <formatter type="xml"/>
 
-            <batchtest fork="yes">
-                <fileset dir="${src.dir}" includes="*Test.java"/>
+            <batchtest fork="yes" todir="${report.dir}">
+                <fileset dir="${src.dir}">
+                    <include name="**/*Test*.java"/>
+                </fileset>
             </batchtest>
         </junit>
     </target>
     
     <target name="testReport" depends="test">
         <junitreport todir="${report.dir}">
-            <fileset dir="${report.dir}" includes="TEST-*.xml"/>
+            <fileset dir="${report.dir}" includes="TEST-*.xml">
+                <include name="TEST-*.xml"/>
+            </fileset>
             <report todir="${report.dir}"/>
         </junitreport>
     </target>

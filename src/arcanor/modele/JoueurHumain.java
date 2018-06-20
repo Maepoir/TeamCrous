@@ -20,7 +20,7 @@ public class JoueurHumain extends Joueur{
    * @return int le numéro correspondant au déplacement */
    public int jouer(){
      Scanner sc = new Scanner(System.in);
-     System.out.println("|\t1|\t2|\t3| \n |\t0|Pion|\t4| \n |\t7|\t6|\t5");
+     System.out.println("|\t0|\t1|\t2| \n |\t7|\tPion|\t3| \n |\t6|\t5|\t4");
      System.out.println("saisir le numéro correspondant au déplacement choisi : ");
      int deplacement = sc.nextInt();
      return deplacement;

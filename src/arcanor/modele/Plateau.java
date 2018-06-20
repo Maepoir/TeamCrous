@@ -189,7 +189,7 @@ public class Plateau {
     Pion ret = null;
     for(int i = 0; i < this.lePlateau.length; i++){
         for(int j = 0; j < this.lePlateau[0].length; j++){
-            if(this.lePlateau[i][j].getNum() == num){
+            if((this.lePlateau[i][j] != null)&&(this.lePlateau[i][j].getNum() == num)){
                 ret = this.lePlateau[i][j];
             }
         }
@@ -217,14 +217,14 @@ public class Plateau {
       int score = 0;
       if(j.equals(j1)){
           for(int i = 0; i < this.lePlateau.length; i ++){
-              if(this.lePlateau[i][6].getLeJoueur().equals(j)){
+              if((this.lePlateau[i][6] != null)&&(this.lePlateau[i][6].getLeJoueur().equals(j))){
                   score += 5 - this.lePlateau[i][6].getTAILLE();
               }
           }
       }
       else if(j.equals(j2)){
           for(int i = 0; i < this.lePlateau.length; i++){
-              if(this.lePlateau[i][0].getLeJoueur().equals(j)){
+              if((this.lePlateau[i][0] != null)&&(this.lePlateau[i][0].getLeJoueur().equals(j))){
                   score += 5 - this.lePlateau[i][0].getTAILLE();
               }
           }

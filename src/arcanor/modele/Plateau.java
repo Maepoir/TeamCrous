@@ -201,7 +201,7 @@ public class Plateau {
      * Recupere un pion en fonction de ses coordonnées
      * @param x coordonnée x
      * @param y coordonnée y
-     * @return le pion en coordonnée x y 
+     * @return le pion en coordonnée x y
      */
   public Pion getPion(int x ,int y){
       return this.lePlateau[x][y];

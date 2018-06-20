@@ -34,7 +34,6 @@ public class Jeu{
   /** Role : permet de créer un objet Jeu avec des paramètres précis
   * @param joueur1 le premier Joueur
   * @param joueur2 le deuxième joueur
-  * @param plateau le plateau de jeu
   * @param modeJeu le mode de jeu choisi
   * @param modeGraphique le mode d'affichage du jeu choisi */
   public Jeu(Joueur joueur1, Joueur joueur2, ModeJeu modeJeu, boolean modeGraphique){
@@ -171,7 +170,8 @@ public class Jeu{
               }
               aDeplacer = lePlateau.getPion(choixPion);
               placement = this.aLaMain.jouer();
-              deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement);
+//              Gérer la libération des pions
+              deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement,false);
             }
             partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
             if(!partieGagne){
@@ -184,9 +184,4 @@ public class Jeu{
           System.out.println("non géré pour l'instant");
         }
       }
-      /**Pion ret;
-      Scanner sc = new Scanner(System.in);
-      System.out.println("choisir le pion que vous souhaitez jouer : ");
-      int choixPion = sc.nextInt();
-      ret = */
 }

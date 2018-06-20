@@ -23,20 +23,20 @@ public class MenuTxt {
         System.out.println("Saisir nom du joueur 1 :");
         Scanner in = new Scanner (System.in);
         String nom1 = in.nextLine();
-        JoueurHumain j1 = new JoueurHumain(nom1,Couleur.BLANC, true);
+        JoueurHumain j1 = new JoueurHumain(nom1,Couleur.BLANC);
         System.out.println("Jouer contre un IA ?(o/n)");
         Joueur j2;
         String ia = in.nextLine();
         if(ia.equals("o")){
           System.out.println("Saisir nom de l'IA : ");
           String nom2 = in.nextLine();
-          j2 = new IA(nom2, Couleur.NOIR, false,1);
+          j2 = new IA(nom2, Couleur.NOIR,1);
         }
         else{
           //si la saisie est incorrecte, il s'agira d'une partie entre 2 joueurs
           System.out.println("Saisir nom du joueur 2 : ");
           String nom2 = in.nextLine();
-          j2 = new JoueurHumain(nom2,Couleur.NOIR, false);
+          j2 = new JoueurHumain(nom2,Couleur.NOIR);
         }
         Plateau plateau = new Plateau();
         plateau.initPions(j1, j2);
@@ -62,8 +62,6 @@ public class MenuTxt {
         System.out.println("Merci d'avoir lancé Arcanor, à bientôt !");
         System.exit(0);
       }
-
-
   }
 
 }

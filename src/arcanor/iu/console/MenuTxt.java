@@ -38,8 +38,7 @@ public class MenuTxt {
           String nom2 = in.nextLine();
           j2 = new JoueurHumain(nom2,Couleur.NOIR);
         }
-        Plateau plateau = new Plateau();
-        plateau.initPions(j1, j2);
+        Plateau plateau = new Plateau(j1,j2);
         boolean modeGraphique = false;
         System.out.println("Jouer en mode triche (voir quel pion à déjà mangé un autre) ou en mode normal ? (t/n)");
         String tricheNormal = in.nextLine();

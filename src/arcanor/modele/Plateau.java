@@ -56,9 +56,19 @@ public class Plateau {
    * Role : Cette méthode permet de deplacer un pion
    * @param lePion le pion que l'on souhaite deplacer
    * @param i le numéro du déplacement a effectuer
+   * @param libere true si on libère le pion caché, faux sinon
    */
-  public boolean deplacerPion(Pion lePion , int i){
+  public boolean deplacerPion(Pion lePion , int i, boolean libere){
       boolean ret = false;
+      Pion cache = null;
+      int x1 = lePion.getX();
+      int y1 = lePion.getY();
+      if(libere){
+          cache = lePion.getAMange();
+          lePion.setAMange(null);
+          cache.setEstMange(false);
+          cache.setXY(lePion.getX(),lePion.getY());
+      }
       this.lePlateau[lePion.getX()][lePion.getY()] = null;
       int x = deplacementPossibles(lePion)[i][0];
       int y = deplacementPossibles(lePion)[i][1];
@@ -70,6 +80,9 @@ public class Plateau {
       }
       else{
           System.out.println("Déplacement hors des limites");
+      }
+      if(libere){
+          this.lePlateau[x1][y1] = cache;
       }
       return ret;
   }
@@ -184,6 +197,11 @@ public class Plateau {
     return ret;
   }
 
+    /**
+     * Vérifie si les conditions de victoire du joueur passé en paramtètre sont réunies
+     * @param j le joueur a vérifié
+     * @return true si le joueur a réuni les conditions de victoire, false sinon
+     */
   public boolean verifVictoire (Joueur j){
       boolean ret = false;
       int score = 0;

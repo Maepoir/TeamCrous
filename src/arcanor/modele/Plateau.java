@@ -198,6 +198,16 @@ public class Plateau {
   }
 
     /**
+     * Recupere un pion en fonction de ses coordonnées
+     * @param x coordonnée x
+     * @param y coordonnée y
+     * @return le pion en coordonnée x y 
+     */
+  public Pion getPion(int x ,int y){
+      return this.lePlateau[x][y];
+  }
+
+    /**
      * Vérifie si les conditions de victoire du joueur passé en paramtètre sont réunies
      * @param j le joueur a vérifié
      * @return true si le joueur a réuni les conditions de victoire, false sinon

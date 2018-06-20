@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8543929a-2f63-48a1-aa1d-dea73a472cf0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/iu/console/PlateauTxt.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/console/PlateauTxt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/modele/IA.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/IA.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Jeu.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Jeu.class" afterDir="false" />
@@ -22,16 +21,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="PlateauTxt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/PlateauTxt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Plateau.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Plateau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3145">
-              <caret line="240" column="3" selection-start-line="240" selection-start-column="3" selection-end-line="240" selection-end-column="3" />
+            <state relative-caret-position="323">
+              <caret line="203" column="41" selection-start-line="203" selection-start-column="41" selection-end-line="203" selection-end-column="41" />
               <folding>
-                <element signature="e#6245#6246#0" expanded="true" />
-                <element signature="e#6267#6268#0" expanded="true" />
-                <element signature="e#6402#6403#0" expanded="true" />
-                <element signature="e#6425#6426#0" expanded="true" />
+                <element signature="e#6178#6179#0" expanded="true" />
+                <element signature="e#6217#6218#0" expanded="true" />
+                <element signature="e#7204#7205#0" expanded="true" />
+                <element signature="e#7230#7231#0" expanded="true" />
+                <element signature="e#7339#7340#0" expanded="true" />
+                <element signature="e#7367#7368#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -311,12 +324,12 @@
       <workItem from="1528292670344" duration="4623000" />
       <workItem from="1528996130876" duration="1021000" />
       <workItem from="1529312068842" duration="484000" />
-      <workItem from="1529494391340" duration="7051000" />
+      <workItem from="1529494391340" duration="7215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26911000" />
+    <option name="totallyTimeSpent" value="27075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -746,7 +759,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/PlateauTxt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
+        <state relative-caret-position="176">
           <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -756,13 +769,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Plateau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3145">
-          <caret line="240" column="3" selection-start-line="240" selection-start-column="3" selection-end-line="240" selection-end-column="3" />
+        <state relative-caret-position="323">
+          <caret line="203" column="41" selection-start-line="203" selection-start-column="41" selection-end-line="203" selection-end-column="41" />
           <folding>
-            <element signature="e#6245#6246#0" expanded="true" />
-            <element signature="e#6267#6268#0" expanded="true" />
-            <element signature="e#6402#6403#0" expanded="true" />
-            <element signature="e#6425#6426#0" expanded="true" />
+            <element signature="e#6178#6179#0" expanded="true" />
+            <element signature="e#6217#6218#0" expanded="true" />
+            <element signature="e#7204#7205#0" expanded="true" />
+            <element signature="e#7230#7231#0" expanded="true" />
+            <element signature="e#7339#7340#0" expanded="true" />
+            <element signature="e#7367#7368#0" expanded="true" />
           </folding>
         </state>
       </provider>

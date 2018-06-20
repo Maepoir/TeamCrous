@@ -29,6 +29,9 @@ package arcanor.modele;
     /** coordonnées du pion sur le plateau en y (ordonnée) */
     private int y;
 
+    //le numéro du pion
+    private int num;
+
     /**
     * Role :Construit un objet Pion
     * @param taille la taille du pion
@@ -36,13 +39,14 @@ package arcanor.modele;
               int taille = 3;
               Pion p = new Pion(taille);
     */
-    public Pion (int taille, boolean estManger, Pion aManger, int x, int y, Joueur leJoueur){
+    public Pion (int taille, boolean estManger, Pion aManger, int x, int y, Joueur leJoueur, int num){
       this.TAILLE = taille;
       this.estManger = estManger;
       this.aManger = aManger;
       this.x = x;
       this.y = y;
       this.leJoueur = leJoueur;
+      this.num = num;
     }
 
    /**
@@ -161,4 +165,8 @@ package arcanor.modele;
      public int getTAILLE(){
          return this.TAILLE;
      }
+
+     /** permet d'accéder au numéro du pion
+     * @return le numéro du pion */
+     public int getNum() {return this.num;}
 }

@@ -34,20 +34,20 @@ public class Plateau {
       }
 
 //    Initialisation des pions du joueur 1
-      this.lePlateau[0][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j1), 0, 0, this.j1);
-      this.lePlateau[1][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j1), 0, 0, this.j1);
-      this.lePlateau[3][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j1), 0, 0, this.j1);
-      this.lePlateau[4][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j1), 0, 0, this.j1);
-      this.lePlateau[6][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j1), 0, 0, this.j1);
-      this.lePlateau[7][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j1), 0, 0, this.j1);
+      this.lePlateau[0][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j1,1), 0, 0, this.j1,2);
+      this.lePlateau[1][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j1,3), 0, 0, this.j1,4);
+      this.lePlateau[3][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j1,5), 0, 0, this.j1,6);
+      this.lePlateau[4][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j1,7), 0, 0, this.j1,8);
+      this.lePlateau[6][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j1,9), 0, 0, this.j1,10);
+      this.lePlateau[7][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j1,11), 0, 0, this.j1,12);
 
 //    Initialisation des pions du joueur 2
-      this.lePlateau[0][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j2), 0, 0, this.j2);
-      this.lePlateau[1][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j2), 0, 0, this.j2);
-      this.lePlateau[3][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j2), 0, 0, this.j2);
-      this.lePlateau[4][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j2), 0, 0, this.j2);
-      this.lePlateau[6][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j2), 0, 0, this.j2);
-      this.lePlateau[7][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j2), 0, 0, this.j2);
+      this.lePlateau[0][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j2,13), 0, 0, this.j2,14);
+      this.lePlateau[1][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j2,15), 0, 0, this.j2,16);
+      this.lePlateau[3][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j2,17), 0, 0, this.j2,18);
+      this.lePlateau[4][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j2,19), 0, 0, this.j2,20);
+      this.lePlateau[6][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j2,21), 0, 0, this.j2,22);
+      this.lePlateau[7][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j2,23), 0, 0, this.j2,24);
 
 
   }

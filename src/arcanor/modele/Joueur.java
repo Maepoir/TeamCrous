@@ -13,8 +13,6 @@ public abstract class Joueur {
   // L'ensemble des pions du joueur
   private Pion[] mesPions ;
 
-  // Le joueur qui à la main
-  private boolean aLaMain ;
 
   /**
    * Role : Cette méthode permet de créer un objet Joueur
@@ -27,11 +25,11 @@ public abstract class Joueur {
    *      Color col = new Color( 255,255,255);
    *      Joueur p = new Joueur (nom,col );
   */
-  public Joueur (String nom, Couleur couleur, boolean aLaMain){
+  public Joueur (String nom, Couleur couleur){
     this.nom = nom ;
     this.couleur = couleur;
-    this.aLaMain = aLaMain;
   }
+
   /**
    * Role : Cette méthode permet de récupérer le nom/pseudo du Joueur
    * @return la valeur du nom du Joueur
@@ -45,6 +43,7 @@ public abstract class Joueur {
     String ret = this.nom;
     return ret;
   }
+
   /**
    * Role : Cette méthode modifier le nom/pseudo du Joueur
    * @param nom le nom ou pseudo du Joueur
@@ -83,36 +82,6 @@ public abstract class Joueur {
     this.couleur = couleur;
   }
 
-  /**
-   * Role : Cette méthode permet de récupérer savoir si le joueur qui a la main
-   * @return true si le joueur  a la main
-  *          false si Le joueur  n'a  pas la main
-   * Case d'utilisation :
-   *      String nom = "GURVAN";
-   *      Color col = new Color( 255,255,255);
-   *      boolean aLaMain = true;
-   *      Joueur p = new Joueur (nom,col );
-   *      col = p.getALaMain();
-  */
-  public boolean getALaMain(){
-    boolean ret = this.aLaMain;
-    return ret;
-  }
-
-  /**
-   * Role : Cette méthode permet de récupérer savoir si le joueur qui a la main
-   * @param aLaMain  true si le joueur  a la main
-   *                 false si  Le joueur  n'a  pas la main
-   * Case d'utilisation :
-   *      String nom = "GURVAN";
-   *      Color col = new Color( 255,255,255);
-   *      boolean aLaMain = true;
-   *      Joueur p = new Joueur (nom,col );
-   *      col = p.getALaMain();
-  */
-  public void setALaMain(boolean aLaMain){
-    this.aLaMain = aLaMain;
-  }
 
   /** Rôle : permet d'acceder à l'attribut mesPions en dehors de la classe Joueur
   * @return la liste des pions du joueur */

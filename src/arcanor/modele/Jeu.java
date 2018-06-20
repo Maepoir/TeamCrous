@@ -23,7 +23,8 @@ public class Jeu{
   private long tempsJeu;
   // détermine si le jeu doit s'afficher en mode graphique ou console
   private boolean modeGraphique;
-
+  //le joueur qui a la main
+  private Joueur aLaMain;
   //fenêtre de jeu graphique
   //private JeuFen jeuG;
 
@@ -95,13 +96,11 @@ public class Jeu{
   * l'autre
   */
   public void changerMain(){
-    if(joueur1.getALaMain()){
-      joueur2.setALaMain(true);
-      joueur1.setALaMain(false);
+    if(aLaMain.equals(joueur1)){
+      aLaMain = this.joueur2;
     }
     else{
-      joueur1.setALaMain(true);
-      joueur2.setALaMain(false);
+      aLaMain = this.joueur1;
     }
   }
 
@@ -166,4 +165,9 @@ public class Jeu{
          String tuto = "";
          System.out.println("tuto");
        }
+
+      /** permet de jouer à Arcanor */
+      public void jouer(){
+        //verifVictoire(this.joueur1);
+      }
 }

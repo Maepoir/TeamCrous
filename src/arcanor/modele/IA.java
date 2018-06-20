@@ -15,8 +15,8 @@ public class IA extends Joueur{
    * @param couleur couleur des pions
    * @param aLaMain true si le joueur  a la main
    */
-   public IA (String nom, Couleur couleur, boolean aLaMain, int niveau){
-     super(nom,couleur,aLaMain);
+   public IA (String nom, Couleur couleur, int niveau){
+     super(nom,couleur);
      this.difficulte = niveau;
    }
 

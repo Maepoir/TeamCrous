@@ -11,8 +11,8 @@ public class JoueurHumain extends Joueur{
    * @param couleur couleur des pions
    * @param aLaMain true si le joueur  a la main
    */
-   public JoueurHumain(String nom, Couleur couleur, boolean aLaMain){
-     super(nom,couleur,aLaMain);
+   public JoueurHumain(String nom, Couleur couleur){
+     super(nom,couleur);
    }
 
    public void jouer(){

@@ -1,6 +1,6 @@
 package arcanor;
 import arcanor.modele.*;
-
+import arcanor.iu.console.*;
 import java.util.Scanner;
 
 /**
@@ -9,8 +9,6 @@ import java.util.Scanner;
  */
  public class Partie{
 
-   //l'instance de jeu permettant de lancer une partie
-   private Jeu leJeu;
 
    /** Rôle : lance Arcanor
    * @param args tableau de chaine de caractères
@@ -20,7 +18,7 @@ import java.util.Scanner;
 
        System.out.println("Voulez vous jouez avec l'interface graphique active ? (oui/non)");
        Scanner sc = new Scanner(System.in);
-       String rep ="";
+       String rep = sc.nextLine();
        boolean mode = false;
 
        while(!rep.trim().equals("oui") && !rep.trim().equals("non")){
@@ -28,7 +26,15 @@ import java.util.Scanner;
          rep = sc.nextLine();
        }
        if(rep.trim().equals("oui")){mode = true;}
-       Jeu jeu = new Jeu (mode);
+
+       if(!mode){
+         MenuTxt menuC = new MenuTxt();
+         menuC.afficherMenu();
+       }
+       else{
+         //mettre ici partie graphique
+         System.out.println("non géré pour l'instant");
+       }
        //commentaire car méthode non écrite, elle permettra de lancer la partie
        //jeu.start();
    }

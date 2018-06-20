@@ -169,12 +169,19 @@ public class Plateau {
 
     /**
      * Role : Cette méthode permet de recuperer un pion
-     * @param x la coordonnée en abscisse
-     * @param y La coordonnée en coordonnée
+     * @param num le numéro du pion
      * @return le pion correspondant dans la grille
      */
-  public Pion getPion(int x ,int y){
-    return this.lePlateau[x][y];
+  public Pion getPion(int num){
+    Pion ret = null;
+    for(int i = 0; i < this.lePlateau.length; i++){
+        for(int j = 0; j < this.lePlateau[0].length; j++){
+            if(this.lePlateau[i][j].getNum() == num){
+                ret = this.lePlateau[i][j];
+            }
+        }
+    }
+    return ret;
   }
 
   public boolean verifVictoire (Joueur j){

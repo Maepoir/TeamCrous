@@ -53,8 +53,9 @@ public class Plateau {
    * @param y La coordonnée en coordonnée
    */
   public void deplacerPion(Pion lePion , int x, int y){
-    this.lePlateau [x][y] = lePion;
-    lePion.setXY(x,y);
+      this.lePlateau[lePion.getX()][lePion.getY()] = null;
+      this.lePlateau [x][y] = lePion;
+      lePion.setXY(x,y);
   }
 
   /**
@@ -63,8 +64,8 @@ public class Plateau {
    * @param mange le pion qui est mangé
    */
   public void manger(Pion mangeur,Pion mange){
-    mangeur.setAMange(mange);
-    mange.setEstMange(true);
+      mangeur.setAMange(mange);
+      mange.setEstMange(true);
   }
 
   /**

@@ -165,9 +165,20 @@ public class Plateau {
       int score = 0;
       if(j.equals(j1)){
           for(int i = 0; i < this.lePlateau.length; i ++){
-              
+              if(this.lePlateau[i][6].getLeJoueur().equals(j)){
+                  score += 5 - this.lePlateau[i][6].getTAILLE();
+              }
           }
       }
+      else if(j.equals(j2)){
+          for(int i = 0; i < this.lePlateau.length; i++){
+              if(this.lePlateau[i][0].getLeJoueur().equals(j)){
+                  score += 5 - this.lePlateau[i][0].getTAILLE();
+              }
+          }
+      }
+      if(score >= 7){ ret = true;}
+
       return ret;
   }
 }

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8543929a-2f63-48a1-aa1d-dea73a472cf0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/arcanor/modele/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/modele/Plateau.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,8 +18,8 @@
       <file leaf-file-name="PlateauTxt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/PlateauTxt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="561">
+              <caret line="33" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -26,11 +27,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Jeu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Jeu.java">
+      <file leaf-file-name="Pion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Pion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="48" column="115" selection-start-line="48" selection-start-column="115" selection-end-line="48" selection-end-column="115" />
+            <state relative-caret-position="394">
+              <caret line="158" column="29" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
+              <folding>
+                <element signature="e#1963#1964#0" expanded="true" />
+                <element signature="e#1999#2000#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,12 +43,8 @@
       <file leaf-file-name="Plateau.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Plateau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="167" column="14" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="14" />
-              <folding>
-                <element signature="e#307#308#0" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="473">
+              <caret line="179" column="34" selection-start-line="179" selection-start-column="34" selection-end-line="179" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -115,7 +116,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,6 +202,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -311,11 +312,12 @@
       <workItem from="1528292670344" duration="4623000" />
       <workItem from="1528996130876" duration="1021000" />
       <workItem from="1529312068842" duration="484000" />
+      <workItem from="1529494391340" duration="1072000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19444000" />
+    <option name="totallyTimeSpent" value="20932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -334,56 +336,35 @@
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.20574887" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.23903178" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="5" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info id="Designer" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32838285" />
-      <window_info content_ui="combo" id="Project" order="5" weight="0.5325265" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Run" order="6" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="1" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32838285" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="5" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="5" weight="0.5325265" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="TODO" order="10" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -393,10 +374,10 @@
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32838285" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info id="Capture Tool" order="2" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32838285" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -407,6 +388,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Jeu.java">
@@ -699,13 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/TestPlateau.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -713,13 +692,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Taille.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Taille.java" />
     <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Couleur.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -741,17 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Pion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
-          <caret line="158" column="29" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
-          <folding>
-            <element signature="e#1963#1964#0" expanded="true" />
-            <element signature="e#1999#2000#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -762,10 +724,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ws/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="36" selection-end-line="92" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/PlateauTxt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="561">
+          <caret line="33" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -774,19 +743,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Jeu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="48" column="115" selection-start-line="48" selection-start-column="115" selection-end-line="48" selection-end-column="115" />
+        <state relative-caret-position="-751">
+          <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Pion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="158" column="29" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
+          <folding>
+            <element signature="e#1963#1964#0" expanded="true" />
+            <element signature="e#1999#2000#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Plateau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="167" column="14" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="14" />
-          <folding>
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="473">
+          <caret line="179" column="34" selection-start-line="179" selection-start-column="34" selection-end-line="179" selection-end-column="34" />
         </state>
       </provider>
     </entry>

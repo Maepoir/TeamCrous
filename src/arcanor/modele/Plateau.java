@@ -1,4 +1,7 @@
 package arcanor.modele;
+
+import arcanor.iu.console.PlateauTxt;
+
 /**
  * Role : Cette classe modélise le Plateau de jeu de Arcanor
  * @author S.Bay ,M.Racine,M.Poiré G.Renault
@@ -10,18 +13,21 @@ public class Plateau {
   public Pion[][] lePlateau;
   private Joueur j1;
   private Joueur j2;
+  private PlateauTxt plateauTxt;
 
   /**
    * Role : Cette méthode permet de créer un objet Plateau
    */
-  public Plateau(){
+  public Plateau(Joueur j1, Joueur j2){
       this.lePlateau = new Pion[8][7];
-  }
-
-  public void initPions (Joueur j1, Joueur j2){
-
       this.j1 = j1;
       this.j2 = j2;
+      initPions();
+      this.plateauTxt = new PlateauTxt(this,this.j1,this.j2);
+      this.plateauTxt.afficherPlateau();
+  }
+
+  private void initPions (){
 
       for(int i = 0; i < this.lePlateau.length; i++){
           for(int j = 0; j < this.lePlateau[0].length;j++){
@@ -30,32 +36,44 @@ public class Plateau {
       }
 
 //    Initialisation des pions du joueur 1
-      this.lePlateau[0][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, j1), 0, 0, j1);
-      this.lePlateau[1][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, j1), 0, 0, j1);
-      this.lePlateau[3][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, j1), 0, 0, j1);
-      this.lePlateau[4][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, j1), 0, 0, j1);
-      this.lePlateau[6][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, j1), 0, 0, j1);
-      this.lePlateau[7][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, j1), 0, 0, j1);
+      this.lePlateau[0][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j1), 0, 0, this.j1);
+      this.lePlateau[1][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j1), 0, 0, this.j1);
+      this.lePlateau[3][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j1), 0, 0, this.j1);
+      this.lePlateau[4][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j1), 0, 0, this.j1);
+      this.lePlateau[6][0] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j1), 0, 0, this.j1);
+      this.lePlateau[7][0] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j1), 0, 0, this.j1);
 
 //    Initialisation des pions du joueur 2
-      this.lePlateau[0][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, j2), 0, 0, j2);
-      this.lePlateau[1][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, j2), 0, 0, j2);
-      this.lePlateau[3][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, j2), 0, 0, j2);
-      this.lePlateau[4][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, j2), 0, 0, j2);
-      this.lePlateau[6][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, j2), 0, 0, j2);
-      this.lePlateau[7][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, j2), 0, 0, j2);
+      this.lePlateau[0][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j2), 0, 0, this.j2);
+      this.lePlateau[1][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j2), 0, 0, this.j2);
+      this.lePlateau[3][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j2), 0, 0, this.j2);
+      this.lePlateau[4][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j2), 0, 0, this.j2);
+      this.lePlateau[6][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j2), 0, 0, this.j2);
+      this.lePlateau[7][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j2), 0, 0, this.j2);
+
+
   }
 
   /**
    * Role : Cette méthode permet de deplacer un pion
    * @param lePion le pion que l'on souhaite deplacer
-   * @param x la coordonnée en abscisse
-   * @param y La coordonnée en coordonnée
+   * @param i le numéro du déplacement a effectuer
    */
-  public void deplacerPion(Pion lePion , int x, int y){
+  public boolean deplacerPion(Pion lePion , int i){
+      boolean ret = false;
       this.lePlateau[lePion.getX()][lePion.getY()] = null;
-      this.lePlateau [x][y] = lePion;
-      lePion.setXY(x,y);
+      int x = deplacementPossibles(lePion)[i][0];
+      int y = deplacementPossibles(lePion)[i][1];
+      if(x != -1 && y != -1){
+          this.lePlateau [x][y] = lePion;
+          lePion.setXY(x,y);
+          this.plateauTxt.afficherPlateau();
+          ret = true;
+      }
+      else{
+          System.out.println("Déplacement hors des limites");
+      }
+      return ret;
   }
 
   /**

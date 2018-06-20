@@ -1,9 +1,7 @@
 package test;
 
 import static org.junit.Assert.*;
-
-import arcanor.modele.Couleur;
-import arcanor.modele.IA;
+import arcanor.modele.*;
 import org.junit.Test;
 
 import java.awt.*;
@@ -12,36 +10,33 @@ public class TestIA {
   @Test
   public void testNom(){
     // Cas Normal : le nom entré est une chaine remplie
-    Couleur color = Couleur.BLANC;
-    IA ia = new IA("RENAULT",color,1);
+    Color color = new Color(255,255,255);
+    IA ia = new IA("BAY",Couleur_BLANC,1);
     String nom = "Pomme";
     ia.setNom("Pomme");
     assertEquals(nom,ia.getNom());
 
-    // Cas Limite : le nom entré est une chaine remplie
-    ia = new IA("",color,1);
+    // Cas Limite : le nom entré est une chaine vide
+    ia = new IA("",Couleur_NOIR,1);
     nom = "Pomme";
     ia.setNom("Pomme");
     assertEquals(nom,ia.getNom());
-
   }
+
   @Test
   public void testColor(){
     // Cas Normal : la couleur est valide
-    Couleur color = Couleur.BLANC;
-    IA ia = new IA("RENAULT",color,1);
-    color = Couleur.NOIR;
+    IA ia = new IA("Poiré",Couleur_BLANC,1);
+    Couleur color = Couleur_NOIR;
     ia.setColor(color);
     assertEquals(color,ia.getColor());
-
-
   }
+
   @Test
   public void testDifficulte(){
-    Couleur color = Couleur.BLANC;
-    IA ia = new IA("RENAULT",color,0);
-    ia.setDifficulte(0);
-    assertEquals(0,ia.getDifficulte());
+    IA ia = new IA("RENAULT",Couleur_BLANC,0);
+    ia.setDifficulte(1);
+    assertEquals(1,ia.getDifficulte());
     ia.setDifficulte(-1);
     assertFalse( 0 != ia.getDifficulte() );
   }

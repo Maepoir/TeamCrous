@@ -13,7 +13,6 @@ public class Plateau {
   public Pion[][] lePlateau;
   private Joueur j1;
   private Joueur j2;
-  private PlateauTxt plateauTxt;
 
   /**
    * Role : Cette méthode permet de créer un objet Plateau
@@ -23,8 +22,7 @@ public class Plateau {
       this.j1 = j1;
       this.j2 = j2;
       initPions();
-      this.plateauTxt = new PlateauTxt(this,this.j1,this.j2);
-      this.plateauTxt.afficherPlateau();
+      PlateauTxt.afficherPlateau(this);
   }
 
   private void initPions (){
@@ -67,7 +65,7 @@ public class Plateau {
       if(x != -1 && y != -1){
           this.lePlateau [x][y] = lePion;
           lePion.setXY(x,y);
-          this.plateauTxt.afficherPlateau();
+          PlateauTxt.afficherPlateau(this);
           ret = true;
       }
       else{
@@ -200,4 +198,21 @@ public class Plateau {
 
       return ret;
   }
+
+    /**
+     * permet de connaitre le joueur 1
+     * @return le joueur 1
+     */
+  public Joueur getJ1() {
+      return this.j1;
+  }
+
+    /**
+     * permet de connaitre le joueur 2
+     * @return le joueur 2
+     */
+  public Joueur getJ2() {
+        return this.j2;
+  }
+
 }

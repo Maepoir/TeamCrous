@@ -21,9 +21,11 @@ public class IA extends Joueur{
    }
 
    /** Rôle : permet de lancer une partie contre l'intelligence
-   * artificielle du jeu. */
-   public void jouer(){
-     System.out.println("jouer IA");
+   * artificielle du jeu.
+   * @return le déplacement choisi*/
+   public int jouer(){
+     int deplacement = (int)(Math.random() * 8);
+     return deplacement;
    }
 
    /** Rôle : permet d'accéder au niveau de difficulté de l'intelligence

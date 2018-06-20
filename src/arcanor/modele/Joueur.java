@@ -10,10 +10,6 @@ public abstract class Joueur {
   // La couleur associé au joueur
   private Couleur couleur ;
 
-  // L'ensemble des pions du joueur
-  private Pion[] mesPions ;
-
-
   /**
    * Role : Cette méthode permet de créer un objet Joueur
    * @param nom nom/pseudo  du joueur
@@ -89,6 +85,9 @@ public abstract class Joueur {
     return this.mesPions;
   }
 
-  public abstract void jouer();
+  /** permet de faire le choix de déplacement du pion
+  * @return int le numéro correspondant au déplacement */
+  public abstract int jouer();
+
 
 }

@@ -41,12 +41,14 @@ public class MenuTxt {
         boolean modeGraphique = false;
         System.out.println("Jouer en mode triche (voir quel pion à déjà mangé un autre) ou en mode normal ? (t/n)");
         String tricheNormal = in.nextLine();
+        Jeu jeu;
         if(tricheNormal.equals("t")){
-          Jeu jeu = new Jeu(j1,j2, ModeJeu.TRICHE,modeGraphique);
+          jeu = new Jeu(j1,j2, ModeJeu.TRICHE,modeGraphique);
         }
         else{
-          Jeu jeu = new Jeu(j1,j2, ModeJeu.NORMAL,modeGraphique);
+          jeu = new Jeu(j1,j2, ModeJeu.NORMAL,modeGraphique);
         }
+        jeu.debutPartie();
       }
       //cet condition non codée, uniquement pour la compilation
       else if(choix == 2){int i = 0;}

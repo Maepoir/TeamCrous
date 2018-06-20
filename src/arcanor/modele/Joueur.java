@@ -78,13 +78,6 @@ public abstract class Joueur {
     this.couleur = couleur;
   }
 
-
-  /** Rôle : permet d'acceder à l'attribut mesPions en dehors de la classe Joueur
-  * @return la liste des pions du joueur */
-  public Pion[] getMesPions (){
-    return this.mesPions;
-  }
-
   /** permet de faire le choix de déplacement du pion
   * @return int le numéro correspondant au déplacement */
   public abstract int jouer();

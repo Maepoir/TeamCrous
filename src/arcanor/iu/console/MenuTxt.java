@@ -38,27 +38,21 @@ public class MenuTxt {
           String nom2 = in.nextLine();
           j2 = new JoueurHumain(nom2,Couleur.NOIR);
         }
-        Plateau plateau = new Plateau(j1,j2);
         boolean modeGraphique = false;
         System.out.println("Jouer en mode triche (voir quel pion à déjà mangé un autre) ou en mode normal ? (t/n)");
         String tricheNormal = in.nextLine();
         if(tricheNormal.equals("t")){
-          Jeu jeu = new Jeu(j1,j2,plateau, ModeJeu.TRICHE,modeGraphique);
+          Jeu jeu = new Jeu(j1,j2, ModeJeu.TRICHE,modeGraphique);
         }
         else{
-          Jeu jeu = new Jeu(j1,j2,plateau,ModeJeu.NORMAL,modeGraphique);
+          Jeu jeu = new Jeu(j1,j2, ModeJeu.NORMAL,modeGraphique);
         }
-
-
-
-        //garder pour Simon
-        //PlateauTxt plTxt = new PlateauTxt(plateau, j1, j2);
       }
       //cet condition non codée, uniquement pour la compilation
       else if(choix == 2){int i = 0;}
       //en cas de saisie incorrecte ou de choix 3
       else{
-        System.out.println("Merci d'avoir lancé Arcanor, à bientôt !");
+        System.out.println("Merci d'avoir lancé Arcanor, à bientôt ! <3");
         System.exit(0);
       }
   }

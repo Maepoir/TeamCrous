@@ -42,6 +42,7 @@ public class Jeu{
     this.lePlateau = new Plateau(this.joueur1, this.joueur2);
     this.modeJeu = modeJeu;
     this.modeGraphique = modeGraphique;
+    this.aLaMain = this.joueur1;
   }
 
   /**
@@ -89,11 +90,11 @@ public class Jeu{
   * l'autre
   */
   public void changerMain(){
-    if(aLaMain.equals(joueur1)){
-      aLaMain = this.joueur2;
+    if(this.aLaMain.equals(joueur1)){
+      this.aLaMain = this.joueur2;
     }
     else{
-      aLaMain = this.joueur1;
+      this.aLaMain = this.joueur1;
     }
   }
 
@@ -157,8 +158,10 @@ public class Jeu{
         Pion aDeplacer;
         int placement;
         int choixPion;
+        System.out.println("Le joueur qui commence est : " +aLaMain.getNom());
         if(!this.modeGraphique){
           System.out.println("== Début de partie ==");
+          tutoriel();
           while(!partieGagne){
             while(!deplacementFait){
               Scanner sc = new Scanner(System.in);
@@ -178,6 +181,7 @@ public class Jeu{
               changerMain();
               System.out.println("C'est au tour de " + this.aLaMain.getNom());
             }
+            deplacementFait = false;
           }
         }
         else{

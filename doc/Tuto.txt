@@ -1,0 +1,5 @@
+Tutoriel Arcanor (mode console)
+Lorsque vous aurez effectue tous les choix de configuration, la partie se lancera et vous vous retrouverez face au plateau de jeu.
+Vous verrez sur ce plateau des cases vides et des cases contenant des sequences de caractere, comme par exemple "t1nomJoueur(2)". Cela correspond a la taille du pion : t1 <=> taille 1, t2 <=> taille 2, etc... nomJoueur correspond au joueur auquel appartient le pion. (2) correspond au numero du pion, que vous aurez a entrer lorsque votre tour sera arrive. 
+Ensuite, il vous sera demande de choisir le mouvement que vous souhaite effectue (mouvement numerote de 0 a 7).
+Enfin, vous devrez choisir si vous souhaitez liberer un pion qui se trouve sous celui que vous avez choisi.

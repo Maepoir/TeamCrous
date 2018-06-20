@@ -2,6 +2,8 @@ package arcanor.modele;
 import java.util.*;
 import arcanor.Sauvegarde;
 import arcanor.*;
+import arcanor.iu.console.*;
+import arcanor.iu.graphique.*;
 
 /**
  * Role :  Cette classe permet de modeliser le jeu d'Arcanor
@@ -29,24 +31,16 @@ public class Jeu{
   //private JeuFen jeuG;
 
 
-  /**
-   * Role : Cette methode permet de creer un objet Jeu
-   * @param modeGraphique le mode d'affichage du jeu choisi
-   */
-  /**public Jeu(boolean modeGraphique){
-    this.modeGraphique = modeGraphique;
-  }*/
-
   /** Role : permet de créer un objet Jeu avec des paramètres précis
   * @param joueur1 le premier Joueur
   * @param joueur2 le deuxième joueur
   * @param plateau le plateau de jeu
   * @param modeJeu le mode de jeu choisi
   * @param modeGraphique le mode d'affichage du jeu choisi */
-  public Jeu(Joueur joueur1, Joueur joueur2, Plateau plateau, ModeJeu modeJeu, boolean modeGraphique){
+  public Jeu(Joueur joueur1, Joueur joueur2, ModeJeu modeJeu, boolean modeGraphique){
     this.joueur1 = joueur1;
     this.joueur2 = joueur2;
-    this.lePlateau = plateau;
+    this.lePlateau = new Plateau(this.joueur1, this.joueur2);
     this.modeJeu = modeJeu;
     this.modeGraphique = modeGraphique;
   }
@@ -137,16 +131,6 @@ public class Jeu{
       this.modeJeu = modeJeu;
     }
 
-  /**
-  * Role : permet la génération du menu de jeu graphiquement ou via console
-  */
-   /**public void menu(){
-     if(!this.modeGraphique){
-       MenuTxt menu = new MenuTxt();
-       menu.afficherMenu();
-     }
-   }
-*/
     /**
     * Role : permet de mettre à jour l'affichage du plateau suite aux déplacements
     * des pions
@@ -167,7 +151,42 @@ public class Jeu{
        }
 
       /** permet de jouer à Arcanor */
-      public void jouer(){
-        //verifVictoire(this.joueur1);
+      public void debutPartie(){
+        boolean partiFini = false;
+        boolean deplacementFait = false;
+        boolean partieGagne = false;
+        Pion aDeplacer;
+        int placement;
+        int choixPion;
+        if(!this.modeGraphique){
+          System.out.println("== Début de partie ==");
+          while(!partieGagne){
+            while(!deplacementFait){
+              Scanner sc = new Scanner(System.in);
+              System.out.println("choisir le pion que vous souhaitez jouer : ");
+              choixPion = sc.nextInt();
+              while((choixPion > 24)||(choixPion < 0)){
+                System.out.println("Saisie incorrecte ! saisissez un nombre compris entre 0 et 24 : ");
+                choixPion = sc.nextInt();
+              }
+              aDeplacer = lePlateau.getPion(choixPion);
+              placement = this.aLaMain.jouer();
+              deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement);
+            }
+            partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
+            if(!partieGagne){
+              changerMain();
+              System.out.println("C'est au tour de " + this.aLaMain.getNom());
+            }
+          }
+        }
+        else{
+          System.out.println("non géré pour l'instant");
+        }
       }
+      /**Pion ret;
+      Scanner sc = new Scanner(System.in);
+      System.out.println("choisir le pion que vous souhaitez jouer : ");
+      int choixPion = sc.nextInt();
+      ret = */
 }

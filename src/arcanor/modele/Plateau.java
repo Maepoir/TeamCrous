@@ -22,7 +22,6 @@ public class Plateau {
       this.j1 = j1;
       this.j2 = j2;
       initPions();
-      PlateauTxt.afficherPlateau(this);
   }
 
   private void initPions (){
@@ -76,14 +75,16 @@ public class Plateau {
           if (lePion.getAMange() != null) {
               lePion.getAMange().setXY(x, y);
           }
-          PlateauTxt.afficherPlateau(this);
           ret = true;
       } else {
-          System.out.println("Déplacement hors des limites");
+          System.out.println("Déplacement hors des limites, veuillez choisir un autre déplacement s'il vous plait.");
       }
       if (libere) {
           this.lePlateau[x1][y1] = cache;
       }
+
+      Jeu.blanc();
+      PlateauTxt.afficherPlateau(this);
       return ret;
   }
 
@@ -105,7 +106,7 @@ public class Plateau {
   public int[][] deplacementPossibles(Pion lePion){
       int [][] ret = new int[8][2];
 //      Solution 0
-      if(lePion.getX()+1<8 && lePion.getY()+1<7) {
+      if(lePion.getX() - 1 >= 0 && lePion.getY() - 1 >= 0) {
           ret[0][0] = lePion.getX() - 1;
           ret[0][1] = lePion.getY() - 1;
       } else {
@@ -114,7 +115,7 @@ public class Plateau {
       }
 
 //      Solution 1
-      if(lePion.getX()+1<8) {
+      if(lePion.getX()-1>=0) {
           ret[1][0] = lePion.getX() - 1;
           ret[1][1] = lePion.getY();
       } else {
@@ -124,7 +125,7 @@ public class Plateau {
 
 
 //      Solution 2
-      if(lePion.getX()+1<8 && lePion.getY()-1>=0) {
+      if(lePion.getX()-1>=0 && lePion.getY()+1<7) {
           ret[2][0] = lePion.getX() - 1;
           ret[2][1] = lePion.getY() + 1;
       } else {
@@ -142,7 +143,7 @@ public class Plateau {
       }
 
 //      Solution 4
-      if(lePion.getY()-1>=0) {
+      if(lePion.getX()+1<8 && lePion.getY()+1<7) {
           ret[4][0] = lePion.getX() + 1;
           ret[4][1] = lePion.getY() + 1;
       } else {
@@ -152,7 +153,7 @@ public class Plateau {
 
 
 //      Solution 5
-      if(lePion.getX()-1>=0 && lePion.getY()+1<7) {
+      if(lePion.getX()+1<8) {
           ret[5][0] = lePion.getX() + 1;
           ret[5][1] = lePion.getY();
       } else {
@@ -161,7 +162,7 @@ public class Plateau {
       }
 
 //      Solution 6
-      if(lePion.getX()-1>=0) {
+      if(lePion.getX()+1<8 && lePion.getY()-1>=0) {
           ret[6][0] = lePion.getX() + 1;
           ret[6][1] = lePion.getY() - 1;
       } else {
@@ -170,7 +171,7 @@ public class Plateau {
       }
 
 //      Solution 7
-      if(lePion.getX()-1>=0 && lePion.getY()-1>=0) {
+      if(lePion.getY()-1>=0) {
           ret[7][0] = lePion.getX();
           ret[7][1] = lePion.getY() - 1;
       } else {
@@ -187,15 +188,15 @@ public class Plateau {
      * @param num le numéro du pion
      * @return le pion correspondant dans la grille
      */
-  public Pion getPion(int num){
+    Pion getPion(int num){
     Pion ret = null;
-    for(int i = 0; i < this.lePlateau.length; i++){
-        for(int j = 0; j < this.lePlateau[0].length; j++){
-            if((this.lePlateau[i][j] != null)&&(this.lePlateau[i][j].getNum() == num)){
-                ret = this.lePlateau[i][j];
+        for (Pion[] aLePlateau : this.lePlateau) {
+            for (int j = 0; j < this.lePlateau[0].length; j++) {
+                if ((aLePlateau[j] != null) && (aLePlateau[j].getNum() == num)) {
+                    ret = aLePlateau[j];
+                }
             }
         }
-    }
     return ret;
   }
 
@@ -214,20 +215,20 @@ public class Plateau {
      * @param j le joueur a vérifié
      * @return true si le joueur a réuni les conditions de victoire, false sinon
      */
-  public boolean verifVictoire (Joueur j){
+    boolean verifVictoire(Joueur j){
       boolean ret = false;
       int score = 0;
       if(j.equals(j1)){
-          for(int i = 0; i < this.lePlateau.length; i ++){
-              if((this.lePlateau[i][6] != null)&&(this.lePlateau[i][6].getLeJoueur().equals(j))){
-                  score += 5 - this.lePlateau[i][6].getTAILLE();
+          for (Pion[] aLePlateau : this.lePlateau) {
+              if ((aLePlateau[6] != null) && (aLePlateau[6].getLeJoueur().equals(j))) {
+                  score += 5 - aLePlateau[6].getTAILLE();
               }
           }
       }
       else if(j.equals(j2)){
-          for(int i = 0; i < this.lePlateau.length; i++){
-              if((this.lePlateau[i][0] != null)&&(this.lePlateau[i][0].getLeJoueur().equals(j))){
-                  score += 5 - this.lePlateau[i][0].getTAILLE();
+          for (Pion[] aLePlateau : this.lePlateau) {
+              if ((aLePlateau[0] != null) && (aLePlateau[0].getLeJoueur().equals(j))) {
+                  score += 5 - aLePlateau[0].getTAILLE();
               }
           }
       }

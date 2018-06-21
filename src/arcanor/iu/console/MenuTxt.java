@@ -39,15 +39,15 @@ public class MenuTxt {
           j2 = new JoueurHumain(nom2,Couleur.NOIR);
         }
         boolean modeGraphique = false;
-        System.out.println("Jouer en mode triche (voir quel pion à déjà mangé un autre) ou en mode normal ? (t/n)");
-        String tricheNormal = in.nextLine();
-        Jeu jeu;
-        if(tricheNormal.equals("t")){
+        /*System.out.println("Jouer en mode triche (voir quel pion à déjà mangé un autre) ou en mode normal ? (t/n)");
+        String tricheNormal = in.nextLine();*/
+        Jeu jeu = new Jeu(j1,j2,ModeJeu.NORMAL,modeGraphique)
+        /*if(tricheNormal.equals("t")){
           jeu = new Jeu(j1,j2, ModeJeu.TRICHE,modeGraphique);
         }
         else{
           jeu = new Jeu(j1,j2, ModeJeu.NORMAL,modeGraphique);
-        }
+        }*/
         jeu.debutPartie();
       }
       //cet condition non codée, uniquement pour la compilation

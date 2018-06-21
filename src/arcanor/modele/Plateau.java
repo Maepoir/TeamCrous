@@ -61,28 +61,27 @@ public class Plateau {
       Pion cache = null;
       int x1 = lePion.getX();
       int y1 = lePion.getY();
-      if(libere){
+      if (libere) {
           cache = lePion.getAMange();
           lePion.setAMange(null);
           cache.setEstMange(false);
-          cache.setXY(lePion.getX(),lePion.getY());
+          cache.setXY(lePion.getX(), lePion.getY());
       }
       this.lePlateau[lePion.getX()][lePion.getY()] = null;
       int x = deplacementPossibles(lePion)[i][0];
       int y = deplacementPossibles(lePion)[i][1];
-      if(x != -1 && y != -1){
-          this.lePlateau [x][y] = lePion;
-          lePion.setXY(x,y);
-          if(lePion.getAMange()!= null){
-              lePion.getAMange().setXY(x,y);
+      if (x != -1 && y != -1) {
+          this.lePlateau[x][y] = lePion;
+          lePion.setXY(x, y);
+          if (lePion.getAMange() != null) {
+              lePion.getAMange().setXY(x, y);
           }
           PlateauTxt.afficherPlateau(this);
           ret = true;
-      }
-      else{
+      } else {
           System.out.println("Déplacement hors des limites");
       }
-      if(libere){
+      if (libere) {
           this.lePlateau[x1][y1] = cache;
       }
       return ret;
@@ -252,5 +251,4 @@ public class Plateau {
   public Joueur getJ2() {
         return this.j2;
   }
-
 }

@@ -48,8 +48,6 @@ public class Plateau {
       this.lePlateau[4][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j2,19), 0, 0, this.j2,20);
       this.lePlateau[6][6] = new Pion(2, false, new Pion(1, true, null, 0, 0, this.j2,21), 0, 0, this.j2,22);
       this.lePlateau[7][6] = new Pion(4, false, new Pion(3, true, null, 0, 0, this.j2,23), 0, 0, this.j2,24);
-
-
   }
 
   /**
@@ -229,7 +227,7 @@ public class Plateau {
               }
           }
       }
-      if(score >= 7){ ret = true;}
+      if(score >= 12){ret = true;}
 
       return ret;
   }

@@ -11,7 +11,7 @@
       <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Joueur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Pion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Plateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/iu/console/PlateauTxt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/iu/console/PlateauTxt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arcanor/modele/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/modele/Plateau.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Plateau.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Plateau.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Plateau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1819">
-              <caret line="107" column="40" lean-forward="true" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+            <state relative-caret-position="408">
+              <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
               <folding>
                 <element signature="e#6380#6381#0" expanded="true" />
                 <element signature="e#6419#6420#0" expanded="true" />
@@ -36,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlateauTxt.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlateauTxt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/PlateauTxt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="24" column="93" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
+            <state relative-caret-position="306">
+              <caret line="18" column="49" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,7 +51,7 @@
       <file leaf-file-name="Pion.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Pion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2720">
+            <state relative-caret-position="2462">
               <caret line="170" column="43" selection-start-line="170" selection-start-column="43" selection-end-line="170" selection-end-column="43" />
             </state>
           </provider>
@@ -127,11 +127,11 @@
         <option value="$PROJECT_DIR$/src/arcanor/iu/console/MenuTxt.java" />
         <option value="$PROJECT_DIR$/src/arcanor/Test.java" />
         <option value="$PROJECT_DIR$/src/arcanor/modele/Pion.java" />
-        <option value="$PROJECT_DIR$/src/arcanor/modele/Plateau.java" />
         <option value="$PROJECT_DIR$/src/test/TestJeu.java" />
         <option value="$PROJECT_DIR$/src/test/TestPlateau.java" />
         <option value="$PROJECT_DIR$/src/arcanor/modele/Jeu.java" />
         <option value="$PROJECT_DIR$/src/arcanor/iu/console/PlateauTxt.java" />
+        <option value="$PROJECT_DIR$/src/arcanor/modele/Plateau.java" />
       </list>
     </option>
   </component>
@@ -364,12 +364,12 @@
       <workItem from="1529494391340" duration="9086000" />
       <workItem from="1529504862917" duration="501000" />
       <workItem from="1529529323458" duration="322000" />
-      <workItem from="1529571132850" duration="951000" />
+      <workItem from="1529571132850" duration="3447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31059000" />
+    <option name="totallyTimeSpent" value="33555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -740,13 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Pion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2720">
-          <caret line="170" column="43" selection-start-line="170" selection-start-column="43" selection-end-line="170" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/TestPlateau.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -768,23 +761,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Plateau.java">
+    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/PlateauTxt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="107" column="40" lean-forward="true" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+        <state relative-caret-position="306">
+          <caret line="18" column="49" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
           <folding>
-            <element signature="e#6380#6381#0" expanded="true" />
-            <element signature="e#6419#6420#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/PlateauTxt.java">
+    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Pion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="93" selection-start-line="24" selection-start-column="93" selection-end-line="24" selection-end-column="93" />
+        <state relative-caret-position="2462">
+          <caret line="170" column="43" selection-start-line="170" selection-start-column="43" selection-end-line="170" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Plateau.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#6380#6381#0" expanded="true" />
+            <element signature="e#6419#6420#0" expanded="true" />
           </folding>
         </state>
       </provider>

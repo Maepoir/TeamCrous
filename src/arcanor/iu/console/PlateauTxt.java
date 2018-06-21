@@ -14,15 +14,15 @@ public class PlateauTxt {
   /**permet d'afficher le plateau et différents éléments de jeu sur la console */
   public static void afficherPlateau(Plateau plateau){
       System.out.println("Le joueur 1 dispose des pions 1 a 12 et le joueur 2 des pions 13 a 24.");
-      for(int i = 0; i < plateau.lePlateau[0].length; i++){
-          for(int j = 0; j < plateau.lePlateau.length; j++){
-              if (plateau.getPion(j,i) == null) {
+      for(int i = 0; i < plateau.lePlateau.length; i++){
+          for(int j = 0; j < plateau.lePlateau[0].length; j++){
+              if (plateau.getPion(i,j) == null) {
                   System.out.print("\t|");
               } else {
-                  System.out.print("t" + plateau.getPion(j,i).getTAILLE()+ plateau.getPion(j,i).getLeJoueur().getNom() + "(" + plateau.getPion(j,i).getNum() +")|");
+                  System.out.print("t" + plateau.getPion(i,j).getTAILLE()+ plateau.getPion(i,j).getLeJoueur().getNom() + "(" + plateau.getPion(i,j).getNum() +")|");
               }
           }
-          System.out.println("\n\n - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+          System.out.println("\n\n - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
       }
   }
 

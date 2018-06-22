@@ -19,13 +19,16 @@ public class MenuFen extends JFrame {
     private JButton nouvPartie;
     private JButton charger;
     private JButton quitter;
-    private JeuFen fenetreJeu;
 
     //affichage si le joueur va sur nouvelle partie
     private MenuJoueur menuJoueur;
 
     //composants du menu si le joueur va sur charger
     //private MenuCharger menuCharger;
+
+    //composants de la fenêtre de jeu
+    private JeuFen fenetreJeu;
+    private InfoBarre barreInfo;
 
 
     public static void main(String args[]){
@@ -46,7 +49,7 @@ public class MenuFen extends JFrame {
       this.titreJeu.setFont(f);
 
       this.nouvPartie = new JButton("Nouvelle Partie");
-      this.nouvPartie.addActionListener(new NouvPartieEcout(this));
+      this.nouvPartie.addActionListener(new MenuFenEcout(this));
       this.charger = new JButton("Charger");
       this.quitter = new JButton("Quitter :'( ");
 
@@ -79,8 +82,10 @@ public class MenuFen extends JFrame {
     public void actionNouvPartie(Joueur j1, Joueur j2){
         Jeu jeu = new Jeu(j1,j2,ModeJeu.NORMAL,false);
         this.fenetreJeu = new JeuFen(jeu);
+        this.barreInfo = new InfoBarre(jeu);
         remove(this.menuJoueur);
-        add(this.fenetreJeu);
+        add(this.fenetreJeu, "Center");
+        add(this.barreInfo, "South");
         repaint();
         revalidate();
         pack();

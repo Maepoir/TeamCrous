@@ -302,6 +302,33 @@ public class Jeu {
       return libererPion;
     }
 
-    /** permet d'acceder au plateau de jeu */
+    /**
+     *  permet d'acceder au plateau de jeu
+     * @return le plateau de jeu
+     * */
     public Plateau getLePlateau(){return this.lePlateau;}
+
+    /**
+     * Permet de savoir qui joue
+     * @return le joueur qui a la main
+     */
+    public Joueur getaLaMain() {
+        return aLaMain;
+    }
+
+    /**
+     * Permet d'obtenir le joueur 1
+     * @return le joueur 1
+     */
+    public Joueur getJoueur1() {
+        return joueur1;
+    }
+
+    /**
+     * permet d'obtenir le joueur 2
+     * @return le joueur 2
+     */
+    public Joueur getJoueur2() {
+        return joueur2;
+    }
 }

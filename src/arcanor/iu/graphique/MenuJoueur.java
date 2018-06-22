@@ -1,7 +1,6 @@
 package arcanor.iu.graphique;
 
-import arcanor.controleur.graphique.NomJoueurEcout;
-import arcanor.controleur.graphique.ValiderJoueursEcout;
+import arcanor.controleur.graphique.MenuJoueurEcout;
 
 import javax.swing.*;
 import java.awt.*;
@@ -41,13 +40,16 @@ public class MenuJoueur extends JPanel {
         this.nomJ2 = new JLabel("Nom du joueur 2 :", SwingConstants.CENTER);
 
         this.j1 = new JTextField();
-        this.j1.addActionListener(new NomJoueurEcout(this,1));
+        this.j1.addActionListener(new MenuJoueurEcout(this.menu, this));
         this.j2 = new JTextField();
-        this.j2.addActionListener(new NomJoueurEcout(this,2));
+        this.j2.addActionListener(new MenuJoueurEcout(this.menu,this));
 
         this.choixIA = new JLabel("Jouer contre l'IA ?", SwingConstants.CENTER);
         this.IAoui = new JRadioButton("oui");
+        this.IAoui.addActionListener(new MenuJoueurEcout(this.menu, this));
         this.IAnon = new JRadioButton("non");
+        this.IAnon.addActionListener(new MenuJoueurEcout(this.menu, this));
+        this.IAnon.doClick();
 
         ButtonGroup bg = new ButtonGroup();
         bg.add(this.IAoui);
@@ -66,7 +68,7 @@ public class MenuJoueur extends JPanel {
         this.boutons.add(this.choixBouton);
 
         this.valider = new JButton("Valider");
-        this.valider.addActionListener(new ValiderJoueursEcout(this.menu,this));
+        this.valider.addActionListener(new MenuJoueurEcout(this.menu,this));
 
         setLayout(new BorderLayout());
         add(boutons, "Center");
@@ -95,5 +97,17 @@ public class MenuJoueur extends JPanel {
 
     public void setNomJoueur2 (String nomJoueur2){
         this.nomJoueur2 = nomJoueur2;
+    }
+
+    public JButton getValider (){
+        return this.valider;
+    }
+
+    public JRadioButton getIAoui() {
+        return IAoui;
+    }
+
+    public JRadioButton getIAnon() {
+        return IAnon;
     }
 }

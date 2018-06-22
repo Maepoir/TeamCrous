@@ -23,13 +23,13 @@ public class Plateau extends JPanel {
             BufferedImage noir3 = ImageIO.read(new File("../doc/noir3.png"));
             BufferedImage noir4 = ImageIO.read(new File("../doc/noir4.png"));
             setLayout(new GridLayout(8,7));
-            for(int i = 0; i < plateau.lePlateau[0].length; i++){
-                for(int j = 0; j < plateau.lePlateau.length; j++){
-                    if(plateau.lePlateau[j][i]==null){
+            for(int i = 0; i < plateau.lePlateau.length; i++){
+                for(int j = 0; j < plateau.lePlateau[0].length; j++){
+                    if(plateau.lePlateau[i][j]==null){
                         add(new JLabel(new ImageIcon(caseM)));
                     }
-                    else if(plateau.lePlateau[j][i].getLeJoueur().equals(plateau.getJ1())){
-                        switch (plateau.lePlateau[j][i].getTAILLE()){
+                    else if(plateau.lePlateau[i][j].getLeJoueur().equals(plateau.getJ1())){
+                        switch (plateau.lePlateau[i][j].getTAILLE()){
                             case 1:
                                 add(new JLabel(new ImageIcon(blanc1)));
                             break;
@@ -47,7 +47,7 @@ public class Plateau extends JPanel {
                         }
                     }
                     else{
-                        switch (plateau.lePlateau[j][i].getTAILLE()){
+                        switch (plateau.lePlateau[i][j].getTAILLE()){
                             case 1:
                                 add(new JLabel(new ImageIcon(noir1)));
                                 break;

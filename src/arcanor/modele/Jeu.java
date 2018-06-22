@@ -253,4 +253,7 @@ public class Jeu {
     public static void blanc (){
         System.out.println("\n\n\n\n\n\n\n\n\n\n");
     }
+    
+    /** permet d'acceder au plateau de jeu */
+    public Plateau getLePlateau(){return this.lePlateau;}
 }

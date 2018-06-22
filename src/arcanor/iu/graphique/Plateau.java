@@ -5,7 +5,7 @@ import java.awt.*;
 
 /** represente graphiquement le plateau de jeu
 * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet */
-public class Plateau extends JFrame {
+public class Plateau extends JPanel {
 
     public Plateau (arcanor.modele.Plateau plateau){
         initComponents(plateau);

@@ -17,7 +17,7 @@ public class EcoutMenuFen implements ActionListener {
   public void actionPerformed(ActionEvent e){
     Object evenement = e.getSource();
     if(evenement == menu.getNouvPartie()){
-      menu.actionNouv();
+//      menu.actionNouv();
     }
   }
 }

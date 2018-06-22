@@ -22,16 +22,6 @@
       <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Joueur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Pion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Plateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/blanc1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/blanc2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/blanc3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/blanc4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/caseBlanche.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/caseNoire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/noir1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/noir2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/noir3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/noir4.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -44,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Plateau.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Plateau.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="286">
+              <caret line="50" column="35" lean-forward="true" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,11 +49,20 @@
       <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="136">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuTxt.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/MenuTxt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -108,7 +107,6 @@
         <option value="$PROJECT_DIR$/src/arcanor/modele/Couleur.java" />
         <option value="$PROJECT_DIR$/src/arcanor/modele/Taille.java" />
         <option value="$PROJECT_DIR$/src/test/TestIA.java" />
-        <option value="$PROJECT_DIR$/src/arcanor/iu/console/MenuTxt.java" />
         <option value="$PROJECT_DIR$/src/arcanor/Test.java" />
         <option value="$PROJECT_DIR$/src/arcanor/modele/Pion.java" />
         <option value="$PROJECT_DIR$/src/test/TestJeu.java" />
@@ -119,6 +117,7 @@
         <option value="$PROJECT_DIR$/src/arcanor/modele/Jeu.java" />
         <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/Test.java" />
         <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java" />
+        <option value="$PROJECT_DIR$/src/arcanor/iu/console/MenuTxt.java" />
       </list>
     </option>
   </component>
@@ -134,7 +133,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -144,8 +143,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,7 +238,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,12 +365,13 @@
       <workItem from="1529494391340" duration="9086000" />
       <workItem from="1529504862917" duration="501000" />
       <workItem from="1529529323458" duration="322000" />
-      <workItem from="1529571132850" duration="11583000" />
+      <workItem from="1529571132850" duration="11851000" />
+      <workItem from="1529658453669" duration="805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41691000" />
+    <option name="totallyTimeSpent" value="42764000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -390,7 +390,7 @@
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25037822" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25416037" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
@@ -408,33 +408,33 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="bottom" id="Find" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Run" order="6" />
       <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.23903178" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="5" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32838285" />
       <window_info id="Capture Tool" order="2" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32838285" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.23903178" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,6 +449,23 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Jeu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3774">
+          <caret line="222" lean-forward="true" selection-end-line="256" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Joueur.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -663,13 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/MenuTxt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Joueur.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-374">
@@ -685,13 +695,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/TestJoueur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/TestJoueur.java" />
     <entry file="file://$PROJECT_DIR$/src/test/TestJeu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -706,9 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../IUT/IHM/TP5/src/tab/ExceptionTableau.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/exceptions/ExDeplacement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -722,9 +723,6 @@
           <caret line="170" column="43" selection-start-line="170" selection-start-column="43" selection-end-line="170" selection-end-column="43" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../PuissanceN/src/power/AutoPlayer.java">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../../PuissanceN/src/power/Game.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -741,34 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Plateau.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
-          <folding>
-            <element signature="e#6631#6632#0" expanded="true" />
-            <element signature="e#6670#6671#0" expanded="true" />
-            <element signature="e#7718#7719#0" expanded="true" />
-            <element signature="e#7744#7745#0" expanded="true" />
-            <element signature="e#7853#7854#0" expanded="true" />
-            <element signature="e#7881#7882#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Jeu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
-          <folding>
-            <element signature="e#4121#4122#0" expanded="true" />
-            <element signature="e#4159#4160#0" expanded="true" />
-            <element signature="e#7931#7932#0" expanded="true" />
-            <element signature="e#7973#7974#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/Partie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -776,30 +746,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/arcanor/Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Jeu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="14">
+          <caret line="228" column="43" lean-forward="true" selection-start-line="228" selection-start-column="43" selection-end-line="228" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Plateau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="85" column="18" selection-end-line="255" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="286">
+          <caret line="50" column="35" lean-forward="true" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/MenuTxt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
         </state>
       </provider>
     </entry>

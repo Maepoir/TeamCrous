@@ -41,7 +41,7 @@ public class MenuTxt {
         boolean modeGraphique = false;
         /*System.out.println("Jouer en mode triche (voir quel pion à déjà mangé un autre) ou en mode normal ? (t/n)");
         String tricheNormal = in.nextLine();*/
-        Jeu jeu = new Jeu(j1,j2,ModeJeu.NORMAL,modeGraphique)
+        Jeu jeu = new Jeu(j1,j2,ModeJeu.NORMAL,modeGraphique);
         /*if(tricheNormal.equals("t")){
           jeu = new Jeu(j1,j2, ModeJeu.TRICHE,modeGraphique);
         }

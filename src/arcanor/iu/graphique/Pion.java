@@ -16,6 +16,7 @@ public class Pion extends JPanel {
     public Pion (int taille, Couleur couleur){
 
         try {
+            setLayout(new FlowLayout(0,0,0));
             BufferedImage blanc1 = ImageIO.read(new File("../doc/blanc1.png"));
             BufferedImage blanc2 = ImageIO.read(new File("../doc/blanc2.png"));
             BufferedImage blanc3 = ImageIO.read(new File("../doc/blanc3.png"));

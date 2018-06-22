@@ -16,7 +16,7 @@ public class Plateau extends JPanel {
     }
 
     public void initComponents (arcanor.modele.Plateau plateau) {
-        setLayout(new GridLayout(8,7));
+        setLayout(new GridLayout(8,7,0,0));
         for(int i = 0; i < plateau.lePlateau.length; i++){
             for(int j = 0; j < plateau.lePlateau[0].length; j++) {
                 if (plateau.lePlateau[i][j] == null) {

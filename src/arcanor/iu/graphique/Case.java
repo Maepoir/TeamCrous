@@ -12,6 +12,7 @@ public class Case extends JPanel {
 
     public Case (){
         try {
+            setLayout(new FlowLayout(0,0,0));
             BufferedImage caseM = ImageIO.read(new File("../doc/caseM.png"));
             add(new JLabel(new ImageIcon(caseM)));
         } catch (IOException e) {

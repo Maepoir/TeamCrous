@@ -37,7 +37,6 @@ public class Jeu {
 
     /**
      * Role : permet de créer un objet Jeu avec des paramètres précis
-     *
      * @param joueur1       le premier Joueur
      * @param joueur2       le deuxième joueur
      * @param modeJeu       le mode de jeu choisi
@@ -86,7 +85,6 @@ public class Jeu {
 
     /**
      * Role : Cette methode permet de changer l'affichage d'un pion (mode triche)
-     *
      * @param lePion le pion pour lequel il faut changer l'affichage
      */
     public void changerAffichagePion(Pion lePion, boolean affichage) {
@@ -98,16 +96,12 @@ public class Jeu {
      * l'autre
      */
     public void changerMain() {
-        if (this.aLaMain.equals(joueur1)) {
-            this.aLaMain = this.joueur2;
-        } else {
-            this.aLaMain = this.joueur1;
-        }
+        if (this.aLaMain.equals(joueur1)) {this.aLaMain = this.joueur2;}
+        else {this.aLaMain = this.joueur1;}
     }
 
     /**
      * Role : Cette methode permet de recuperer le temps de jeu
-     *
      * @return temps de jeu
      */
     public long getTempsJeu() {
@@ -126,7 +120,6 @@ public class Jeu {
 
     /**
      * Role : Cette methode permet de recuperer le mode de jeu
-     *
      * @return le mode de jeu choisi par l'utilisateur
      */
     public ModeJeu getModeJeu() {
@@ -135,7 +128,6 @@ public class Jeu {
 
     /**
      * Role : Cette methode permet de modifier le mode de jeu
-     *
      * @param modeJeu le choix de mode de jeu de l'utilisateur
      */
     public void setModeJeu(ModeJeu modeJeu) {
@@ -170,26 +162,28 @@ public class Jeu {
 
     /**
      * permet de jouer à Arcanor
+     * @param ia permet de savoir si le joueur veut jouer contre une IA
      */
-    public void debutPartie() {
+    public void debutPartie(boolean ia) {
         boolean deplacementFait = false;
         boolean partieGagne = false;
         boolean libererPion = false;
-        String libere;
         Pion aDeplacer;
         int placement;
         int choixPion;
         Scanner sc = new Scanner(System.in);
-
+        int tirageAuSort;
 
         if (!this.modeGraphique) {
-            tutoriel();
+
+            /**tutoriel();
             try {
                 Thread.sleep(30000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            blanc();
+            blanc(); */
+
             System.out.println("== Début de partie ==");
             try {
                 Thread.sleep(500);
@@ -199,39 +193,11 @@ public class Jeu {
             PlateauTxt.afficherPlateau(this.lePlateau);
             System.out.println("Le joueur qui commence est : " + aLaMain.getNom());
             while (!partieGagne) {
-
                 while (!deplacementFait) {
-                    System.out.println("Choisir le pion que vous souhaitez jouer : ");
-                    choixPion = sc.nextInt();
-                    if (aLaMain.equals(joueur1)) {
-                        while ((choixPion > 12) || (choixPion <= 0)) {
-                            System.out.println("Saisie incorrecte ! Vous disposez des pions compris entre 1 et 12. ");
-                            choixPion = sc.nextInt();
-                        }
-                    } else {
-                        while ((choixPion > 24) || (choixPion <= 12)) {
-                            System.out.println("Saisie incorrecte ! Vous disposez des pions compris entre 13 et 24. ");
-                            choixPion = sc.nextInt();
-                        }
-                    }
-
+                    choixPion = choixPion(ia);
                     aDeplacer = lePlateau.getPion(choixPion);
                     placement = this.aLaMain.jouer();
-
-                    System.out.println("Voulez vous libérer le pion situe sous celui que vous deplacez ? (o/n)");
-                    libere = sc.next();
-
-                    while( !libere.equals("o") && !libere.equals("n")){
-                        System.out.println("Veuillez entrer une saisie correcte");
-                        libere = sc.nextLine();
-                    }
-
-                    if(libere.equals("o")){
-                        libererPion = true;
-                    }
-                    else{
-                        libererPion = false;
-                    }
+                    libererPion = libererPion(ia, aDeplacer);
                     deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement, libererPion);
                 }
                 partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
@@ -253,7 +219,89 @@ public class Jeu {
     public static void blanc (){
         System.out.println("\n\n\n\n\n\n\n\n\n\n");
     }
-    
+
+    /** Permet de choisir le pion à jouer pour la méthode debutPartie()
+    * @param ia permet de savoir si un joueur est un ia
+    * @return le nombre du pion à bouger */
+    public int choixPion(boolean ia){
+      int choixPion;
+      Pion pionAJouer;
+      boolean verif = true;
+      Scanner sc = new Scanner(System.in);
+      if((!ia)||(aLaMain.equals(joueur1))){
+        System.out.println("Choisir le pion que vous souhaitez jouer : ");
+        choixPion = sc.nextInt();
+        /*pionAJouer = lePlateau.getPion(choixPion);
+        verif = pionAJouer.getEstMange();*/
+        if (aLaMain.equals(joueur1)){
+            while ((choixPion > 12) || (choixPion <= 0)) {
+              System.out.println("Saisie incorrecte ! Vous disposez des pions compris entre 1 et 12. ");
+              choixPion = sc.nextInt();
+            }
+            /*while(verif){
+              System.out.println("Déplacement de ce pion impossible, il est mangé par un autre !");
+              choixPion = sc.nextInt();
+              pionAJouer = lePlateau.getPion(choixPion);
+              verif = pionAJouer.getEstMange();
+            }*/
+        }
+        else{
+            while ((choixPion > 24) || (choixPion <= 12)){
+                System.out.println("Saisie incorrecte ! Vous disposez des pions compris entre 13 et 24. ");
+                choixPion = sc.nextInt();
+            }
+            /*while(verif){
+              System.out.println("Déplacement de ce pion impossible, il est mangé par un autre !");
+              choixPion = sc.nextInt();
+              pionAJouer = lePlateau.getPion(choixPion);
+              verif = pionAJouer.getEstMange();
+            }*/
+        }
+      }
+      else{
+        choixPion = 13 + (int)(Math.random() * ((24 - 13) + 1));
+        pionAJouer = lePlateau.getPion(choixPion);
+        verif = pionAJouer.getEstMange();
+        System.out.println("Le pion choisi est : " +choixPion);
+        /*while(verif){
+          System.out.println("Déplacement de ce pion impossible, il est mangé par un autre !");
+          choixPion = 13 + (int)(Math.random() * ((24 - 13) + 1));
+          pionAJouer = lePlateau.getPion(choixPion);
+          verif = pionAJouer.getEstMange();
+        }
+        System.out.println("Le pion choisi est : " +choixPion);*/
+      }
+      return choixPion;
+    }
+
+
+    /** Permet de choisir s'il faut libérer le pion ou non
+    * @param ia permet de savoir si un joueur est un ia */
+    public boolean libererPion(boolean ia, Pion aDeplacer){
+      Scanner sc = new Scanner(System.in);
+      String libere;
+      boolean libererPion;
+      //if((!ia)||(aLaMain.equals(joueur1))){
+        System.out.println("Voulez vous libérer le pion situe sous celui que vous deplacez ? (o/n)");
+        libere = sc.next();
+
+        while(!libere.equals("o") && !libere.equals("n")){
+            System.out.println("Veuillez entrer une saisie correcte");
+            libere = sc.nextLine();
+        }
+      /*}
+      else{
+        tirageAuSort = (int)(Math.random());
+        if(tirageAuSort == 0){libere = "o";}
+        else{libere = "n";}
+      }*/
+
+
+      if((libere.equals("o"))&&(aDeplacer.getAMange() != null)){libererPion = true;}
+      else{libererPion = false;}
+      return libererPion;
+    }
+
     /** permet d'acceder au plateau de jeu */
     public Plateau getLePlateau(){return this.lePlateau;}
 }

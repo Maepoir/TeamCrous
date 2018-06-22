@@ -1,15 +1,11 @@
 package arcanor.iu.graphique;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 /** represente graphiquement le plateau de jeu
 * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet */
-public class Plateau extends JPanel {
+public class Plateau extends JFrame {
 
     public Plateau (arcanor.modele.Plateau plateau){
         initComponents(plateau);

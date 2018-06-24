@@ -1,12 +1,11 @@
 package arcanor.modele;
 
+import arcanor.iu.console.PlateauTxt;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.*;
-
-import arcanor.Sauvegarde;
-import arcanor.iu.console.*;
-import arcanor.iu.graphique.*;
+import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Role :  Cette classe permet de modeliser le jeu d'Arcanor
@@ -83,6 +82,13 @@ public class Jeu {
      }
      else{System.out.print("chargement impossible, aucune sauvegarde effectuée.");}
      } */
+
+    /**
+     * Permet de passer des lignes pour ne pas que la console soit surchargée
+     */
+    static void blanc() {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n");
+    }
 
     /**
      * Role : Cette methode permet de changer l'affichage d'un pion (mode triche)
@@ -205,14 +211,6 @@ public class Jeu {
         }
     }
 
-
-    /**
-     * Permet de passer des lignes pour ne pas que la console soit surchargée
-     */
-    static void blanc() {
-        System.out.println("\n\n\n\n\n\n\n\n\n\n");
-    }
-
     /**
      * Permet de choisir le pion à jouer pour la méthode debutPartie()
      *
@@ -224,49 +222,41 @@ public class Jeu {
         int ret = -1;
         boolean verif = false;
 
-        if(!ia ||aLaMain.equals(joueur1)){
+        if (!ia || aLaMain.equals(joueur1)) {
             System.out.println("Veuillez choisir le pion que vous souhaitez deplacer.");
-            while(!verif){
+            while (!verif) {
                 ret = sc.nextInt();
-                if(this.aLaMain.equals(joueur1)){
-                    if(ret > 0 && ret < 13) {
-                        if (lePlateau.getPion(ret).getEstMange()){
+                if (this.aLaMain.equals(joueur1)) {
+                    if (ret > 0 && ret < 13) {
+                        if (lePlateau.getPion(ret).getEstMange()) {
                             System.out.println("Vous ne pouvez pas jouer un pion mange.");
-                        }
-                        else{
+                        } else {
                             verif = true;
                         }
-                    }
-                    else if(ret > 12 && ret <= 24){
+                    } else if (ret > 12 && ret <= 24) {
                         System.out.println("Vous ne pouvez pas jouer un pion adverse.");
-                    }
-                    else{
+                    } else {
                         System.out.println("Vous ne pouvez jouer que les pions compris entre 1 et 12.");
                     }
-                }
-                else{
-                    if(ret > 12 && ret < 25){
-                        if(lePlateau.getPion(ret).getEstMange()){
+                } else {
+                    if (ret > 12 && ret < 25) {
+                        if (lePlateau.getPion(ret).getEstMange()) {
                             System.out.println("Vous ne pouvez pas jouer un pion mange.");
-                        }
-                        else{
+                        } else {
                             verif = true;
                         }
-                    }
-                    else if(ret <= 12 && ret > 0){
+                    } else if (ret <= 12 && ret > 0) {
                         System.out.println("Vous ne pouvez pas jouer un pion adverse.");
-                    }
-                    else {
+                    } else {
                         System.out.println("Vous ne pouvez jouer que les pions compris entre 13 et 24.");
                     }
                 }
             }
-        }
-        else {
-            while(!verif) {
+        } else {
+            while (!verif) {
                 ret = 13 + (int) (Math.random() * ((24 - 13) + 1));
-                if(ret > 0 && ret <= 24){
-                    if(lePlateau.getPion(ret).getEstMange()){
+                if (ret > 0 && ret <= 24) {
+                    if (lePlateau.getPion(ret).getEstMange()) {
                         verif = true;
                     }
                 }
@@ -291,20 +281,22 @@ public class Jeu {
         boolean libererPion = false;
         int tirageAuSort;
 
-        if((!ia) || (aLaMain.equals(joueur1))){
-        System.out.println("Voulez vous liberer le pion situe sous celui que vous deplacez ? (o/n)");
-        libere = sc.next();
+        if ((!ia) || (aLaMain.equals(joueur1))) {
+            System.out.println("Voulez vous liberer le pion situe sous celui que vous deplacez ? (o/n)");
+            libere = sc.next();
 
-        while (!libere.equals("o") && !libere.equals("n")) {
-            System.out.println("Veuillez entrer une saisie correcte");
-            libere = sc.nextLine();
+            while (!libere.equals("o") && !libere.equals("n")) {
+                System.out.println("Veuillez entrer une saisie correcte");
+                libere = sc.nextLine();
+            }
+        } else {
+            tirageAuSort = r.nextInt(2);
+            if (tirageAuSort == 0) {
+                libere = "o";
+            } else {
+                libere = "n";
+            }
         }
-      }
-      else{
-        tirageAuSort = r.nextInt(2);
-        if(tirageAuSort == 0){libere = "o";}
-        else{libere = "n";}
-      }
 
 
         if ((libere.equals("o")) && (aDeplacer.getAMange() != null)) {

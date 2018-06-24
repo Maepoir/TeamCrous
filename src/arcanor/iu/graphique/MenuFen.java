@@ -1,6 +1,6 @@
 package arcanor.iu.graphique;
 
-import arcanor.controleur.graphique.*;
+import arcanor.controleur.graphique.MenuFenEcout;
 import arcanor.modele.Jeu;
 import arcanor.modele.Joueur;
 import arcanor.modele.ModeJeu;
@@ -8,8 +8,11 @@ import arcanor.modele.ModeJeu;
 import javax.swing.*;
 import java.awt.*;
 
-/** affiche graphiquement le menu avec les options de jeu disponibles
-* @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet */
+/**
+ * affiche graphiquement le menu avec les options de jeu disponibles
+ *
+ * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
+ */
 public class MenuFen extends JFrame {
 
     private JLabel titreJeu;
@@ -31,56 +34,62 @@ public class MenuFen extends JFrame {
     private InfoBarre barreInfo;
 
 
-    public static void main(String args[]){
-      EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
+    public static void main(String args[]) {
+        EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
     }
 
-    public MenuFen(){
-      initComponents();
+    private MenuFen() {
+        initComponents();
     }
 
-    /** affichage du premier menu */
-    public void initComponents(){
-      setTitle("Arcanor <3");
-      setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    /**
+     * affichage du premier menu
+     */
+    private void initComponents() {
+        setTitle("Arcanor <3");
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-      Font f = new Font("Arial",Font.PLAIN,60);
-      this.titreJeu = new JLabel("ARCANOR", SwingConstants.CENTER);
-      this.titreJeu.setFont(f);
+        Font f = new Font("Arial", Font.PLAIN, 60);
+        this.titreJeu = new JLabel("ARCANOR", SwingConstants.CENTER);
+        this.titreJeu.setFont(f);
 
-      this.nouvPartie = new JButton("Nouvelle Partie");
-      this.nouvPartie.addActionListener(new MenuFenEcout(this));
-      this.charger = new JButton("Charger");
-      this.quitter = new JButton("Quitter :'( ");
+        this.nouvPartie = new JButton("Nouvelle Partie");
+        this.nouvPartie.addActionListener(new MenuFenEcout(this));
+        this.charger = new JButton("Charger");
+        this.quitter = new JButton("Quitter :'( ");
 
-      JPanel vide = new JPanel();
-      JPanel vide2 = new JPanel();
-      getContentPane().setLayout(new BorderLayout());
-      this.sousPan = new JPanel();
-      this.sousPan.setLayout(new GridLayout(5,1));
-      this.sousPan.add(vide);
-      this.sousPan.add(nouvPartie);
-      this.sousPan.add(charger);
-      this.sousPan.add(quitter);
-      add(titreJeu, "North");
-      add(sousPan, "Center");
-      setSize(800,800);
+        JPanel vide = new JPanel();
+        JPanel vide2 = new JPanel();
+        getContentPane().setLayout(new BorderLayout());
+        this.sousPan = new JPanel();
+        this.sousPan.setLayout(new GridLayout(5, 1));
+        this.sousPan.add(vide);
+        this.sousPan.add(nouvPartie);
+        this.sousPan.add(charger);
+        this.sousPan.add(quitter);
+        add(titreJeu, "North");
+        add(sousPan, "Center");
+        setSize(800, 800);
     }
 
-    /** s'actionne quand le joueur clique sur nouvelle partie */
-    public void actionJoueur(){
-      remove(this.sousPan);
-      this.menuJoueur = new MenuJoueur(this);
-      add(this.menuJoueur,"Center");
-      repaint();
-      revalidate();
-      pack();
+    /**
+     * s'actionne quand le joueur clique sur nouvelle partie
+     */
+    public void actionJoueur() {
+        remove(this.sousPan);
+        this.menuJoueur = new MenuJoueur(this);
+        add(this.menuJoueur, "Center");
+        repaint();
+        revalidate();
+        pack();
     }
 
-    public JButton getNouvPartie(){return this.nouvPartie;}
+    public JButton getNouvPartie() {
+        return this.nouvPartie;
+    }
 
-    public void actionNouvPartie(Joueur j1, Joueur j2){
-        Jeu jeu = new Jeu(j1,j2,ModeJeu.NORMAL,false);
+    public void actionNouvPartie(Joueur j1, Joueur j2) {
+        Jeu jeu = new Jeu(j1, j2, ModeJeu.NORMAL, false);
         this.fenetreJeu = new JeuFen(jeu);
         this.barreInfo = new InfoBarre(jeu);
         remove(this.menuJoueur);
@@ -90,5 +99,5 @@ public class MenuFen extends JFrame {
         revalidate();
         pack();
     }
-    
+
 }

@@ -79,9 +79,8 @@ public class Plateau {
             if (libere && lePion.getAMange() != null) {
                 lePion.getAMange().setEstMange(false);
                 lePion.setEstMange(false);
-            }
-            else if (!libere && lePion.getAMange() != null){
-                lePion.getAMange().setXY(x,y);
+            } else if (!libere && lePion.getAMange() != null) {
+                lePion.getAMange().setXY(x, y);
             }
 
         } else {
@@ -215,8 +214,10 @@ public class Plateau {
      */
     public Pion getPion(int x, int y) {
         Pion ret = null;
-        for (Pion p : this.lesPions){
-            if(x == p.getX() && y == p.getY()){ ret = p;}
+        for (Pion p : this.lesPions) {
+            if (x == p.getX() && y == p.getY()) {
+                ret = p;
+            }
         }
         return ret;
     }
@@ -232,13 +233,13 @@ public class Plateau {
         int score = 0;
         if (j.equals(j1)) {
             for (Pion p : this.lesPions) {
-                if(p.getY()== 6 && p.getLeJoueur().equals(j)){
+                if (p.getY() == 6 && p.getLeJoueur().equals(j)) {
                     score += 5 - p.getTAILLE();
                 }
             }
         } else if (j.equals(j2)) {
             for (Pion p : this.lesPions) {
-                if(p.getY()== 0 && p.getLeJoueur().equals(j)){
+                if (p.getY() == 0 && p.getLeJoueur().equals(j)) {
                     score += 5 - p.getTAILLE();
                 }
             }

@@ -30,19 +30,19 @@ public class MenuJoueur extends JPanel {
 
     private MenuFen menu;
 
-    public MenuJoueur(MenuFen menu) {
+    MenuJoueur(MenuFen menu) {
         this.menu = menu;
         initComponents();
     }
 
-    public void initComponents() {
+    private void initComponents() {
         this.nomJ1 = new JLabel("Nom du joueur 1 :", SwingConstants.CENTER);
         this.nomJ2 = new JLabel("Nom du joueur 2 :", SwingConstants.CENTER);
 
         this.j1 = new JTextField();
         this.j1.addActionListener(new MenuJoueurEcout(this.menu, this));
         this.j2 = new JTextField();
-        this.j2.addActionListener(new MenuJoueurEcout(this.menu,this));
+        this.j2.addActionListener(new MenuJoueurEcout(this.menu, this));
 
         this.choixIA = new JLabel("Jouer contre l'IA ?", SwingConstants.CENTER);
         this.IAoui = new JRadioButton("oui");
@@ -68,7 +68,7 @@ public class MenuJoueur extends JPanel {
         this.boutons.add(this.choixBouton);
 
         this.valider = new JButton("Valider");
-        this.valider.addActionListener(new MenuJoueurEcout(this.menu,this));
+        this.valider.addActionListener(new MenuJoueurEcout(this.menu, this));
 
         setLayout(new BorderLayout());
         add(boutons, "Center");
@@ -95,11 +95,11 @@ public class MenuJoueur extends JPanel {
         this.nomJoueur1 = nomJoueur1;
     }
 
-    public void setNomJoueur2 (String nomJoueur2){
+    public void setNomJoueur2(String nomJoueur2) {
         this.nomJoueur2 = nomJoueur2;
     }
 
-    public JButton getValider (){
+    public JButton getValider() {
         return this.valider;
     }
 

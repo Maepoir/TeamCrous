@@ -1,6 +1,6 @@
 package arcanor.iu.graphique;
+
 import arcanor.modele.Couleur;
-import arcanor.modele.Joueur;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -9,14 +9,17 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-/** represente graphiquement un pion du jeu
-* @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet */
+/**
+ * represente graphiquement un pion du jeu
+ *
+ * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
+ */
 public class Pion extends JPanel {
 
-    public Pion (int taille, Couleur couleur){
+    public Pion(int taille, Couleur couleur) {
 
         try {
-            setLayout(new FlowLayout(0,0,0));
+            setLayout(new FlowLayout(0, 0, 0));
             BufferedImage blanc1 = ImageIO.read(new File("../doc/blanc1.png"));
             BufferedImage blanc2 = ImageIO.read(new File("../doc/blanc2.png"));
             BufferedImage blanc3 = ImageIO.read(new File("../doc/blanc3.png"));
@@ -25,8 +28,8 @@ public class Pion extends JPanel {
             BufferedImage noir2 = ImageIO.read(new File("../doc/noir2.png"));
             BufferedImage noir3 = ImageIO.read(new File("../doc/noir3.png"));
             BufferedImage noir4 = ImageIO.read(new File("../doc/noir4.png"));
-            if(couleur.equals(Couleur.BLANC)){
-                switch(taille){
+            if (couleur.equals(Couleur.BLANC)) {
+                switch (taille) {
                     case 1:
                         add(new JLabel(new ImageIcon(blanc1)));
                         break;
@@ -40,9 +43,8 @@ public class Pion extends JPanel {
                         add(new JLabel(new ImageIcon(blanc4)));
                         break;
                 }
-            }
-            else{
-                switch(taille){
+            } else {
+                switch (taille) {
                     case 1:
                         add(new JLabel(new ImageIcon(noir1)));
                         break;

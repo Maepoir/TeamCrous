@@ -13,7 +13,6 @@ public class IA extends Joueur{
    * @param  niveau difficulté choisie par le joueur
    * @param nom nom/pseudo  du joueur
    * @param couleur couleur des pions
-   * @param aLaMain true si le joueur  a la main
    */
    public IA (String nom, Couleur couleur, int niveau){
      super(nom,couleur);

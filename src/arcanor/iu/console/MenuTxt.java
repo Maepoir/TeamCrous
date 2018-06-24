@@ -9,6 +9,7 @@ public class MenuTxt {
 
   /**permet d'afficher le menu sur la console */
   public void afficherMenu(){
+      boolean iaPresente = false;
       System.out.println(" <3 Arcanor <3 ");
       System.out.println("\t(1.) Nouvelle partie");
       System.out.println("\t(2.) Charger");
@@ -31,6 +32,7 @@ public class MenuTxt {
           System.out.println("Saisir nom de l'IA : ");
           String nom2 = in.nextLine();
           j2 = new IA(nom2, Couleur.NOIR,1);
+          iaPresente = true;
         }
         else{
           //si la saisie est incorrecte, il s'agira d'une partie entre 2 joueurs
@@ -48,7 +50,7 @@ public class MenuTxt {
         else{
           jeu = new Jeu(j1,j2, ModeJeu.NORMAL,modeGraphique);
         }*/
-        jeu.debutPartie();
+        jeu.debutPartie(iaPresente);
       }
       //cet condition non codée, uniquement pour la compilation
       else if(choix == 2){int i = 0;}

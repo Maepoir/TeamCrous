@@ -13,12 +13,12 @@ public class Plateau extends JPanel {
 
     public void initComponents (arcanor.modele.Plateau plateau) {
         setLayout(new GridLayout(8,7,0,0));
-        for(int i = 0; i < plateau.lePlateau.length; i++){
-            for(int j = 0; j < plateau.lePlateau[0].length; j++) {
-                if (plateau.lePlateau[i][j] == null) {
+        for(int i = 0; i < 8; i++){
+            for(int j = 0; j < 7; j++) {
+                if (plateau.getPion(i,j) == null) {
                     add(new Case());
                 } else {
-                    add(new Pion(plateau.lePlateau[i][j].getTAILLE(), plateau.lePlateau[i][j].getLeJoueur().getColor()));
+                    add(new Pion(plateau.getPion(i,j).getTAILLE(), plateau.getPion(i,j).getLeJoueur().getColor()));
                 }
             }
         }

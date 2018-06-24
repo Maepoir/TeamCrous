@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.util.*;
 
 import arcanor.Sauvegarde;
-import arcanor.*;
 import arcanor.iu.console.*;
 import arcanor.iu.graphique.*;
 
@@ -37,6 +36,7 @@ public class Jeu {
 
     /**
      * Role : permet de créer un objet Jeu avec des paramètres précis
+     *
      * @param joueur1       le premier Joueur
      * @param joueur2       le deuxième joueur
      * @param modeJeu       le mode de jeu choisi
@@ -55,7 +55,7 @@ public class Jeu {
      * Role : Cette methode permet de sauvegarder une partie
      * @param chemin chemin pour la sauvegarde
      */
-    /**public void sauvegarderJeu(String chemin){
+    /*public void sauvegarderJeu(String chemin){
      this.sauvegardeur = new Sauvegarde(this.lePlateau, this.arrayJoueur, this.modeJeu, this.tempsJeu, this.modeGraphique);
      this.sauvegardeur.sauvegarder(chemin);
      } */
@@ -64,7 +64,8 @@ public class Jeu {
      * Role : Cette methode permet de charger une partie
      * @param chemin chemin de la sauvegarde
      */
-    /**public void chargerJeu(String chemin){
+
+    /*public void chargerJeu(String chemin){
      ArrayList <Object> list = new ArrayList<Object>();
      if(this.sauvegardeur != null){
      list = this.sauvegardeur.charger(chemin);
@@ -85,6 +86,7 @@ public class Jeu {
 
     /**
      * Role : Cette methode permet de changer l'affichage d'un pion (mode triche)
+     *
      * @param lePion le pion pour lequel il faut changer l'affichage
      */
     public void changerAffichagePion(Pion lePion, boolean affichage) {
@@ -95,18 +97,21 @@ public class Jeu {
      * Role : Cette methode permet de changer la main d'un joueur pour la donner à
      * l'autre
      */
-    public void changerMain() {
-        if (this.aLaMain.equals(joueur1)) {this.aLaMain = this.joueur2;}
-        else {this.aLaMain = this.joueur1;}
+    private void changerMain() {
+        if (this.aLaMain.equals(joueur1)) {
+            this.aLaMain = this.joueur2;
+        } else {
+            this.aLaMain = this.joueur1;
+        }
     }
 
     /**
      * Role : Cette methode permet de recuperer le temps de jeu
+     *
      * @return temps de jeu
      */
     public long getTempsJeu() {
-        long ret = this.tempsJeu;
-        return ret;
+        return this.tempsJeu;
     }
 
     /**
@@ -120,6 +125,7 @@ public class Jeu {
 
     /**
      * Role : Cette methode permet de recuperer le mode de jeu
+     *
      * @return le mode de jeu choisi par l'utilisateur
      */
     public ModeJeu getModeJeu() {
@@ -128,20 +134,11 @@ public class Jeu {
 
     /**
      * Role : Cette methode permet de modifier le mode de jeu
+     *
      * @param modeJeu le choix de mode de jeu de l'utilisateur
      */
     public void setModeJeu(ModeJeu modeJeu) {
         this.modeJeu = modeJeu;
-    }
-
-    /**
-     * Role : permet de mettre à jour l'affichage du plateau suite aux déplacements
-     * des pions
-     */
-    public void rafraichirPlateau() {
-        if (!this.modeGraphique) {
-//        this.jeuC.getPlateauTxt().display();
-        }
     }
 
     /**
@@ -151,38 +148,33 @@ public class Jeu {
     private void tutoriel() {
         try {
             Scanner sc = new Scanner(new FileReader("../doc/Tuto.txt"));
-            while(sc.hasNextLine()){
+            while (sc.hasNextLine()) {
                 System.out.println(sc.nextLine());
             }
             sc.close();
-        } catch (FileNotFoundException e) {
+            Thread.sleep(30000);
+        } catch (FileNotFoundException | InterruptedException e) {
             e.printStackTrace();
         }
+        blanc();
     }
 
     /**
      * permet de jouer à Arcanor
+     *
      * @param ia permet de savoir si le joueur veut jouer contre une IA
      */
     public void debutPartie(boolean ia) {
         boolean deplacementFait = false;
         boolean partieGagne = false;
-        boolean libererPion = false;
+        boolean libererPion;
         Pion aDeplacer;
         int placement;
         int choixPion;
-        Scanner sc = new Scanner(System.in);
-        int tirageAuSort;
 
         if (!this.modeGraphique) {
 
-            /**tutoriel();
-            try {
-                Thread.sleep(30000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            blanc(); */
+//            tutoriel();
 
             System.out.println("== Début de partie ==");
             try {
@@ -207,6 +199,7 @@ public class Jeu {
                 }
                 deplacementFait = false;
             }
+            System.out.println("Fin du jeu ! Victoire de " + this.aLaMain.getNom() + " !! :)");
         } else {
             System.out.println("Non gere pour l'instant");
         }
@@ -216,100 +209,123 @@ public class Jeu {
     /**
      * Permet de passer des lignes pour ne pas que la console soit surchargée
      */
-    public static void blanc (){
+    static void blanc() {
         System.out.println("\n\n\n\n\n\n\n\n\n\n");
     }
 
-    /** Permet de choisir le pion à jouer pour la méthode debutPartie()
-    * @param ia permet de savoir si un joueur est un ia
-    * @return le nombre du pion à bouger */
-    public int choixPion(boolean ia){
-      int choixPion;
-      Pion pionAJouer;
-      boolean verif = true;
-      Scanner sc = new Scanner(System.in);
-      if((!ia)||(aLaMain.equals(joueur1))){
-        System.out.println("Choisir le pion que vous souhaitez jouer : ");
-        choixPion = sc.nextInt();
-        /*pionAJouer = lePlateau.getPion(choixPion);
-        verif = pionAJouer.getEstMange();*/
-        if (aLaMain.equals(joueur1)){
-            while ((choixPion > 12) || (choixPion <= 0)) {
-              System.out.println("Saisie incorrecte ! Vous disposez des pions compris entre 1 et 12. ");
-              choixPion = sc.nextInt();
+    /**
+     * Permet de choisir le pion à jouer pour la méthode debutPartie()
+     *
+     * @param ia permet de savoir si un joueur est un ia
+     * @return le nombre du pion à bouger
+     */
+    private int choixPion(boolean ia) {
+        Scanner sc = new Scanner(System.in);
+        int ret = -1;
+        boolean verif = false;
+
+        if(!ia ||aLaMain.equals(joueur1)){
+            System.out.println("Veuillez choisir le pion que vous souhaitez deplacer.");
+            while(!verif){
+                ret = sc.nextInt();
+                if(this.aLaMain.equals(joueur1)){
+                    if(ret > 0 && ret < 13) {
+                        if (lePlateau.getPion(ret).getEstMange()){
+                            System.out.println("Vous ne pouvez pas jouer un pion mange.");
+                        }
+                        else{
+                            verif = true;
+                        }
+                    }
+                    else if(ret > 12 && ret <= 24){
+                        System.out.println("Vous ne pouvez pas jouer un pion adverse.");
+                    }
+                    else{
+                        System.out.println("Vous ne pouvez jouer que les pions compris entre 1 et 12.");
+                    }
+                }
+                else{
+                    if(ret > 12 && ret < 25){
+                        if(lePlateau.getPion(ret).getEstMange()){
+                            System.out.println("Vous ne pouvez pas jouer un pion mange.");
+                        }
+                        else{
+                            verif = true;
+                        }
+                    }
+                    else if(ret <= 12 && ret > 0){
+                        System.out.println("Vous ne pouvez pas jouer un pion adverse.");
+                    }
+                    else {
+                        System.out.println("Vous ne pouvez jouer que les pions compris entre 13 et 24.");
+                    }
+                }
             }
-            /*while(verif){
-              System.out.println("Déplacement de ce pion impossible, il est mangé par un autre !");
-              choixPion = sc.nextInt();
-              pionAJouer = lePlateau.getPion(choixPion);
-              verif = pionAJouer.getEstMange();
-            }*/
         }
-        else{
-            while ((choixPion > 24) || (choixPion <= 12)){
-                System.out.println("Saisie incorrecte ! Vous disposez des pions compris entre 13 et 24. ");
-                choixPion = sc.nextInt();
+        else {
+            while(!verif) {
+                ret = 13 + (int) (Math.random() * ((24 - 13) + 1));
+                if(ret > 0 && ret <= 24){
+                    if(lePlateau.getPion(ret).getEstMange()){
+                        verif = true;
+                    }
+                }
             }
-            /*while(verif){
-              System.out.println("Déplacement de ce pion impossible, il est mangé par un autre !");
-              choixPion = sc.nextInt();
-              pionAJouer = lePlateau.getPion(choixPion);
-              verif = pionAJouer.getEstMange();
-            }*/
         }
-      }
-      else{
-        choixPion = 13 + (int)(Math.random() * ((24 - 13) + 1));
-        pionAJouer = lePlateau.getPion(choixPion);
-        verif = pionAJouer.getEstMange();
-        System.out.println("Le pion choisi est : " +choixPion);
-        /*while(verif){
-          System.out.println("Déplacement de ce pion impossible, il est mangé par un autre !");
-          choixPion = 13 + (int)(Math.random() * ((24 - 13) + 1));
-          pionAJouer = lePlateau.getPion(choixPion);
-          verif = pionAJouer.getEstMange();
-        }
-        System.out.println("Le pion choisi est : " +choixPion);*/
-      }
-      return choixPion;
+
+        System.out.println("Le pion choisi est le " + ret);
+
+        return ret;
     }
 
 
-    /** Permet de choisir s'il faut libérer le pion ou non
-    * @param ia permet de savoir si un joueur est un ia */
-    public boolean libererPion(boolean ia, Pion aDeplacer){
-      Scanner sc = new Scanner(System.in);
-      String libere;
-      boolean libererPion;
-      //if((!ia)||(aLaMain.equals(joueur1))){
-        System.out.println("Voulez vous libérer le pion situe sous celui que vous deplacez ? (o/n)");
+    /**
+     * Permet de choisir s'il faut libérer le pion ou non
+     *
+     * @param ia permet de savoir si un joueur est un ia
+     */
+    private boolean libererPion(boolean ia, Pion aDeplacer) {
+        Scanner sc = new Scanner(System.in);
+        Random r = new Random();
+        String libere;
+        boolean libererPion = false;
+        int tirageAuSort;
+
+        if((!ia) || (aLaMain.equals(joueur1))){
+        System.out.println("Voulez vous liberer le pion situe sous celui que vous deplacez ? (o/n)");
         libere = sc.next();
 
-        while(!libere.equals("o") && !libere.equals("n")){
+        while (!libere.equals("o") && !libere.equals("n")) {
             System.out.println("Veuillez entrer une saisie correcte");
             libere = sc.nextLine();
         }
-      /*}
+      }
       else{
-        tirageAuSort = (int)(Math.random());
+        tirageAuSort = r.nextInt(2);
         if(tirageAuSort == 0){libere = "o";}
         else{libere = "n";}
-      }*/
+      }
 
 
-      if((libere.equals("o"))&&(aDeplacer.getAMange() != null)){libererPion = true;}
-      else{libererPion = false;}
-      return libererPion;
+        if ((libere.equals("o")) && (aDeplacer.getAMange() != null)) {
+            libererPion = true;
+        }
+
+        return libererPion;
     }
 
     /**
-     *  permet d'acceder au plateau de jeu
+     * permet d'acceder au plateau de jeu
+     *
      * @return le plateau de jeu
-     * */
-    public Plateau getLePlateau(){return this.lePlateau;}
+     */
+    public Plateau getLePlateau() {
+        return this.lePlateau;
+    }
 
     /**
      * Permet de savoir qui joue
+     *
      * @return le joueur qui a la main
      */
     public Joueur getaLaMain() {
@@ -318,6 +334,7 @@ public class Jeu {
 
     /**
      * Permet d'obtenir le joueur 1
+     *
      * @return le joueur 1
      */
     public Joueur getJoueur1() {
@@ -326,6 +343,7 @@ public class Jeu {
 
     /**
      * permet d'obtenir le joueur 2
+     *
      * @return le joueur 2
      */
     public Joueur getJoueur2() {

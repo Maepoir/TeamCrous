@@ -29,9 +29,8 @@ public class MenuFen extends JFrame {
     //private MenuCharger menuCharger;
 
     //composants de la fenêtre de jeu
-    private JeuFen fenetreJeu;
+    private Plateau fenetreJeu;
     private InfoBarre barreInfo;
-    private ArrayList<Pion> listePions;
 
     //Partie
     private Jeu jeu;
@@ -61,7 +60,6 @@ public class MenuFen extends JFrame {
         this.quitter = new JButton("Quitter :'( ");
 
         JPanel vide = new JPanel();
-        JPanel vide2 = new JPanel();
         getContentPane().setLayout(new BorderLayout());
         this.sousPan = new JPanel();
         this.sousPan.setLayout(new GridLayout(5, 1));
@@ -93,18 +91,14 @@ public class MenuFen extends JFrame {
 
     /** s'actionne pour afficher le plateau de jeu */
     public void actionNouvPartie(Joueur j1, Joueur j2) {
-        this.jeu = new Jeu(j1, j2, false, this);
-        this.fenetreJeu = new JeuFen(jeu);
+        this.jeu = new Jeu(j1, j2, true, this);
+        this.fenetreJeu = new Plateau(jeu.getLePlateau());
         this.barreInfo = new InfoBarre(jeu);
         remove(this.menuJoueur);
         add(this.fenetreJeu, "Center");
         add(this.barreInfo, "South");
         repaint();
         revalidate();
-//        this.listePions = fenetreJeu.getPions();
-//        for(int i = 0; i < this.listePions.size(); i++){
-//          listePions.get(i).addMouseListener(new PlateauEcout(this));
-//        }
         pack();
     }
 
@@ -114,6 +108,10 @@ public class MenuFen extends JFrame {
 
     public void deplacerPion (){
         this.jeu.getaLaMain();
+    }
+
+    public Plateau getFenetreJeu () {
+        return this.fenetreJeu;
     }
 
 }

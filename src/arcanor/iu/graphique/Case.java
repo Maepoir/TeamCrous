@@ -1,7 +1,10 @@
 package arcanor.iu.graphique;
 
-import arcanor.controleur.graphique.CaseEcout;
+import arcanor.controleur.graphique.PlateauEcout;
+import arcanor.iu.console.PlateauTxt;
 import arcanor.modele.Couleur;
+import arcanor.modele.Pion;
+import arcanor.modele.Plateau;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -17,7 +20,12 @@ import java.io.IOException;
  */
 public class Case extends JPanel {
 
-    Case () {
+    private int x;
+    private int y;
+    private Plateau plateau;
+
+    Case (int i, int j, Plateau p) {
+        this.plateau = p;
         try {
             setLayout(new FlowLayout(0, 0, 0));
             BufferedImage caseM = ImageIO.read(new File("../doc/caseM.png"));
@@ -25,9 +33,13 @@ public class Case extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        this.x = i;
+        this.y = j;
+        addMouseListener(new PlateauEcout(this.plateau));
     }
 
-    Case(arcanor.modele.Pion lePion) {
+    Case(arcanor.modele.Pion lePion, Plateau p) {
+        this.plateau = p;
 
         try {
             setLayout(new FlowLayout(FlowLayout.TRAILING, 0, 0));
@@ -73,6 +85,17 @@ public class Case extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        this.x = lePion.getX();
+        this.y = lePion.getY();
+        addMouseListener(new PlateauEcout(this.plateau, lePion));
     }
+
+    public int getLeX(){
+        return this.x;
+    }
+
+    public int getLeY() {
+        return y;
+    }
+
 }

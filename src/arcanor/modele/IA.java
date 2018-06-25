@@ -1,5 +1,6 @@
 package arcanor.modele;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Random;
  *
  * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
  */
-public class IA extends Joueur {
+public class IA extends Joueur implements Serializable {
 
     //représente la difficulté de l'ordinateur
     private int difficulte;

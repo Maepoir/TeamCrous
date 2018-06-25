@@ -14,7 +14,7 @@ public class MenuTxt {
     /**
      * permet d'afficher le menu sur la console
      */
-    public void afficherMenu() {
+    public static void afficherMenu() {
         boolean iaPresente = false;
         String ia ="";
         Scanner sc = new Scanner(System.in);
@@ -66,7 +66,8 @@ public class MenuTxt {
         }
         //cet condition non codée, uniquement pour la compilation
         else if (choix == 2) {
-            int i = 0;
+            Jeu jeu = Jeu.chargerJeu();
+            jeu.debutPartie(iaPresente);
         }
         //en cas de saisie incorrecte ou de choix 3
         else {

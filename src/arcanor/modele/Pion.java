@@ -1,5 +1,7 @@
 package arcanor.modele;
 
+import java.io.Serializable;
+
 /**
  * Role : Cette classe permet de modéliser une pièce du jeu Arcanor
  *
@@ -8,7 +10,7 @@ package arcanor.modele;
  * int TAILLE = 3
  * Pion p = new Pion ( TAILLE );
  */
-public class Pion {
+public class Pion implements Serializable {
 
     /**
      * C'est la  valeur du pion

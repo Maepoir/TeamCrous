@@ -1,5 +1,6 @@
 package arcanor.modele;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Scanner;
  *
  * @author M.Poiré, S.Bay
  */
-public class JoueurHumain extends Joueur {
+public class JoueurHumain extends Joueur implements Serializable {
 
     /**
      * construit la classe IA

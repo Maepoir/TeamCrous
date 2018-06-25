@@ -1,7 +1,9 @@
 package arcanor;
 
 import arcanor.iu.console.MenuTxt;
+import arcanor.iu.graphique.MenuFen;
 
+import java.awt.*;
 import java.util.Scanner;
 
 /**
@@ -34,11 +36,14 @@ public class Partie {
         }
 
         if (!mode) {
-            MenuTxt menuC = new MenuTxt();
-            menuC.afficherMenu();
+            MenuTxt.afficherMenu();
         } else {
-            //mettre ici partie graphique
-            System.out.println("non géré pour l'instant");
+            EventQueue.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    new MenuFen().setVisible(true);
+                }
+            });
         }
         //commentaire car méthode non écrite, elle permettra de lancer la partie
         //jeu.start();

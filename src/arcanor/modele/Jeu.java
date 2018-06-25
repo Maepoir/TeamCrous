@@ -1,9 +1,12 @@
 package arcanor.modele;
 
+import arcanor.Sauvegarde;
+import arcanor.iu.console.MenuTxt;
 import arcanor.iu.console.PlateauTxt;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,15 +15,13 @@ import java.util.Scanner;
  *
  * @author S.Bay ,M.Racine,M.Poiré G.Renault
  */
-public class Jeu {
+public class Jeu implements Serializable {
 
     private Plateau lePlateau;
     //le premier joueur
     private Joueur joueur1;
     //le deuxième joueur
     private Joueur joueur2;
-    //le fichier de sauvegarde de la partie
-    //private Sauvegarde sauvegardeur;
     //correspond au mode de jeu choisi
     private ModeJeu modeJeu;
     //permet de sauvegarder le temps de jeu des joueurs
@@ -31,6 +32,8 @@ public class Jeu {
     private Joueur aLaMain;
     //fenêtre de jeu graphique
     //private JeuFen jeuG;
+    //Pour la sauvegarde
+    boolean ia;
 
 
     /**
@@ -51,43 +54,40 @@ public class Jeu {
     }
 
     /**
-     * Role : Cette methode permet de sauvegarder une partie
-     * @param chemin chemin pour la sauvegarde
-     */
-    /*public void sauvegarderJeu(String chemin){
-     this.sauvegardeur = new Sauvegarde(this.lePlateau, this.arrayJoueur, this.modeJeu, this.tempsJeu, this.modeGraphique);
-     this.sauvegardeur.sauvegarder(chemin);
-     } */
-
-    /**
-     * Role : Cette methode permet de charger une partie
-     * @param chemin chemin de la sauvegarde
-     */
-
-    /*public void chargerJeu(String chemin){
-     ArrayList <Object> list = new ArrayList<Object>();
-     if(this.sauvegardeur != null){
-     list = this.sauvegardeur.charger(chemin);
-     if(list != null){
-     this.lePlateau = (Plateau)(list.get(0));
-     this.arrayJoueur = (Joueur[])(list.get(1));
-     this.modeJeu = (int)(list.get(2));
-     this.tempsJeu = (long)(list.get(3));
-     this.modeGraphique = (boolean)(list.get(4));
-     }
-     else{
-     System.out.println("fichier introuvable, création d'une nouvelle partie");
-     Partie partie = new Partie();
-     }
-     }
-     else{System.out.print("chargement impossible, aucune sauvegarde effectuée.");}
-     } */
-
-    /**
      * Permet de passer des lignes pour ne pas que la console soit surchargée
      */
     static void blanc() {
         System.out.println("\n\n\n\n\n\n\n\n\n\n");
+    }
+
+    /**
+     * Role : Cette methode permet de sauvegarder une partie
+     *
+     * @param chemin chemin pour la sauvegarde
+     */
+    private void sauvegarderJeu(String chemin) {
+        Sauvegarde.sauvegarder(chemin, this);
+    }
+
+    /**
+     * Role : Cette methode permet de charger une partie
+     */
+
+    public static Jeu chargerJeu() {
+        Jeu ret = null;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Veuillez entrer le nom de votre sauvegarde :");
+        String sauvegarde = sc.nextLine();
+
+        if (Sauvegarde.charger(sauvegarde) != null) {
+            ret = Sauvegarde.charger(sauvegarde);
+        } else {
+            System.out.println("Fichier introuvable, création d'une nouvelle partie");
+            MenuTxt.afficherMenu();
+        }
+
+        return ret;
     }
 
     /**
@@ -177,6 +177,9 @@ public class Jeu {
         Pion aDeplacer;
         int placement;
         int choixPion;
+        String sauvegarder;
+        Scanner sc = new Scanner(System.in);
+        this.ia = ia;
 
         if (!this.modeGraphique) {
 
@@ -199,8 +202,22 @@ public class Jeu {
                     deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement, libererPion);
                 }
                 partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
+
                 if (!partieGagne) {
                     changerMain();
+                    System.out.println("Voulez vous sauvegarder la partie ? (o/n)");
+                    sauvegarder = sc.nextLine();
+                    while (!sauvegarder.equals("o") && !sauvegarder.equals("n")) {
+                        System.out.println("Veuillez realiser une saise correcte.");
+                        sauvegarder = sc.nextLine();
+                    }
+                    if (sauvegarder.equals("o")) {
+                        System.out.println("Entrer le nom de votre fichier");
+                        String chemin = sc.nextLine();
+                        sauvegarderJeu(chemin);
+                        System.out.println("Partie sauvegardee avec succes. Nous esperons vous revoir bientot !");
+                        System.exit(0);
+                    }
                     System.out.println("C'est au tour de " + this.aLaMain.getNom());
                 }
                 deplacementFait = false;

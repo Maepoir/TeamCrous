@@ -1,11 +1,13 @@
 package arcanor.modele;
 
+import java.io.Serializable;
+
 /**
  * Rôle : Cette classe permet de modéliser un joueur du jeu Arcanor
  *
  * @author S.Bay, M.Racine, M.Poiré, G.Renault
  */
-public abstract class Joueur {
+public abstract class Joueur implements Serializable {
     // Le nom du joueur
     private String nom;
 

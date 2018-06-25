@@ -25,6 +25,7 @@ class Plateau extends JPanel {
             for (int j = 0; j < 7; j++) {
                 if (plateau.getPion(i, j) == null) {
                     add(new Pion(i,j));
+                    pionsGraphique.add(new Pion(i,j));
                 } else {
                     pionsGraphique.add(new Pion(plateau.getPion(i, j).getTAILLE(), plateau.getPion(i, j).getLeJoueur().getColor(),i,j));
                     add(new Pion(plateau.getPion(i, j).getTAILLE(), plateau.getPion(i, j).getLeJoueur().getColor(),i,j));

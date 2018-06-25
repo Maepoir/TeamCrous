@@ -17,6 +17,9 @@ import arcanor.controleur.graphique.*;
  */
 public class Pion extends JPanel {
 
+    int x;
+    int y;
+
     public Pion(int i,int j){
         try {
             setLayout(new FlowLayout(0, 0, 0));
@@ -24,6 +27,10 @@ public class Pion extends JPanel {
             add(new JLabel(new ImageIcon(caseM)));
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        finally{
+          this.x = i;
+          this.y = j;
         }
       }
 
@@ -72,6 +79,10 @@ public class Pion extends JPanel {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        finally{
+          this.x = i;
+          this.y = j;
         }
     }
 }

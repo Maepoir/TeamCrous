@@ -31,6 +31,7 @@ public class MenuFen extends JFrame {
     //composants de la fenêtre de jeu
     private Plateau fenetreJeu;
     private InfoBarre barreInfo;
+    private MenuBarre menuBarre;
 
     //Partie
     private Jeu jeu;
@@ -94,9 +95,11 @@ public class MenuFen extends JFrame {
         this.jeu = new Jeu(j1, j2, true, this);
         this.fenetreJeu = new Plateau(jeu.getLePlateau());
         this.barreInfo = new InfoBarre(jeu);
+        this.menuBarre = new MenuBarre(this.barreInfo);
         remove(this.menuJoueur);
         add(this.fenetreJeu, "Center");
         add(this.barreInfo, "South");
+        add(this.menuBarre,"East");
         repaint();
         revalidate();
         pack();

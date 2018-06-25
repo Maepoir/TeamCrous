@@ -1,8 +1,5 @@
 package arcanor.controleur.graphique;
 
-import arcanor.iu.graphique.Case;
-import arcanor.iu.graphique.Plateau;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 

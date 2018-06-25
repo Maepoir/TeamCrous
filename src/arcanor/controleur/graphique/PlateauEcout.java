@@ -1,39 +1,41 @@
 package arcanor.controleur.graphique;
 
-import arcanor.modele.*;
-import arcanor.*;
-import arcanor.iu.graphique.*;
-import arcanor.controleur.graphique.*;
-import java.awt.event.*;
-import java.awt.*;
-import javax.swing.*;
+import arcanor.iu.graphique.Case;
+import arcanor.modele.Pion;
+import arcanor.modele.Plateau;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class PlateauEcout implements MouseListener {
 
-  private MenuFen menu;
+    private Plateau plateau;
+    private Pion pion;
 
-  public PlateauEcout(MenuFen menu){
-    this.menu = menu;
-  }
+    public PlateauEcout(Plateau plateau) {
+        this.plateau = plateau;
+    }
 
-  public void mouseClicked (MouseEvent e){
-    System.out.println("mouse clicked");
-    
-  }
+    public PlateauEcout(Plateau plateau, Pion pion) {
+        this.plateau = plateau;
+        this.pion = pion;
+    }
 
-  public void mouseEntered(MouseEvent e){
-    System.out.println("mouse entered");
-  }
+    public void mouseClicked(MouseEvent e) {
+    }
 
-  public void mouseExited(MouseEvent e){
-    System.out.println("mouse exited");
-  }
+    public void mouseEntered(MouseEvent e) {
+//    System.out.println("mouse entered");
+    }
 
-  public void mousePressed(MouseEvent e){
-    System.out.println("mouse pressed");
-  }
+    public void mouseExited(MouseEvent e) {
+//    System.out.println("mouse exited");
+    }
 
-  public void mouseReleased(MouseEvent e){
-    System.out.println("mouseReleased");
-  }
+    public void mousePressed(MouseEvent e) {
+//        System.out.println("mouse pressed");
+    }
+
+    public void mouseReleased(MouseEvent e) {
+//        System.out.println("mouse released");
+    }
 }

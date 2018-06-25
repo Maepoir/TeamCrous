@@ -38,12 +38,7 @@ public class Partie {
         if (!mode) {
             MenuTxt.afficherMenu();
         } else {
-            EventQueue.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    new MenuFen().setVisible(true);
-                }
-            });
+            EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
         }
         //commentaire car méthode non écrite, elle permettra de lancer la partie
         //jeu.start();

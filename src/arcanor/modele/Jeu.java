@@ -17,23 +17,19 @@ import java.util.Scanner;
  */
 public class Jeu implements Serializable {
 
+    //fenêtre de jeu graphique
+    //private JeuFen jeuG;
+    //Pour la sauvegarde
+    boolean ia;
     private Plateau lePlateau;
     //le premier joueur
     private Joueur joueur1;
     //le deuxième joueur
     private Joueur joueur2;
-    //correspond au mode de jeu choisi
-    private ModeJeu modeJeu;
-    //permet de sauvegarder le temps de jeu des joueurs
-    private long tempsJeu;
     // détermine si le jeu doit s'afficher en mode graphique ou console
     private boolean modeGraphique;
     //le joueur qui a la main
     private Joueur aLaMain;
-    //fenêtre de jeu graphique
-    //private JeuFen jeuG;
-    //Pour la sauvegarde
-    boolean ia;
 
 
     /**
@@ -41,14 +37,12 @@ public class Jeu implements Serializable {
      *
      * @param joueur1       le premier Joueur
      * @param joueur2       le deuxième joueur
-     * @param modeJeu       le mode de jeu choisi
      * @param modeGraphique le mode d'affichage du jeu choisi
      */
-    public Jeu(Joueur joueur1, Joueur joueur2, ModeJeu modeJeu, boolean modeGraphique) {
+    public Jeu(Joueur joueur1, Joueur joueur2, boolean modeGraphique) {
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
         this.lePlateau = new Plateau(this.joueur1, this.joueur2);
-        this.modeJeu = modeJeu;
         this.modeGraphique = modeGraphique;
         this.aLaMain = this.joueur1;
     }
@@ -56,17 +50,12 @@ public class Jeu implements Serializable {
     /**
      * Permet de passer des lignes pour ne pas que la console soit surchargée
      */
-    static void blanc() {
-        System.out.println("\n\n\n\n\n\n\n\n\n\n");
-    }
-
-    /**
-     * Role : Cette methode permet de sauvegarder une partie
-     *
-     * @param chemin chemin pour la sauvegarde
-     */
-    private void sauvegarderJeu(String chemin) {
-        Sauvegarde.sauvegarder(chemin, this);
+    public static void blanc() {
+        StringBuilder blanc = new StringBuilder();
+        for (int i = 0; i < 28; i++) {
+            blanc.append("\n");
+        }
+        System.out.println(blanc);
     }
 
     /**
@@ -91,6 +80,15 @@ public class Jeu implements Serializable {
     }
 
     /**
+     * Role : Cette methode permet de sauvegarder une partie
+     *
+     * @param chemin chemin pour la sauvegarde
+     */
+    private void sauvegarderJeu(String chemin) {
+        Sauvegarde.sauvegarder(chemin, this);
+    }
+
+    /**
      * Role : Cette methode permet de changer l'affichage d'un pion (mode triche)
      *
      * @param lePion le pion pour lequel il faut changer l'affichage
@@ -109,42 +107,6 @@ public class Jeu implements Serializable {
         } else {
             this.aLaMain = this.joueur1;
         }
-    }
-
-    /**
-     * Role : Cette methode permet de recuperer le temps de jeu
-     *
-     * @return temps de jeu
-     */
-    public long getTempsJeu() {
-        return this.tempsJeu;
-    }
-
-    /**
-     * Role : Cette methode permet de modifier le temps de jeu
-     *
-     * @param tempsJeu le temps de jeu que l'on souhaite modifier
-     */
-    public void setTempsJeu(long tempsJeu) {
-        this.tempsJeu = tempsJeu;
-    }
-
-    /**
-     * Role : Cette methode permet de recuperer le mode de jeu
-     *
-     * @return le mode de jeu choisi par l'utilisateur
-     */
-    public ModeJeu getModeJeu() {
-        return this.modeJeu;
-    }
-
-    /**
-     * Role : Cette methode permet de modifier le mode de jeu
-     *
-     * @param modeJeu le choix de mode de jeu de l'utilisateur
-     */
-    public void setModeJeu(ModeJeu modeJeu) {
-        this.modeJeu = modeJeu;
     }
 
     /**
@@ -185,12 +147,8 @@ public class Jeu implements Serializable {
 
 //            tutoriel();
 
-            System.out.println("== Début de partie ==");
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            System.out.println("== Debut de partie ==");
+
             PlateauTxt.afficherPlateau(this.lePlateau);
             System.out.println("Le joueur qui commence est : " + aLaMain.getNom());
             while (!partieGagne) {
@@ -223,10 +181,19 @@ public class Jeu implements Serializable {
                 deplacementFait = false;
             }
             System.out.println("Fin du jeu ! Victoire de " + this.aLaMain.getNom() + " !! :)");
-        }
-        //mode graphique
-        else {
-            System.out.println("Non gere pour l'instant");
+        } else {
+
+            while(!partieGagne){
+
+                while(!deplacementFait){
+
+                    if(!partieGagne){
+                        changerMain();
+                    }
+                }
+
+            }
+
         }
     }
 

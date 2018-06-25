@@ -21,6 +21,8 @@ public class PlateauEcout implements MouseListener {
     }
 
     public void mouseClicked(MouseEvent e) {
+        ((Case) e.getSource()).getLeX();
+        ((Case) e.getSource()).getLeY();
     }
 
     public void mouseEntered(MouseEvent e) {

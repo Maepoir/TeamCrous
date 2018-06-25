@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8543929a-2f63-48a1-aa1d-dea73a472cf0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/arcanor/controleur/graphique/MenuBarreEcout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/Partie.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/Partie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/Sauvegarde.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/Sauvegarde.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/controleur/graphique/CaseEcout.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/controleur/graphique/CaseEcout.class" afterDir="false" />
@@ -26,8 +24,7 @@
       <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Joueur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Pion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Plateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuBarre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuBarre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arcanor/controleur/graphique/PlateauEcout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/controleur/graphique/PlateauEcout.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,28 +36,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MenuBarre.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/MenuBarre.java">
+      <file leaf-file-name="Case.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Case.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+            <state relative-caret-position="156">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
-                <element signature="e#400#401#0" expanded="true" />
-                <element signature="e#434#435#0" expanded="true" />
-                <element signature="e#469#470#0" expanded="true" />
-                <element signature="e#499#500#0" expanded="true" />
-                <element signature="e#536#537#0" expanded="true" />
-                <element signature="e#566#567#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InfoBarre.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/InfoBarre.java">
+      <file leaf-file-name="PlateauEcout.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/arcanor/controleur/graphique/PlateauEcout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+            <state relative-caret-position="238">
+              <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,8 +63,8 @@
       <file leaf-file-name="MenuFen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+            <state relative-caret-position="136">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,15 +72,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuBarreEcout.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/arcanor/controleur/graphique/MenuBarreEcout.java">
+      <file leaf-file-name="Plateau.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="394">
+              <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#318#319#0" expanded="true" />
-                <element signature="e#356#357#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,12 +154,12 @@
         <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/InfoBarre.java" />
         <option value="$PROJECT_DIR$/src/arcanor/controleur/graphique/CaseEcout.java" />
         <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/Pion.java" />
-        <option value="$PROJECT_DIR$/src/arcanor/controleur/graphique/PlateauEcout.java" />
-        <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/Case.java" />
-        <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java" />
         <option value="$PROJECT_DIR$/src/arcanor/controleur/graphique/MenuBarreEcout.java" />
         <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java" />
         <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuBarre.java" />
+        <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java" />
+        <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/Case.java" />
+        <option value="$PROJECT_DIR$/src/arcanor/controleur/graphique/PlateauEcout.java" />
       </list>
     </option>
   </component>
@@ -437,12 +427,12 @@
       <workItem from="1529701097609" duration="7835000" />
       <workItem from="1529870446768" duration="6344000" />
       <workItem from="1529909584815" duration="196000" />
-      <workItem from="1529915723891" duration="22714000" />
+      <workItem from="1529915723891" duration="23358000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88157000" />
+    <option name="totallyTimeSpent" value="88801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -615,13 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/ConnexionTxt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/ModePan.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -789,68 +772,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="89" column="65" lean-forward="true" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3075#3076#0" expanded="true" />
-            <element signature="e#3096#3097#0" expanded="true" />
-            <element signature="e#3143#3144#0" expanded="true" />
-            <element signature="e#3167#3168#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/controleur/graphique/PlateauEcout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#294#295#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/controleur/graphique/CaseEcout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/InfoBarre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -877,6 +802,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/MenuBarre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="39" column="52" lean-forward="true" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+          <folding>
+            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="e#469#470#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#536#537#0" expanded="true" />
+            <element signature="e#566#567#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/InfoBarre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/controleur/graphique/MenuBarreEcout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -889,17 +839,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/MenuBarre.java">
+    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/console/ConnexionTxt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#536#537#0" expanded="true" />
-            <element signature="e#566#567#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Case.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/controleur/graphique/PlateauEcout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

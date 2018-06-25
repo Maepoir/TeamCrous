@@ -206,7 +206,9 @@ public class Jeu {
                 deplacementFait = false;
             }
             System.out.println("Fin du jeu ! Victoire de " + this.aLaMain.getNom() + " !! :)");
-        } else {
+        }
+        //mode graphique
+        else {
             System.out.println("Non gere pour l'instant");
         }
     }
@@ -254,9 +256,10 @@ public class Jeu {
             }
         } else {
             while (!verif) {
-                ret = 13 + (int) (Math.random() * ((24 - 13) + 1));
+                Random r = new Random();
+                ret = 24 - r.nextInt(12);
                 if (ret > 0 && ret <= 24) {
-                    if (lePlateau.getPion(ret).getEstMange()) {
+                    if (!lePlateau.getPion(ret).getEstMange()) {
                         verif = true;
                     }
                 }

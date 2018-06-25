@@ -75,15 +75,22 @@ public class Plateau {
         int x = deplacementPossibles(lePion)[i][0];
         int y = deplacementPossibles(lePion)[i][1];
         if (x != -1 && y != -1) {
-            lePion.setXY(x, y);
-            ret = true;
+            if(estLibre(x,y) || (!estLibre(x,y) && (getPion(x,y).getTAILLE() < lePion.getTAILLE()))){
+              lePion.setXY(x, y);
+              ret = true;
 
-            if (libere && lePion.getAMange() != null) {
-                lePion.getAMange().setEstMange(false);
-                lePion.setEstMange(false);
-            } else if (!libere && lePion.getAMange() != null) {
-                lePion.getAMange().setXY(x, y);
+              //gérer libération des pions
+              if (libere && lePion.getAMange() != null) {
+                  lePion.getAMange().setEstMange(false);
+                  lePion.setEstMange(false);
+                } else if (!libere && lePion.getAMange() != null) {
+                  lePion.getAMange().setXY(x, y);
+                }
             }
+            else{
+              System.out.println("Vous ne pouvez pas manger un pion plus gros !");
+            }
+
 
         } else {
             System.out.println("Déplacement hors des limites, veuillez choisir un autre déplacement s'il vous plait.");
@@ -269,5 +276,16 @@ public class Plateau {
      */
     public Joueur getJ2() {
         return this.j2;
+    }
+
+    /** permet de savoir si une case possède un pion ou non
+    * @param x la première coordonnées
+    * @param y la deuxième coordonnée */
+    public boolean estLibre(int x, int y){
+      boolean ret = true;
+      if(getPion(x,y) != null){
+        ret = false;
+      }
+      return ret;
     }
 }

@@ -62,13 +62,13 @@ public class MenuTxt {
 
             Jeu.blanc();
 
-            Jeu jeu = new Jeu(j1, j2, modeGraphique);
+            Jeu jeu = new Jeu(j1, j2, modeGraphique, iaPresente);
 
             jeu.debutPartie(iaPresente);
         }
         else if (choix == 2) {
             Jeu jeu = Jeu.chargerJeu();
-            jeu.debutPartie(iaPresente);
+            jeu.debutPartie(jeu.getIAPresente());
         }
         else {
             System.out.println("Merci d'avoir lancé Arcanor, à bientôt ! <3");

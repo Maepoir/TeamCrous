@@ -3,6 +3,7 @@ package arcanor.modele;
 import arcanor.Sauvegarde;
 import arcanor.iu.console.MenuTxt;
 import arcanor.iu.console.PlateauTxt;
+import arcanor.iu.graphique.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -17,8 +18,6 @@ import java.util.Scanner;
  */
 public class Jeu implements Serializable {
 
-    //fenêtre de jeu graphique
-    //private JeuFen jeuG;
     //Pour la sauvegarde
     boolean ia;
     private Plateau lePlateau;
@@ -31,6 +30,10 @@ public class Jeu implements Serializable {
     //le joueur qui a la main
     private Joueur aLaMain;
 
+    //Graphique
+    //Fenetre de jeu
+    private MenuFen fenMenu;
+
 
     /**
      * Role : permet de créer un objet Jeu avec des paramètres précis
@@ -39,12 +42,22 @@ public class Jeu implements Serializable {
      * @param joueur2       le deuxième joueur
      * @param modeGraphique le mode d'affichage du jeu choisi
      */
-    public Jeu(Joueur joueur1, Joueur joueur2, boolean modeGraphique) {
+    public Jeu(Joueur joueur1, Joueur joueur2, boolean modeGraphique, boolean ia) {
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
         this.lePlateau = new Plateau(this.joueur1, this.joueur2);
         this.modeGraphique = modeGraphique;
         this.aLaMain = this.joueur1;
+        this.ia = ia;
+    }
+
+    public Jeu(Joueur joueur1, Joueur joueur2, boolean modeGraphique, MenuFen fenMenu) {
+        this.joueur1 = joueur1;
+        this.joueur2 = joueur2;
+        this.lePlateau = new Plateau(this.joueur1, this.joueur2);
+        this.modeGraphique = modeGraphique;
+        this.aLaMain = this.joueur1;
+        this.fenMenu = fenMenu;
     }
 
     /**
@@ -150,8 +163,9 @@ public class Jeu implements Serializable {
             System.out.println("== Debut de partie ==");
 
             PlateauTxt.afficherPlateau(this.lePlateau);
-            System.out.println("Le joueur qui commence est : " + aLaMain.getNom());
             while (!partieGagne) {
+                System.out.println("C'est au tour de " + this.aLaMain.getNom());
+
                 while (!deplacementFait) {
                     choixPion = choixPion(ia);
                     aDeplacer = lePlateau.getPion(choixPion);
@@ -176,7 +190,7 @@ public class Jeu implements Serializable {
                         System.out.println("Partie sauvegardee avec succes. Nous esperons vous revoir bientot !");
                         System.exit(0);
                     }
-                    System.out.println("C'est au tour de " + this.aLaMain.getNom());
+
                 }
                 deplacementFait = false;
             }
@@ -187,12 +201,18 @@ public class Jeu implements Serializable {
 
                 while(!deplacementFait){
 
+                    partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
+
                     if(!partieGagne){
                         changerMain();
+                        this.fenMenu.getBarreInfo().setText(this.aLaMain);
+                        this.fenMenu.repaint();
+                        this.fenMenu.revalidate();
                     }
                 }
 
             }
+            this.fenMenu.getBarreInfo().messageVictoire(aLaMain);
 
         }
     }
@@ -327,5 +347,9 @@ public class Jeu implements Serializable {
      */
     public Joueur getJoueur2() {
         return joueur2;
+    }
+
+    public boolean getIAPresente() {
+        return ia;
     }
 }

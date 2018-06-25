@@ -3,9 +3,12 @@ package arcanor.iu.graphique;
 import arcanor.controleur.graphique.*;
 import arcanor.modele.Jeu;
 import arcanor.modele.Joueur;
+import arcanor.modele.ModeJeu;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
 
 /**
  * affiche graphiquement le menu avec les options de jeu disponibles
@@ -31,7 +34,7 @@ public class MenuFen extends JFrame {
     //composants de la fenêtre de jeu
     private JeuFen fenetreJeu;
     private InfoBarre barreInfo;
-
+    private ArrayList<Pion> listePion;
 
     public static void main(String args[]) {
         EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
@@ -45,7 +48,7 @@ public class MenuFen extends JFrame {
      * affichage du premier menu
      */
     private void initComponents() {
-        setTitle("Arcanor <3");
+        setTitle("<3 Arcanor <3");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         Font f = new Font("Arial", Font.PLAIN, 60);
@@ -90,7 +93,7 @@ public class MenuFen extends JFrame {
 
     /** s'actionne pour afficher le plateau de jeu */
     public void actionNouvPartie(Joueur j1, Joueur j2) {
-        Jeu jeu = new Jeu(j1, j2, false);
+        Jeu jeu = new Jeu(j1, j2, ModeJeu.NORMAL, false);
         this.fenetreJeu = new JeuFen(jeu);
         this.barreInfo = new InfoBarre(jeu);
         remove(this.menuJoueur);
@@ -98,6 +101,7 @@ public class MenuFen extends JFrame {
         add(this.barreInfo, "South");
         repaint();
         revalidate();
+        listePion = fenetreJeu.getPions();
         fenetreJeu.addMouseListener(new PlateauEcout(this));
         pack();
     }

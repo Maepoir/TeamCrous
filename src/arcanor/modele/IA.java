@@ -32,7 +32,7 @@ public class IA extends Joueur {
      */
     public int jouer() {
         Random r = new Random();
-        return r.nextInt(9);
+        return r.nextInt(8);
     }
 
     /**

@@ -30,7 +30,7 @@ public class MenuTxt {
         }
         if (choix == 1) {
             System.out.println("Saisir nom du joueur 1 :");
-            String nom1 = sc.nextLine();
+            String nom1 = sc.next();
             JoueurHumain j1 = new JoueurHumain(nom1, Couleur.BLANC);
             System.out.println("Jouer contre un IA ?(o/n)");
             Joueur j2;

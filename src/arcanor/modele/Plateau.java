@@ -45,18 +45,20 @@ public class Plateau {
         this.lesPions.add(new Pion(4, false, this.lesPions.get(10), 7, 0, this.j1, 12));
 
 //        Joueur 2
-        this.lesPions.add(new Pion(1, true, null, 0, 6, this.j2, 13));
-        this.lesPions.add(new Pion(2, false, this.lesPions.get(12), 0, 6, this.j2, 14));
-        this.lesPions.add(new Pion(3, true, null, 1, 6, this.j2, 15));
-        this.lesPions.add(new Pion(4, false, this.lesPions.get(14), 1, 6, this.j2, 16));
-        this.lesPions.add(new Pion(1, true, null, 3, 6, this.j2, 17));
-        this.lesPions.add(new Pion(2, false, this.lesPions.get(16), 3, 6, this.j2, 18));
-        this.lesPions.add(new Pion(3, true, null, 4, 6, this.j2, 19));
-        this.lesPions.add(new Pion(4, false, this.lesPions.get(18), 4, 6, this.j2, 20));
-        this.lesPions.add(new Pion(1, true, null, 6, 6, this.j2, 21));
-        this.lesPions.add(new Pion(2, false, this.lesPions.get(20), 6, 6, this.j2, 22));
-        this.lesPions.add(new Pion(3, true, null, 7, 6, this.j2, 23));
-        this.lesPions.add(new Pion(4, false, this.lesPions.get(22), 7, 6, this.j2, 24));
+        this.lesPions.add(new Pion(3, true, null, 1, 6, this.j2, 13));
+        this.lesPions.add(new Pion(4, false, this.lesPions.get(12), 1, 6, this.j2, 14));
+        this.lesPions.add(new Pion(1, true, null, 0, 6, this.j2, 15));
+        this.lesPions.add(new Pion(2, false, this.lesPions.get(14), 0, 6, this.j2, 16));
+
+        this.lesPions.add(new Pion(3, true, null, 4, 6, this.j2, 17));
+        this.lesPions.add(new Pion(4, false, this.lesPions.get(16), 4, 6, this.j2, 18));
+        this.lesPions.add(new Pion(1, true, null, 3, 6, this.j2, 19));
+        this.lesPions.add(new Pion(2, false, this.lesPions.get(18), 3, 6, this.j2, 20));
+
+        this.lesPions.add(new Pion(3, true, null, 7, 6, this.j2, 21));
+        this.lesPions.add(new Pion(4, false, this.lesPions.get(20), 7, 6, this.j2, 22));
+        this.lesPions.add(new Pion(1, true, null, 6, 6, this.j2, 23));
+        this.lesPions.add(new Pion(2, false, this.lesPions.get(22), 6, 6, this.j2, 24));
 
     }
 

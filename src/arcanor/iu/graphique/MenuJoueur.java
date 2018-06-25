@@ -59,7 +59,7 @@ public class MenuJoueur extends JPanel {
         this.choixBouton.add(this.IAnon);
 
         this.boutons = new JPanel();
-        this.boutons.setLayout(new GridLayout(3, 2));
+        this.boutons.setLayout(new GridLayout(3, 2, 10, 10));
         this.boutons.add(this.nomJ1);
         this.boutons.add(this.j1);
         this.boutons.add(this.nomJ2);

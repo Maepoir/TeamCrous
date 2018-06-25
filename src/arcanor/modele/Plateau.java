@@ -289,4 +289,8 @@ public class Plateau implements Serializable {
       }
       return ret;
     }
+    
+    /**permet d'accéder à la liste de tous les pions
+    * @return la liste de tous les pions */
+    public ArrayList<Pion> getPions(){return this.lesPions;}
 }

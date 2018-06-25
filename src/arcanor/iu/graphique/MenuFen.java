@@ -3,7 +3,6 @@ package arcanor.iu.graphique;
 import arcanor.controleur.graphique.*;
 import arcanor.modele.Jeu;
 import arcanor.modele.Joueur;
-import arcanor.modele.ModeJeu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -93,7 +92,7 @@ public class MenuFen extends JFrame {
 
     /** s'actionne pour afficher le plateau de jeu */
     public void actionNouvPartie(Joueur j1, Joueur j2) {
-        Jeu jeu = new Jeu(j1, j2, ModeJeu.NORMAL, false);
+        Jeu jeu = new Jeu(j1, j2, false, this);
         this.fenetreJeu = new JeuFen(jeu);
         this.barreInfo = new InfoBarre(jeu);
         remove(this.menuJoueur);
@@ -103,6 +102,10 @@ public class MenuFen extends JFrame {
         revalidate();
         fenetreJeu.addMouseListener(new PlateauEcout(this));
         pack();
+    }
+
+    public InfoBarre getBarreInfo (){
+        return this.barreInfo;
     }
 
 }

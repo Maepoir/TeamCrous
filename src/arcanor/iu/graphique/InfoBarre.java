@@ -41,7 +41,7 @@ public class InfoBarre extends JPanel {
     public void messageVictoire (Joueur j){
         remove(this.nomJoueurs);
         this.joueurActuel.setText("Victoire de " + j.getNom() + " !");
-        this.joueurActuel.setFont(new Font("Arial", Font.PLAIN, 100));
+        this.joueurActuel.setFont(new Font("Arial", Font.PLAIN, 60));
     }
 
 }

@@ -1,12 +1,13 @@
 package arcanor.iu.graphique;
 
-import arcanor.controleur.graphique.MenuFenEcout;
+import arcanor.controleur.graphique.*;
 import arcanor.modele.Jeu;
 import arcanor.modele.Joueur;
 import arcanor.modele.ModeJeu;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 /**
  * affiche graphiquement le menu avec les options de jeu disponibles
@@ -38,7 +39,7 @@ public class MenuFen extends JFrame {
         EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
     }
 
-    private MenuFen() {
+    public MenuFen() {
         initComponents();
     }
 
@@ -84,10 +85,12 @@ public class MenuFen extends JFrame {
         pack();
     }
 
+    /**permet d'accéder au bouton de nouvelle partie */
     public JButton getNouvPartie() {
         return this.nouvPartie;
     }
 
+    /** s'actionne pour afficher le plateau de jeu */
     public void actionNouvPartie(Joueur j1, Joueur j2) {
         Jeu jeu = new Jeu(j1, j2, ModeJeu.NORMAL, false);
         this.fenetreJeu = new JeuFen(jeu);
@@ -97,6 +100,7 @@ public class MenuFen extends JFrame {
         add(this.barreInfo, "South");
         repaint();
         revalidate();
+        fenetreJeu.addMouseListener(new PlateauEcout(this));
         pack();
     }
 

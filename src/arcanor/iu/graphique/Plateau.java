@@ -8,7 +8,7 @@ import java.awt.*;
  *
  * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
  */
-public class Plateau extends JPanel {
+class Plateau extends JPanel {
 
     Plateau(arcanor.modele.Plateau plateau) {
         initComponents(plateau);
@@ -19,12 +19,13 @@ public class Plateau extends JPanel {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 7; j++) {
                 if (plateau.getPion(i, j) == null) {
-                    add(new Case());
+                    add(new Pion());
                 } else {
-                    add(new Case(plateau.getPion(i, j)));
+                    add(new Pion(plateau.getPion(i, j).getTAILLE(), plateau.getPion(i, j).getLeJoueur().getColor()));
                 }
             }
         }
+
     }
 
 }

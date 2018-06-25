@@ -14,11 +14,12 @@ public class MenuJoueurEcout implements ActionListener {
 
     private MenuFen menu;
     private MenuJoueur joueurs;
-    private boolean joueurIA = false;
+    private boolean joueurIA;
 
     public MenuJoueurEcout(MenuFen menu, MenuJoueur joueurs){
         this.menu = menu;
         this.joueurs=joueurs;
+        this.joueurIA = false;
     }
 
     public void actionPerformed(ActionEvent e) {

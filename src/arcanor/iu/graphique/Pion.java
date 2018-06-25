@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import arcanor.controleur.graphique.*;
 
 /**
  * represente graphiquement un pion du jeu
@@ -16,7 +17,7 @@ import java.io.IOException;
  */
 public class Pion extends JPanel {
 
-    public Pion(){
+    public Pion(int i,int j){
         try {
             setLayout(new FlowLayout(0, 0, 0));
             BufferedImage caseM = ImageIO.read(new File("../doc/caseM.png"));
@@ -26,7 +27,7 @@ public class Pion extends JPanel {
         }
       }
 
-    public Pion(int taille, Couleur couleur) {
+    public Pion(int taille, Couleur couleur, int i, int j) {
 
         try {
             setLayout(new FlowLayout(0, 0, 0));

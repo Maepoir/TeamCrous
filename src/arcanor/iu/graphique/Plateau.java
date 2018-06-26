@@ -27,8 +27,13 @@ class Plateau extends JPanel {
                 if (plateau.getPion(i, j) == null) {
                     sousPan.add(new Case());
                 } else {
-                    sousPan.add(new Case(plateau.getPion(i, j)));
-                    sousPan.addMouseListener(new PlateauEcout(menu, plateau.getPion(i, j)));
+                    if(!plateau.getPion(i,j).getEstMange()) {
+                        sousPan.add(new Case(plateau.getPion(i, j)));
+                        sousPan.addMouseListener(new PlateauEcout(menu, plateau.getPion(i, j)));
+                    }
+                    else{
+                        sousPan.add(new Case());
+                    }
                 }
                 sousPan.setEnabled(true);
                 pan.add(sousPan);

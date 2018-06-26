@@ -24,7 +24,12 @@ public class PlateauTxt {
                 if (plateau.getPion(i, j) == null) {
                     System.out.print("\t|");
                 } else {
-                    System.out.print("t" + plateau.getPion(i, j).getTAILLE() + plateau.getPion(i, j).getLeJoueur().getNom() + "(" + plateau.getPion(i, j).getNum() + ")|");
+                    if(!plateau.getPion(i,j).getEstMange()) {
+                        System.out.print("t" + plateau.getPion(i, j).getTAILLE() + plateau.getPion(i, j).getLeJoueur().getNom() + "(" + plateau.getPion(i, j).getNum() + ")|");
+                    }
+                    else{
+                        System.out.print("\t|");
+                    }
                 }
             }
             System.out.println("\n\n - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");

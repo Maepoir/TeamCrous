@@ -17,6 +17,10 @@ public class InfoBarre extends JPanel {
     private JLabel joueurActuel;
     private JLabel nomJoueurs;
 
+    /**
+     * Constructeur de la barre d'info présente en bas de la fenetre de jeu
+     * @param jeu Le jeu sur lequel la barre donne ses infos
+     */
     InfoBarre(Jeu jeu) {
         this.jeu = jeu;
         initComposantes();

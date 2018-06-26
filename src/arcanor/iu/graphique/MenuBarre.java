@@ -39,7 +39,6 @@ public class MenuBarre extends JPanel {
     }
 
     private void initComposants(){
-        setLayout(new GridLayout(5,1));
 
         this.sauvegarder = new JButton("Sauvegarder");
         this.sauvegarder.addActionListener(new MenuBarreEcout(this, this.jeu));
@@ -98,7 +97,6 @@ public class MenuBarre extends JPanel {
         panelDeplacements.add(this.basDroite);
         this.basDroite.addActionListener(new MenuBarreEcout(this, this.jeu));
 
-
         //Liberation du pion
         JLabel libere = new JLabel("Liberer un pion ?");
         this.liberer = new JCheckBox();
@@ -115,13 +113,15 @@ public class MenuBarre extends JPanel {
         this.valider.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         JPanel sousPan2 = new JPanel();
-        sousPan2.setLayout(new FlowLayout());
-        sousPan2.add(panelDeplacements);
-        sousPan2.add(liberation);
-        sousPan2.add(this.valider);
+        sousPan2.setLayout(new BorderLayout());
+        sousPan2.add(liberation, "Center");
+        sousPan2.add(this.valider, "South");
 
+        setLayout(new GridLayout(7,1));
 
         add(sousPan);
+        add(new JPanel());
+        add(panelDeplacements);
         add(new JPanel());
         add(sousPan2);
         add(new JPanel());

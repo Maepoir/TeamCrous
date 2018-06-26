@@ -7,14 +7,29 @@ import arcanor.modele.Jeu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Ecouteur gérant le chargement d'une partie
+ *
+ * @author M. POIRE  S. BAY
+ */
 public class MenuChargerEcout implements ActionListener {
 
     private MenuCharger menuC;
 
+    /**
+     * Constructeur
+     *
+     * @param menuC le menu a gérer
+     */
     public MenuChargerEcout(MenuCharger menuC) {
         this.menuC = menuC;
     }
 
+    /**
+     * Gère les différentes actions du menu de chargement
+     *
+     * @param e l'évènement à gérer
+     */
     public void actionPerformed(ActionEvent e) {
         String nomSauv;
         nomSauv = menuC.getNomSauv().getText();

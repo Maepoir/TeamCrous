@@ -2,14 +2,16 @@ package arcanor.controleur.graphique;
 
 import arcanor.iu.graphique.MenuFen;
 import arcanor.iu.graphique.MenuJoueur;
-import arcanor.modele.Couleur;
-import arcanor.modele.IA;
-import arcanor.modele.Joueur;
-import arcanor.modele.JoueurHumain;
+import arcanor.modele.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Ecouteur du menu gérant les joueurs
+ *
+ * @author M. POIRE  S. BAY
+ */
 public class MenuJoueurEcout implements ActionListener {
 
     private MenuFen menu;
@@ -37,7 +39,7 @@ public class MenuJoueurEcout implements ActionListener {
             } else {
                 j2 = new JoueurHumain(this.joueurs.getNomJoueur2(), Couleur.NOIR);
             }
-            this.menu.actionNouvPartie(j1, j2, joueurIA);
+            this.menu.actionNouvPartie(j1,j2,joueurIA);
         }
     }
 

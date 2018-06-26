@@ -17,6 +17,9 @@ import java.io.IOException;
  */
 public class Case extends JPanel {
 
+    /**
+     * Constructeur pour une case vide
+     */
     Case() {
         try {
             setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
@@ -27,6 +30,10 @@ public class Case extends JPanel {
         }
     }
 
+    /**
+     * Constructeur pour une case avec un pion
+     * @param lePion le pion présent dans la case
+     */
     Case(arcanor.modele.Pion lePion) {
         try {
             setLayout(new FlowLayout(FlowLayout.TRAILING, 0, 0));

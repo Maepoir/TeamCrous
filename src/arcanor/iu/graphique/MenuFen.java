@@ -92,7 +92,6 @@ public class MenuFen extends JFrame {
      * s'actionne pour afficher le plateau de jeu
      */
     public void actionNouvPartie(Joueur j1, Joueur j2, boolean ia) {
-        System.out.println(ia);
         this.jeu = new Jeu(j1, j2, true, ia, this);
         this.fenetreJeu = new Plateau(jeu.getLePlateau(), this);
         this.barreInfo = new InfoBarre(jeu);

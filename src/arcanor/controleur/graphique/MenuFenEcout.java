@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * permet de mettre à l'écoute tous les boutons de l'application
+ * permet de mettre à l'écoute tous les boutons du menu initial
  *
  * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
  */
@@ -14,6 +14,11 @@ public class MenuFenEcout implements ActionListener {
 
     private MenuFen menu;
 
+    /**
+     * Constructeur
+     *
+     * @param menu le menu a gérer
+     */
     public MenuFenEcout(MenuFen menu) {
         this.menu = menu;
     }

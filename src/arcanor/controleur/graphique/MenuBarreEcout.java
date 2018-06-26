@@ -7,16 +7,32 @@ import arcanor.modele.Jeu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Ecouteur gérant le menu latéral
+ *
+ * @author M. POIRE S. BAY
+ */
 public class MenuBarreEcout implements ActionListener {
 
     private MenuBarre menuBarre;
     private Jeu jeu;
 
+    /**
+     * Constructeur
+     *
+     * @param mB  Le menu latéral à écouter
+     * @param jeu
+     */
     public MenuBarreEcout(MenuBarre mB, Jeu jeu) {
         this.menuBarre = mB;
         this.jeu = jeu;
     }
 
+    /**
+     * Gère les différentes actions possibles dans le menu latéral
+     *
+     * @param e l'évènement à gérer
+     */
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(this.menuBarre.getSauvegarder())) {
             Sauvegarde.sauvegarder(this.menuBarre.getChemin().getText(), this.jeu);

@@ -74,18 +74,35 @@ public class Plateau implements Serializable {
         int x = deplacementPossibles(lePion)[i][0];
         int y = deplacementPossibles(lePion)[i][1];
         if (x != -1 && y != -1) {
-            if (estLibre(x, y) || (!estLibre(x, y) && (getPion(x, y).getTAILLE() < lePion.getTAILLE()))) {
+            if (estLibre(x, y)) {
                 lePion.setXY(x, y);
                 ret = true;
 
                 //gérer libération des pions
                 if (libere && lePion.getAMange() != null) {
                     lePion.getAMange().setEstMange(false);
-                    lePion.setEstMange(false);
+                    lePion.setAMange(null);
                 } else if (!libere && lePion.getAMange() != null) {
                     lePion.getAMange().setXY(x, y);
                 }
-            } else {
+
+            }
+            else if((!estLibre(x, y) && (getPion(x, y).getTAILLE() == lePion.getTAILLE()-1)) && lePion.getAMange() == null && !lePion.getLeJoueur().equals(getPion(x,y).getLeJoueur())){
+                manger(lePion, getPion(x,y));
+                lePion.setXY(x,y);
+                ret = true;
+            }
+            else if((!estLibre(x,y)) && lePion.getLeJoueur().equals(getPion(x,y).getLeJoueur())){
+                if(!g){
+                    System.out.println("Vous ne pouvez pas manger votre propre pion");
+                }
+            }
+            else if (!estLibre(x,y) && lePion.getAMange() != null){
+                if(!g){
+                    System.out.println("Vous ne pouvez pas manger un pion quand il y en a un sous le votre.");
+                }
+            }
+            else {
                 if(!g) {
                     System.out.println("Vous ne pouvez pas manger un pion plus gros !");
                 }
@@ -224,8 +241,10 @@ public class Plateau implements Serializable {
     public Pion getPion(int x, int y) {
         Pion ret = null;
         for (Pion p : this.lesPions) {
-            if (x == p.getX() && y == p.getY()) {
-                ret = p;
+            if ( x == p.getX() && y == p.getY() ) {
+                    if(ret == null || (ret != null && ret.getTAILLE() < p.getTAILLE())) {
+                        ret = p;
+                    }
             }
         }
         return ret;

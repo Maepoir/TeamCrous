@@ -6,7 +6,7 @@ import arcanor.modele.Plateau;
 /**
  * permet d'afficher le plateau de jeu sur la console
  *
- * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
+ * @author M.Poiré, S.Bay
  */
 public class PlateauTxt {
 
@@ -16,6 +16,8 @@ public class PlateauTxt {
 
     /**
      * permet d'afficher le plateau et différents éléments de jeu sur la console
+     *
+     * @param plateau le plateau de jeu
      */
     public static void afficherPlateau(Plateau plateau) {
         System.out.println("Le joueur 1 dispose des pions 1 a 12 et le joueur 2 des pions 13 a 24.");

@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * permet d'afficher le menu sur la console
  *
- * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
+ * @author M.Poiré, S.Bay
  */
 public class MenuTxt {
 

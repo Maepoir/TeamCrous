@@ -3,60 +3,47 @@ package arcanor.modele;
 import java.io.Serializable;
 
 /**
- * Role : Cette classe permet de modéliser une pièce du jeu Arcanor
+ * Permet de modéliser une pièce du jeu Arcanor
  *
- * @author S.Bay ,M.Racine,M.Poiré G.Renault
- * Cas d'utilisation :
- * int TAILLE = 3
- * Pion p = new Pion ( TAILLE );
+ * @author S.Bay, M.Poiré
  */
 public class Pion implements Serializable {
 
-    /**
-     * C'est la  valeur du pion
-     */
+
+    //C'est la  valeur du pion
     private final int TAILLE;
 
-    /**
-     * C'est le Pion  mangé par le pion
-     */
+
+     //C'est le Pion  mangé par le pion
     private Pion aManger;
 
-    /**
-     * Booléen qui permet de déterminer si le pion est mangé
-     */
+    //Booléen qui permet de déterminer si le pion est mangé
     private boolean estManger;
 
-    /**
-     * Booléen qui permet de déterminer si on peut afficher le pion manger
-     */
+    //Booléen qui permet de déterminer si on peut afficher le pion manger
     private boolean afficherManger;
 
-    /**
-     * permet de savoir à qui appartient le pion
-     */
+    //permet de savoir à qui appartient le pion
     private Joueur leJoueur;
 
-    /**
-     * coordonnées sur le plateau en x (abcisse)
-     */
+    //coordonnées sur le plateau en x (abcisse)
     private int x;
 
-    /**
-     * coordonnées du pion sur le plateau en y (ordonnée)
-     */
+    //coordonnées du pion sur le plateau en y (ordonnée)
     private int y;
 
     //le numéro du pion
     private int num;
 
     /**
-     * Role :Construit un objet Pion
+     * Constructeur
      *
      * @param taille la taille du pion
-     *               Cas d'utilisation :
-     *               int taille = 3;
-     *               Pion p = new Pion(taille);
+     * @param estManger permet de savoir si le pion est mangé par un autre
+     * @param x coordonnées en abcisse
+     * @param y coordonnées en ordonnée
+     * @param leJoueur le joueur a qui appartient le pion
+     * @param num le numéro du pion
      */
     public Pion(int taille, boolean estManger, Pion aManger, int x, int y, Joueur leJoueur, int num) {
         this.TAILLE = taille;
@@ -69,39 +56,27 @@ public class Pion implements Serializable {
     }
 
     /**
-     * Role :Récupère le pion qui a été mangé
-     * Cas d'utilisation :
-     * Pion p = new Pion(3);
-     * Pion q = p.getAMange();
+     * Récupère le pion qui a été mangé
      *
-     * @return La  méthode retourne le pion qui a été mangé , si il n'y a pas de
-     * pion qui a été mangé la fonction retourne null
+     * @return le pion mangé par le pion
      */
     public Pion getAMange() {
         return this.aManger;
     }
 
     /**
-     * Role : Ajoute le pion qui a été mangé
+     * Ajoute le pion qui a été mangé
      *
      * @param aManger le pion qui a été mangé
-     *                Cas d'utilisation :
-     *                Pion p = new Pion(3);
-     *                Pion aManger = new Pion(2);
-     *                p.setAMange(aManger);
      */
     public void setAMange(Pion aManger) {
         this.aManger = aManger;
     }
 
     /**
-     * Role : Vérifie si ce pion a été mangé par un autre Pion
-     * Cas d'utilisation :
-     * Pion p = new Pion(42);
-     * boolean estmange = p.getEstMange(estManger);
+     * Vérifie si ce pion a été mangé par un autre Pion
      *
-     * @return true : le pion a été mangé
-     * false : le pion n'as as été mangé
+     * @return true si le pion est mangé par un autre
      */
     public boolean getEstMange() {
         return this.estManger;
@@ -112,35 +87,25 @@ public class Pion implements Serializable {
      *
      * @param estManger true : le pion a été mangé
      *                  false : le pion n'a pas été mangé
-     *                  Cas d'utilisation :
-     *                  Pion p = new Pion(42);
-     *                  p.setEstMange(true)
      */
     public void setEstMange(boolean estManger) {
         this.estManger = estManger;
     }
 
     /**
-     * Role : Vérifie le pion peut être affiché
-     * Cas d'utilisation :
-     * boolean afficherManger ;
-     * Pion p = new Pion(42);
-     * afficherManger = p.getAfficherManger();
+     * Vérifie le pion peut être affiché
      *
      * @return true : le pion peut être affiché
-     * false : le pion ne peut pas être afficher
+     *         false : le pion ne peut pas être afficher
      */
     public boolean getAfficherManger() {
         return this.afficherManger;
     }
 
     /**
-     * Role : Met a jour l'état de l'affichage du pion
+     * Met a jour l'état de l'affichage du pion
      *
-     * @param afficherManger valeur de l'affichage du pion
-     *                       Cas d'utilisation :
-     *                       Pion p = new Pion(42);
-     *                       afficherManger = p.setAfficherManger(true);
+     * @param afficherManger vrai si le pion peut être soulevé
      */
     void setAfficherManger(boolean afficherManger) {
         this.afficherManger = afficherManger;

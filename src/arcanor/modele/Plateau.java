@@ -4,10 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Role : Cette classe modélise le Plateau de jeu de Arcanor
+ * Modélise le Plateau de jeu de Arcanor
  *
- * @author S.Bay ,M.Racine,M.Poiré G.Renault
- * *
+ * @author S.Bay, M.Poiré
  */
 public class Plateau implements Serializable {
 
@@ -20,7 +19,10 @@ public class Plateau implements Serializable {
     private ArrayList<Pion> lesPions;
 
     /**
-     * Role : Cette méthode permet de créer un objet Plateau
+     * Constructeur
+     *
+     * @param j1 le premier joueur
+     * @param j2 le deuxième joueur
      */
     public Plateau(Joueur j1, Joueur j2) {
         this.j1 = j1;
@@ -28,6 +30,9 @@ public class Plateau implements Serializable {
         initPions();
     }
 
+    /**
+    * permet d'initialiser les pions sur le plateau
+    */
     private void initPions() {
 
         this.lesPions = new ArrayList<>();
@@ -70,6 +75,8 @@ public class Plateau implements Serializable {
      * @param lePion le pion que l'on souhaite deplacer
      * @param i      le numéro du déplacement a effectuer
      * @param libere true si on libère le pion caché, faux sinon
+     * @param g permet de savoir s'il s'agit d'une interface graphique ou non
+     * @return true si le pion est déplacé
      */
     public boolean deplacerPion(Pion lePion, int i, boolean libere, boolean g) {
         boolean ret = false;
@@ -122,7 +129,7 @@ public class Plateau implements Serializable {
     }
 
     /**
-     * Role : Cette méthode permet de manger un pion
+     * Permet de manger un pion
      *
      * @param mangeur le pion qui mange
      * @param mange   le pion qui est mangé
@@ -133,7 +140,7 @@ public class Plateau implements Serializable {
     }
 
     /**
-     * Role : Cette méthode permet de connaitre les deplacements possible d'un pion
+     * Permet de connaitre les deplacements possible d'un pion
      *
      * @param lePion le pion que l'on veut deplacer
      * @return les coordonnées de déplacements possibles
@@ -219,7 +226,7 @@ public class Plateau implements Serializable {
     }
 
     /**
-     * Role : Cette méthode permet de recuperer un pion
+     * Permet de recuperer un pion à partir de son numéro
      *
      * @param num le numéro du pion
      * @return le pion correspondant dans la grille
@@ -254,7 +261,7 @@ public class Plateau implements Serializable {
     }
 
     /**
-     * Vérifie si les conditions de victoire du joueur passé en paramtètre sont réunies
+     * Vérifie si les conditions de victoire du joueur passé en paramètre sont réunies
      *
      * @param j le joueur a vérifié
      * @return true si le joueur a réuni les conditions de victoire, false sinon
@@ -285,8 +292,8 @@ public class Plateau implements Serializable {
     /**
      * permet de savoir si une case possède un pion ou non
      *
-     * @param x la première coordonnées
-     * @param y la deuxième coordonnée
+     * @param x la coordonnée en abcisse
+     * @param y la coordonnée en ordonnée
      */
     private boolean estLibre(int x, int y) {
         boolean ret = true;

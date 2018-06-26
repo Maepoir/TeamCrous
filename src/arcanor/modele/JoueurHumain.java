@@ -4,16 +4,16 @@ import java.io.Serializable;
 import java.util.Scanner;
 
 /**
- * Rôle :  Cette classe permet de modéliser un joueur humain
+ * Permet de modéliser un joueur humain
  *
  * @author M.Poiré, S.Bay
  */
 public class JoueurHumain extends Joueur implements Serializable {
 
     /**
-     * construit la classe IA
+     * Constructeur
      *
-     * @param nom     nom/pseudo  du joueur
+     * @param nom     nom  du joueur
      * @param couleur couleur des pions
      */
     public JoueurHumain(String nom, Couleur couleur) {
@@ -23,7 +23,7 @@ public class JoueurHumain extends Joueur implements Serializable {
     /**
      * permet de faire le choix de déplacement du pion
      *
-     * @return int le numéro correspondant au déplacement
+     * @return le numéro correspondant au déplacement
      */
     public int jouer() {
         int ret;

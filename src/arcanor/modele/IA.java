@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.Random;
 
 /**
- * Rôle :  Cette classe permet de modéliser l'intelligence artificielle
+ * Cette classe permet de modéliser l'intelligence artificielle
  * contre laquelle le joueur peu jouer lorsqu'il est seul.
  *
- * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
+ * @author M.Poiré, S.Bay
  */
 public class IA extends Joueur implements Serializable {
 
@@ -15,11 +15,11 @@ public class IA extends Joueur implements Serializable {
     private int difficulte;
 
     /**
-     * construit la classe IA
+     * Constructeur
      *
-     * @param niveau  difficulté choisie par le joueur
      * @param nom     nom/pseudo  du joueur
      * @param couleur couleur des pions
+     * @param niveau  difficulté choisie par le joueur
      */
     public IA(String nom, Couleur couleur, int niveau) {
         super(nom, couleur);
@@ -27,7 +27,7 @@ public class IA extends Joueur implements Serializable {
     }
 
     /**
-     * Rôle : permet de lancer une partie contre l'intelligence artificielle du jeu.
+     * Permet à l'intelligence artificielle de choisir un déplacement
      *
      * @return le déplacement choisi
      */
@@ -37,7 +37,7 @@ public class IA extends Joueur implements Serializable {
     }
 
     /**
-     * Rôle : permet d'accéder au niveau de difficulté de l'intelligenc artificielle en dehors de la classe IA
+     * Permet d'accéder au niveau de difficulté de l'intelligenc artificielle en dehors de la classe IA
      *
      * @return le niveau de difficulté de l'intelligence artificielle
      */
@@ -46,7 +46,7 @@ public class IA extends Joueur implements Serializable {
     }
 
     /**
-     * Rôle : permet de modifier le niveau de l'IA
+     * Permet de modifier le niveau de l'IA
      *
      * @param difficulte le nouveau niveau de difficulte
      */

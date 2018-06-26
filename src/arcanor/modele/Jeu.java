@@ -13,9 +13,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * Role :  Cette classe permet de modeliser le jeu d'Arcanor
+ * Cette classe permet de modeliser une partie de jeu d'Arcanor
  *
- * @author S.Bay ,M.Racine,M.Poiré G.Renault
+ * @author S.Bay, M.Poiré
  */
 public class Jeu implements Serializable {
 
@@ -41,11 +41,12 @@ public class Jeu implements Serializable {
 
 
     /**
-     * Role : permet de créer un objet Jeu avec des paramètres précis
+     * Constructeur
      *
      * @param joueur1       le premier Joueur
      * @param joueur2       le deuxième joueur
      * @param modeGraphique le mode d'affichage du jeu choisi
+     * @param ia le booleen correspondant à la présence(ou non) de l'ia
      */
     public Jeu(Joueur joueur1, Joueur joueur2, boolean modeGraphique, boolean ia) {
         this.joueur1 = joueur1;
@@ -56,6 +57,15 @@ public class Jeu implements Serializable {
         this.ia = ia;
     }
 
+    /**
+     * Constructeur
+     *
+     * @param joueur1       le premier Joueur
+     * @param joueur2       le deuxième joueur
+     * @param modeGraphique le mode d'affichage du jeu choisi
+     * @param ia le booleen correspondant à la présence(ou non) de l'ia
+     * @param fenMenu la fenetre permettant d'afficher le jeu en mode graphique
+     */
     public Jeu(Joueur joueur1, Joueur joueur2, boolean modeGraphique, boolean ia, MenuFen fenMenu) {
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
@@ -78,7 +88,7 @@ public class Jeu implements Serializable {
     }
 
     /**
-     * Role : Cette methode permet de charger une partie
+     * Permet de charger une partie en mode console
      *
      * @return le fichier chargé
      */
@@ -101,7 +111,7 @@ public class Jeu implements Serializable {
     }
 
     /**
-     * cette méthode permet de charger une partie en passant le nom en parametre
+     * Permet de charger une partie en passant le nom en parametre (mode graphique)
      *
      * @param chemin le chemin jusqu'à la sauvegarde
      * @return le fichier chargé
@@ -117,7 +127,7 @@ public class Jeu implements Serializable {
     }
 
     /**
-     * Role : Cette methode permet de sauvegarder une partie
+     * Permet de sauvegarder une partie
      *
      * @param chemin chemin pour la sauvegarde
      */
@@ -126,8 +136,7 @@ public class Jeu implements Serializable {
     }
 
     /**
-     * Role : Cette methode permet de changer la main d'un joueur pour la donner à
-     * l'autre
+     * Permet d'alterner les tours de jeu
      */
     private void changerMain() {
         if (this.aLaMain.equals(joueur1)) {
@@ -138,8 +147,7 @@ public class Jeu implements Serializable {
     }
 
     /**
-     * Role : permet de lancer un tutoriel pour apprendre au joueur à jouer à
-     * Arcanor
+     * Permet de lancer une explication de jeu au lancement d'Arcanor
      */
     private void tutoriel() {
         try {
@@ -209,7 +217,8 @@ public class Jeu implements Serializable {
      * Permet de choisir le pion à jouer pour la méthode debutPartie()
      *
      * @param ia permet de savoir si un joueur est un ia
-     * @return le nombre du pion à bouger
+     * @param g permet de savoir s'il s'agit de l'affichage graphique
+     * @return le numéro du pion à bouger
      */
     private int choixPion(boolean ia, boolean g) {
         Scanner sc = new Scanner(System.in);
@@ -270,6 +279,8 @@ public class Jeu implements Serializable {
      * Permet de choisir s'il faut libérer le pion ou non
      *
      * @param ia permet de savoir si un joueur est un ia
+     * @param aDeplacer le pion qu'il faut déplacer
+     * @return vrai s'il faut libérer le pion
      */
     private boolean libererPion(boolean ia, Pion aDeplacer) {
         Scanner sc = new Scanner(System.in);
@@ -339,18 +350,36 @@ public class Jeu implements Serializable {
         return joueur2;
     }
 
+    /**
+    * permet de savoir si l'utilisateur veut jouer contre l'IA
+    *
+    * @return vrai si il faut utiliser l'IA
+    */
     public boolean getIAPresente() {
         return ia;
     }
 
+    /**
+    * permet de modifier s'il faut libérer ou non le pion
+    */
     public void setEtat() {
         this.etat = !etat;
     }
 
+    /**
+    * permet de modifier s'il faut libérer ou non le pion
+    *
+    * @param etat le nouvel etat du pion
+    */
     public void setEtat(boolean etat){
         this.etat = etat;
     }
 
+    /**
+    * permet de changer le pion choisi pour jouer
+    *
+    * @param lePion le nouveau pion à déplacer
+    */
     public void setLePion(Pion lePion) {
         if (lePion.getLeJoueur().equals(this.aLaMain)) {
             this.lePion = lePion;
@@ -359,10 +388,20 @@ public class Jeu implements Serializable {
         }
     }
 
+    /**
+    * permet de modifier le déplacement choisi auparavant
+    *
+    * @param deplacement le nouveau déplacement à faire
+    */
     public void setDeplacement(int deplacement) {
         this.deplacement = deplacement;
     }
 
+    /**
+    * permet de déplacer les pions en mode graphique
+    *
+    * @return true si le déplacement a été fait
+    */
     public boolean deplacement() {
         boolean ret;
         boolean partieGagne;
@@ -394,6 +433,13 @@ public class Jeu implements Serializable {
         return ret;
     }
 
+    /**
+    * permet d'enregistrer les choix du joueur de déplacement sur l'interface graphique
+    *
+    * @param ia permet de savoir si l'IA doit jouer
+    * @param deplacementFait permet de savoir si le déplacement a été fait
+    * @param graphique permet de savoir si le jeu est en mode graphique
+    */
     private void deplacementAFaire(boolean ia, boolean deplacementFait, boolean graphique) {
         int pionChoisi;
         Pion aDeplacer;
@@ -432,6 +478,7 @@ public class Jeu implements Serializable {
 
     /**
      * Accesseur pour récuperer le pion
+     *
      * @return le pion choisi en graphique
      */
     public Pion getLePion() {

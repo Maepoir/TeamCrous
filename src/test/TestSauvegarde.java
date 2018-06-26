@@ -1,7 +1,12 @@
 package test;
-import static org.junit.Assert.*;
+
+import arcanor.modele.Couleur;
+import arcanor.modele.Jeu;
+import arcanor.modele.Joueur;
+import arcanor.modele.JoueurHumain;
 import org.junit.Test;
-import arcanor.modele.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class TestSauvegarde {
 
@@ -10,7 +15,7 @@ public class TestSauvegarde {
         String chemin = "../sauvegarde/save1";
         Joueur j1 = new JoueurHumain("Simon", Couleur.BLANC);
         Joueur j2 = new JoueurHumain("Simon", Couleur.NOIR);
-        Jeu jeu = new Jeu(j1,j2,false, false);
+        Jeu jeu = new Jeu(j1, j2, false, false);
         jeu.sauvegarderJeu(chemin);
         Jeu copieJeu = null;
         copieJeu.chargerJeu(chemin);

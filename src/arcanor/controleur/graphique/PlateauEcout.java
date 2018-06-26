@@ -1,13 +1,10 @@
 package arcanor.controleur.graphique;
 
 
-import arcanor.iu.graphique.Case;
 import arcanor.iu.graphique.MenuFen;
 import arcanor.modele.Pion;
 import arcanor.modele.Plateau;
 
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -22,7 +19,7 @@ public class PlateauEcout implements MouseListener {
     private Pion lePion;
 
 
-    public PlateauEcout(Plateau plateau, MenuFen menu, Pion lePion ) {
+    public PlateauEcout(Plateau plateau, MenuFen menu, Pion lePion) {
 
         this.plateau = plateau;
 
@@ -49,7 +46,6 @@ public class PlateauEcout implements MouseListener {
 
 
     public void mousePressed(MouseEvent e) {
-
 
 
     }

@@ -23,7 +23,7 @@ public class InfoBarre extends JPanel {
     }
 
     private void initComponents() {
-        setLayout(new GridLayout(2,1));
+        setLayout(new GridLayout(2, 1));
 
         nomJoueurs = new JLabel();
         nomJoueurs.setText("Cette partie oppose " + this.jeu.getJoueur1().getNom() + " a " + this.jeu.getJoueur2().getNom() + ".");
@@ -34,15 +34,15 @@ public class InfoBarre extends JPanel {
         add(joueurActuel);
     }
 
-    public void setText (Joueur j){
-        this.joueurActuel.setText("C'est au tour de " + j.getNom() + "de joueur !");
+    public void setText(Joueur j) {
+        this.joueurActuel.setText("C'est au tour de " + j.getNom() + " de jouer !");
     }
 
-    public void setText(String msg){
+    public void setText(String msg) {
         this.joueurActuel.setText(msg);
     }
 
-    public void messageVictoire (Joueur j){
+    public void messageVictoire(Joueur j) {
         remove(this.nomJoueurs);
         this.joueurActuel.setText("Victoire de " + j.getNom() + " !");
         this.joueurActuel.setFont(new Font("Arial", Font.PLAIN, 60));

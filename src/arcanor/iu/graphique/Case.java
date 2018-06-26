@@ -1,9 +1,6 @@
 package arcanor.iu.graphique;
 
-import arcanor.controleur.graphique.PlateauEcout;
-import arcanor.iu.console.PlateauTxt;
 import arcanor.modele.Couleur;
-import arcanor.modele.Pion;
 import arcanor.modele.Plateau;
 
 import javax.imageio.ImageIO;
@@ -24,7 +21,7 @@ public class Case extends JPanel {
     private int y;
     private Plateau plateau;
 
-    Case (int i, int j, Plateau p) {
+    Case(int i, int j, Plateau p) {
         this.plateau = p;
         try {
             setLayout(new FlowLayout(0, 0, 0));
@@ -88,7 +85,7 @@ public class Case extends JPanel {
         this.y = lePion.getY();
     }
 
-    public int getLeX(){
+    public int getLeX() {
         return this.x;
     }
 

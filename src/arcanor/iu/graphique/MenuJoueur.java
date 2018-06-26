@@ -87,12 +87,12 @@ public class MenuJoueur extends JPanel {
         return nomJoueur1;
     }
 
-    public String getNomJoueur2() {
-        return nomJoueur2;
-    }
-
     public void setNomJoueur1(String nomJoueur1) {
         this.nomJoueur1 = nomJoueur1;
+    }
+
+    public String getNomJoueur2() {
+        return nomJoueur2;
     }
 
     public void setNomJoueur2(String nomJoueur2) {

@@ -1,7 +1,5 @@
 package arcanor.modele;
 
-import arcanor.iu.console.PlateauTxt;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -76,20 +74,19 @@ public class Plateau implements Serializable {
         int x = deplacementPossibles(lePion)[i][0];
         int y = deplacementPossibles(lePion)[i][1];
         if (x != -1 && y != -1) {
-            if(estLibre(x,y) || (!estLibre(x,y) && (getPion(x,y).getTAILLE() < lePion.getTAILLE()))){
-              lePion.setXY(x, y);
-              ret = true;
+            if (estLibre(x, y) || (!estLibre(x, y) && (getPion(x, y).getTAILLE() < lePion.getTAILLE()))) {
+                lePion.setXY(x, y);
+                ret = true;
 
-              //gérer libération des pions
-              if (libere && lePion.getAMange() != null) {
-                  lePion.getAMange().setEstMange(false);
-                  lePion.setEstMange(false);
+                //gérer libération des pions
+                if (libere && lePion.getAMange() != null) {
+                    lePion.getAMange().setEstMange(false);
+                    lePion.setEstMange(false);
                 } else if (!libere && lePion.getAMange() != null) {
-                  lePion.getAMange().setXY(x, y);
+                    lePion.getAMange().setXY(x, y);
                 }
-            }
-            else{
-              System.out.println("Vous ne pouvez pas manger un pion plus gros !");
+            } else {
+                System.out.println("Vous ne pouvez pas manger un pion plus gros !");
             }
 
 
@@ -277,18 +274,26 @@ public class Plateau implements Serializable {
         return this.j2;
     }
 
-    /** permet de savoir si une case possède un pion ou non
-    * @param x la première coordonnées
-    * @param y la deuxième coordonnée */
-    public boolean estLibre(int x, int y){
-      boolean ret = true;
-      if(getPion(x,y) != null){
-        ret = false;
-      }
-      return ret;
+    /**
+     * permet de savoir si une case possède un pion ou non
+     *
+     * @param x la première coordonnées
+     * @param y la deuxième coordonnée
+     */
+    public boolean estLibre(int x, int y) {
+        boolean ret = true;
+        if (getPion(x, y) != null) {
+            ret = false;
+        }
+        return ret;
     }
-    
-    /**permet d'accéder à la liste de tous les pions
-    * @return la liste de tous les pions */
-    public ArrayList<Pion> getPions(){return this.lesPions;}
+
+    /**
+     * permet d'accéder à la liste de tous les pions
+     *
+     * @return la liste de tous les pions
+     */
+    public ArrayList<Pion> getPions() {
+        return this.lesPions;
+    }
 }

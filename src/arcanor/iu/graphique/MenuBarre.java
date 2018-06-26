@@ -186,7 +186,7 @@ public class MenuBarre extends JPanel {
         return this.valider;
     }
 
-    public void deplacer (){
+    public void deplacer(){
         if(!this.jeu.deplacement()){
             this.infos.setText("Veuillez jouer un coup correct");
         }

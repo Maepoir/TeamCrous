@@ -1,8 +1,9 @@
 package arcanor.controleur.graphique;
 
-import java.awt.event.*;
+import arcanor.iu.graphique.MenuFen;
 
-import arcanor.iu.graphique.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * permet de mettre à l'écoute tous les boutons de l'application
@@ -19,17 +20,16 @@ public class MenuFenEcout implements ActionListener {
 
     /**
      * permet de définir l'action à faire selon le bouton qui a été cliqué
+     *
      * @param e la nature de l'action
      */
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(this.menu.getNouvPartie())) {
             this.menu.actionJoueur();
-        }
-        else if(e.getSource().equals(this.menu.getCharger())){
-          this.menu.actionChargement();
-        }
-        else if(e.getSource().equals(this.menu.getQuitter())){
-          System.exit(0);
+        } else if (e.getSource().equals(this.menu.getCharger())) {
+            this.menu.actionChargement();
+        } else if (e.getSource().equals(this.menu.getQuitter())) {
+            System.exit(0);
         }
     }
 }

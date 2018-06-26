@@ -2,7 +2,10 @@ package arcanor;
 
 import arcanor.modele.Jeu;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * Rôle :  Cette classe permet de modéliser une sauvegarde au cours de partie
@@ -19,10 +22,9 @@ public class Sauvegarde {
     public static void sauvegarder(String chemin, Jeu jeu) {
         try {
             ObjectOutputStream fichier = new ObjectOutputStream(new FileOutputStream("../sauvegarde/" + chemin));
-            if(jeu != null){
+            if (jeu != null) {
                 fichier.writeObject(jeu);
-            }
-            else{
+            } else {
                 System.out.println("Pb de sauvegarde");
             }
             fichier.close();

@@ -16,7 +16,7 @@ public class MenuTxt {
      */
     public static void afficherMenu() {
         boolean iaPresente = false;
-        String ia ="";
+        String ia = "";
         Scanner sc = new Scanner(System.in);
 
         Jeu.blanc();
@@ -42,7 +42,7 @@ public class MenuTxt {
             Joueur j2;
 
             ia = sc.nextLine();
-            while(!ia.equals("o") && !ia.equals("n")) {
+            while (!ia.equals("o") && !ia.equals("n")) {
                 System.out.println("Veuillez saisir une entree correcte");
                 ia = sc.nextLine();
             }
@@ -65,12 +65,10 @@ public class MenuTxt {
             Jeu jeu = new Jeu(j1, j2, modeGraphique, iaPresente);
 
             jeu.debutPartie(iaPresente);
-        }
-        else if (choix == 2) {
+        } else if (choix == 2) {
             Jeu jeu = Jeu.chargerJeu();
             jeu.debutPartie(jeu.getIAPresente());
-        }
-        else {
+        } else {
             System.out.println("Merci d'avoir lancé Arcanor, à bientôt ! <3");
             System.exit(0);
         }

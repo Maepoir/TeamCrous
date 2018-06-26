@@ -3,15 +3,14 @@ package arcanor.modele;
 import arcanor.Sauvegarde;
 import arcanor.iu.console.MenuTxt;
 import arcanor.iu.console.PlateauTxt;
-import arcanor.iu.graphique.*;
+import arcanor.iu.graphique.MenuFen;
 
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
-import java.awt.event.*;
-import java.awt.*;
 
 /**
  * Role :  Cette classe permet de modeliser le jeu d'Arcanor
@@ -57,13 +56,14 @@ public class Jeu implements Serializable {
         this.ia = ia;
     }
 
-    public Jeu(Joueur joueur1, Joueur joueur2, boolean modeGraphique, MenuFen fenMenu) {
+    public Jeu(Joueur joueur1, Joueur joueur2, boolean modeGraphique, boolean ia, MenuFen fenMenu) {
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
         this.lePlateau = new Plateau(this.joueur1, this.joueur2);
         this.modeGraphique = modeGraphique;
         this.aLaMain = this.joueur1;
         this.fenMenu = fenMenu;
+        this.ia = ia;
     }
 
     /**
@@ -79,6 +79,7 @@ public class Jeu implements Serializable {
 
     /**
      * Role : Cette methode permet de charger une partie
+     *
      * @return le fichier chargé
      */
 
@@ -99,18 +100,20 @@ public class Jeu implements Serializable {
         return ret;
     }
 
-    /** cette méthode permet de charger une partie en passant le nom en parametre
-    * @param chemin le chemin jusqu'à la sauvegarde
-    * @return le fichier chargé */
-    public static Jeu chargerJeu(String chemin){
-      Jeu ret = null;
-      if(Sauvegarde.charger(chemin) != null){
-        ret = Sauvegarde.charger(chemin);
-      }
-      else{
-        EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
-      }
-      return ret;
+    /**
+     * cette méthode permet de charger une partie en passant le nom en parametre
+     *
+     * @param chemin le chemin jusqu'à la sauvegarde
+     * @return le fichier chargé
+     */
+    public static Jeu chargerJeu(String chemin) {
+        Jeu ret = null;
+        if (Sauvegarde.charger(chemin) != null) {
+            ret = Sauvegarde.charger(chemin);
+        } else {
+            EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
+        }
+        return ret;
     }
 
     /**
@@ -178,13 +181,7 @@ public class Jeu implements Serializable {
             while (!partieGagne) {
                 System.out.println("C'est au tour de " + this.aLaMain.getNom());
 
-                while (!deplacementFait) {
-                    choixPion = choixPion(ia);
-                    aDeplacer = lePlateau.getPion(choixPion);
-                    placement = this.aLaMain.jouer();
-                    libererPion = libererPion(ia, aDeplacer);
-                    deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement, libererPion);
-                }
+                deplacementAFaire(ia, deplacementFait);
                 Jeu.blanc();
                 PlateauTxt.afficherPlateau(this.getLePlateau());
                 partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
@@ -349,53 +346,67 @@ public class Jeu implements Serializable {
     }
 
     public void setEtat() {
-        if(etat){
-            this.etat= false;
-        }
-        else{
-            this.etat= true;
+        if (etat) {
+            this.etat = false;
+        } else {
+            this.etat = true;
         }
     }
 
-    public void setLePion (Pion lePion){
-        if(lePion.getLeJoueur().equals(this.aLaMain)){
+    public void setLePion(Pion lePion) {
+        if (lePion.getLeJoueur().equals(this.aLaMain)) {
             this.lePion = lePion;
-        }
-        else{
+        } else {
             System.out.println("Ce n'est pas l'un de vos pions");
         }
     }
 
-    public void setDeplacement (int deplacement){
+    public void setDeplacement(int deplacement) {
         this.deplacement = deplacement;
     }
 
-    public boolean deplacement (){
+    public boolean deplacement() {
         boolean ret;
-        boolean partieGagne = false;
+        boolean partieGagne;
+        boolean deplacementFait = false;
 
-        if(this.deplacement != -1 && this.lePion != null){
+        if (this.deplacement != -1 && this.lePion != null) {
             ret = this.lePlateau.deplacerPion(this.lePion, this.deplacement, this.etat);
-            if(ret){
+            if (ret) {
                 partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
-                if(partieGagne){
+                if (partieGagne) {
                     this.fenMenu.getBarreInfo().messageVictoire(aLaMain);
-                }
-                else {
+                } else {
                     changerMain();
+                    if (ia) {
+                        deplacementAFaire(ia, deplacementFait);
+                    }
                     this.fenMenu.getBarreInfo().setText(this.aLaMain);
                     this.fenMenu.repaint();
                     this.fenMenu.revalidate();
                 }
             }
-        }
-        else{
+        } else {
             ret = false;
         }
         this.deplacement = -1;
-        this.lePion=null;
+        this.lePion = null;
 
         return ret;
+    }
+
+    private void deplacementAFaire(boolean ia, boolean deplacementFait) {
+        int pionChoisi;
+        Pion aDeplacer;
+        int placement;
+        boolean libererPion;
+        while (!deplacementFait) {
+            pionChoisi = choixPion(ia);
+            aDeplacer = lePlateau.getPion(pionChoisi);
+            placement = this.aLaMain.jouer();
+            libererPion = libererPion(ia, aDeplacer);
+            deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement, libererPion);
+        }
     }
 
 }

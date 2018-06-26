@@ -1,11 +1,11 @@
 package arcanor.iu.graphique;
 
-import arcanor.controleur.graphique.*;
+import arcanor.controleur.graphique.MenuFenEcout;
 import arcanor.modele.Jeu;
 import arcanor.modele.Joueur;
+
 import javax.swing.*;
 import java.awt.*;
-import java.util.*;
 
 /**
  * affiche graphiquement le menu avec les options de jeu disponibles
@@ -36,12 +36,12 @@ public class MenuFen extends JFrame {
     //Partie
     private Jeu jeu;
 
-    public static void main(String args[]) {
-        EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
-    }
-
     public MenuFen() {
         initComponents();
+    }
+
+    public static void main(String args[]) {
+        EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
     }
 
     /**
@@ -94,9 +94,11 @@ public class MenuFen extends JFrame {
     }
 
 
-    /** s'actionne pour afficher le plateau de jeu */
-    public void actionNouvPartie(Joueur j1, Joueur j2) {
-        this.jeu = new Jeu(j1, j2, true, this);
+    /**
+     * s'actionne pour afficher le plateau de jeu
+     */
+    public void actionNouvPartie(Joueur j1, Joueur j2, boolean ia) {
+        this.jeu = new Jeu(j1, j2, true, ia, this);
         this.fenetreJeu = new Plateau(jeu.getLePlateau(), this);
         this.barreInfo = new InfoBarre(jeu);
         this.menuBarre = new MenuBarre(this.barreInfo, this.jeu, this);
@@ -109,42 +111,56 @@ public class MenuFen extends JFrame {
         pack();
     }
 
-    public InfoBarre getBarreInfo (){
+    public InfoBarre getBarreInfo() {
         return this.barreInfo;
     }
 
-    public void deplacerPion (){
+    public void deplacerPion() {
         this.jeu.getaLaMain();
     }
 
-    /**permet d'accéder au bouton de nouvelle partie */
-    public JButton getNouvPartie() {return this.nouvPartie;}
-
-    /**permet d'accéder au bouton pour l'écouteur */
-    public JButton getCharger(){return this.charger;}
-
-    /**permet d'accéder au bouton pour l'écouteur */
-    public JButton getQuitter(){return this.quitter;}
-
-
-    /**s'actionne lorsque l'utilisateur appuie sur charger une partie */
-    public void actionChargement(){
-      remove(this.sousPan);
-      this.menuCharger = new MenuCharger(this);
-      add(this.menuCharger,"Center");
-      repaint();
-      revalidate();
-      setSize(400,300);
+    /**
+     * permet d'accéder au bouton de nouvelle partie
+     */
+    public JButton getNouvPartie() {
+        return this.nouvPartie;
     }
 
-    public Plateau getFenetreJeu(){
-      return this.fenetreJeu;
+    /**
+     * permet d'accéder au bouton pour l'écouteur
+     */
+    public JButton getCharger() {
+        return this.charger;
     }
 
-    public void actualise (arcanor.modele.Plateau plateau){
+    /**
+     * permet d'accéder au bouton pour l'écouteur
+     */
+    public JButton getQuitter() {
+        return this.quitter;
+    }
+
+
+    /**
+     * s'actionne lorsque l'utilisateur appuie sur charger une partie
+     */
+    public void actionChargement() {
+        remove(this.sousPan);
+        this.menuCharger = new MenuCharger(this);
+        add(this.menuCharger, "Center");
+        repaint();
+        revalidate();
+        setSize(400, 300);
+    }
+
+    public Plateau getFenetreJeu() {
+        return this.fenetreJeu;
+    }
+
+    public void actualise(arcanor.modele.Plateau plateau) {
         remove(this.fenetreJeu);
         this.fenetreJeu = new Plateau(jeu.getLePlateau(), this);
-        add(this.fenetreJeu,"Center");
+        add(this.fenetreJeu, "Center");
         repaint();
         revalidate();
         pack();

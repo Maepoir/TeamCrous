@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Role : Cette classe permet de modéliser une pièce du jeu Arcanor
  *
  * @author S.Bay ,M.Racine,M.Poiré G.Renault
- * Case d'utilisation :
+ * Cas d'utilisation :
  * int TAILLE = 3
  * Pion p = new Pion ( TAILLE );
  */

@@ -24,7 +24,7 @@ public class Case extends JPanel {
     private int y;
     private Plateau plateau;
 
-    Case (int i, int j, Plateau p, MenuFen menu) {
+    Case (int i, int j, Plateau p) {
         this.plateau = p;
         try {
             setLayout(new FlowLayout(0, 0, 0));
@@ -35,10 +35,9 @@ public class Case extends JPanel {
         }
         this.x = i;
         this.y = j;
-        addMouseListener(new PlateauEcout(this.plateau, menu));
     }
 
-    Case(arcanor.modele.Pion lePion, Plateau p, MenuFen menu) {
+    Case(arcanor.modele.Pion lePion, Plateau p) {
         this.plateau = p;
 
         try {
@@ -87,7 +86,6 @@ public class Case extends JPanel {
         }
         this.x = lePion.getX();
         this.y = lePion.getY();
-        addMouseListener(new PlateauEcout(this.plateau,menu));
     }
 
     public int getLeX(){
@@ -95,7 +93,7 @@ public class Case extends JPanel {
     }
 
     public int getLeY() {
-        return y;
+        return this.y;
     }
 
 }

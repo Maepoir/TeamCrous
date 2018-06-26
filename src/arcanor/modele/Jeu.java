@@ -35,6 +35,10 @@ public class Jeu implements Serializable {
     //Graphique
     //Fenetre de jeu
     private MenuFen fenMenu;
+    //Pour le deplacement
+    private Pion lePion;
+    private int deplacement = -1;
+    private boolean etat;
 
 
     /**
@@ -114,17 +118,8 @@ public class Jeu implements Serializable {
      *
      * @param chemin chemin pour la sauvegarde
      */
-    private void sauvegarderJeu(String chemin) {
+    public void sauvegarderJeu(String chemin) {
         Sauvegarde.sauvegarder(chemin, this);
-    }
-
-    /**
-     * Role : Cette methode permet de changer l'affichage d'un pion (mode triche)
-     *
-     * @param lePion le pion pour lequel il faut changer l'affichage
-     */
-    public void changerAffichagePion(Pion lePion, boolean affichage) {
-        lePion.setAfficherManger(affichage);
     }
 
     /**
@@ -190,6 +185,8 @@ public class Jeu implements Serializable {
                     libererPion = libererPion(ia, aDeplacer);
                     deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement, libererPion);
                 }
+                Jeu.blanc();
+                PlateauTxt.afficherPlateau(this.getLePlateau());
                 partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
 
                 if (!partieGagne) {
@@ -212,24 +209,6 @@ public class Jeu implements Serializable {
                 deplacementFait = false;
             }
             System.out.println("Fin du jeu ! Victoire de " + this.aLaMain.getNom() + " !! :)");
-        } else {
-
-            while(!partieGagne){
-
-                while(!deplacementFait){
-
-                    partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
-
-                    if(!partieGagne){
-                        changerMain();
-                        this.fenMenu.getBarreInfo().setText(this.aLaMain);
-                        this.fenMenu.repaint();
-                        this.fenMenu.revalidate();
-                    }
-                }
-
-            }
-            this.fenMenu.getBarreInfo().messageVictoire(aLaMain);
         }
     }
 
@@ -368,4 +347,55 @@ public class Jeu implements Serializable {
     public boolean getIAPresente() {
         return ia;
     }
+
+    public void setEtat() {
+        if(etat){
+            this.etat= false;
+        }
+        else{
+            this.etat= true;
+        }
+    }
+
+    public void setLePion (Pion lePion){
+        if(lePion.getLeJoueur().equals(this.aLaMain)){
+            this.lePion = lePion;
+        }
+        else{
+            System.out.println("Ce n'est pas l'un de vos pions");
+        }
+    }
+
+    public void setDeplacement (int deplacement){
+        this.deplacement = deplacement;
+    }
+
+    public boolean deplacement (){
+        boolean ret;
+        boolean partieGagne = false;
+
+        if(this.deplacement != -1 && this.lePion != null){
+            ret = this.lePlateau.deplacerPion(this.lePion, this.deplacement, this.etat);
+            if(ret){
+                partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
+                if(partieGagne){
+                    this.fenMenu.getBarreInfo().messageVictoire(aLaMain);
+                }
+                else {
+                    changerMain();
+                    this.fenMenu.getBarreInfo().setText(this.aLaMain);
+                    this.fenMenu.repaint();
+                    this.fenMenu.revalidate();
+                }
+            }
+        }
+        else{
+            ret = false;
+        }
+        this.deplacement = -1;
+        this.lePion=null;
+
+        return ret;
+    }
+
 }

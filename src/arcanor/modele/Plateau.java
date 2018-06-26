@@ -97,8 +97,6 @@ public class Plateau implements Serializable {
             System.out.println("Déplacement hors des limites, veuillez choisir un autre déplacement s'il vous plait.");
         }
 
-        Jeu.blanc();
-        PlateauTxt.afficherPlateau(this);
         return ret;
     }
 

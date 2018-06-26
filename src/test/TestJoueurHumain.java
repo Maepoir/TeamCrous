@@ -11,13 +11,13 @@ public class TestJoueurHumain {
   @Test
   public void testNom(){
     // Cas Normal : le nom entré est une chaine remplie
-    Joueur joueur = new Joueur("Sim",Couleur_BLANC);
+    Joueur joueur = new JoueurHumain("Sim",Couleur.BLANC);
     joueur.setNom("Maë");
     String nom = "Maë";
     assertEquals(nom,joueur.getNom());
 
     // Cas Limite : le nom entré est une chaine vide
-    joueur = new Joueur("",color,true);
+    joueur = new JoueurHumain("",Couleur.AUCUN);
     joueur.setNom("Maë");
     assertEquals(nom,joueur.getNom());
   }
@@ -25,10 +25,10 @@ public class TestJoueurHumain {
   @Test
   public void testColor(){
     // Cas Normal : la couleur est valide
-    Joueur joueur = new Joueur("Maë",Couleur_NOIR);
-    Couleur couleur = COULEUR_BLANC;
+    Joueur joueur = new JoueurHumain("Maë",Couleur.NOIR);
+    Couleur couleur = Couleur.BLANC;
     joueur.setColor(couleur);
-    assertEquals(color,joueur.getColor());
+    assertEquals(Couleur.BLANC,joueur.getColor());
   }
 
 }

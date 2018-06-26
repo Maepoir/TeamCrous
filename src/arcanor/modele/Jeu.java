@@ -399,6 +399,27 @@ public class Jeu implements Serializable {
         while (!deplacementFait) {
             pionChoisi = choixPion(ia, graphique);
             aDeplacer = lePlateau.getPion(pionChoisi);
+            if(!ia || aLaMain.equals(joueur1)){
+                System.out.println("Voulez vous reveler ce qui se trouve sous votre pion ? (o/n)");
+                Scanner sc = new Scanner(System.in);
+                String saisie = sc.nextLine();
+                while (!saisie.equals("o") && !saisie.equals("n")){
+                    System.out.println("Veuillez realiser une saisie correcte.");
+                }
+                if(saisie.equals("o")){
+                    if(aDeplacer.getAMange() != null){
+                        if(aDeplacer.getLeJoueur().equals(aLaMain)) {
+                            System.out.println("\nVotre pion contient un autre de vos pion de taille " + aDeplacer.getAMange().getTAILLE() + "\n");
+                        }
+                        else{
+                            System.out.println("\nVotre pion contient un pion adverse de taille " + aDeplacer.getAMange().getTAILLE() + "\n");
+                        }
+                    }
+                    else{
+                        System.out.println("\nVotre pion n'a rien a declarer.\n");
+                    }
+                }
+            }
             placement = this.aLaMain.jouer();
             libererPion = libererPion(ia, aDeplacer);
             deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement, libererPion, graphique);

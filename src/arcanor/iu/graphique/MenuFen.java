@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * affiche graphiquement le menu avec les options de jeu disponibles
+ * affiche graphiquement toutes les composantes de l'interface
  *
  * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
  */
@@ -33,18 +33,17 @@ public class MenuFen extends JFrame {
     //Partie
     private Jeu jeu;
 
+    /**
+    * Constructeur
+    */
     public MenuFen() {
-        initComposantes();
-    }
-
-    public static void main(String args[]) {
-        EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
+        initComposants();
     }
 
     /**
-     * affichage du premier menu
+     * affichage du premier menu et initialisation de ses composants
      */
-    private void initComposantes() {
+    private void initComposants() {
         setTitle("<3 Arcanor <3");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,6 +109,9 @@ public class MenuFen extends JFrame {
         pack();
     }
 
+    /**
+     * s'actionne pour afficher le plateau de jeu lors d'un chargement de partie
+     */
     public void actionNouvPartie(Jeu jeu){
         this.jeu = jeu;
         this.jeu.setEtat(false);
@@ -125,12 +127,19 @@ public class MenuFen extends JFrame {
         pack();
     }
 
+    /**
+    * permet d'accéder à la barre d'infos du jeu
+    *
+    * @return la barre d'informations InfoBarre
+    */
     public InfoBarre getBarreInfo() {
         return this.barreInfo;
     }
 
     /**
      * permet d'accéder au bouton de nouvelle partie
+     *
+     * @return le bouton de nouvelle partie
      */
     public JButton getNouvPartie() {
         return this.nouvPartie;
@@ -138,6 +147,8 @@ public class MenuFen extends JFrame {
 
     /**
      * permet d'accéder au bouton pour l'écouteur
+     *
+     * @return le bouton de chargement de partie
      */
     public JButton getCharger() {
         return this.charger;
@@ -145,6 +156,8 @@ public class MenuFen extends JFrame {
 
     /**
      * permet d'accéder au bouton pour l'écouteur
+     *
+     * @return le bouton pour quitter l'interface
      */
     public JButton getQuitter() {
         return this.quitter;
@@ -164,6 +177,9 @@ public class MenuFen extends JFrame {
         setSize(400, 300);
     }
 
+    /**
+    * permet d'actualiser le plateau de jeu
+    */
     void actualise() {
         remove(this.fenetreJeu);
         this.fenetreJeu = new Plateau(jeu.getLePlateau(), this);
@@ -173,6 +189,10 @@ public class MenuFen extends JFrame {
         pack();
     }
 
+    /**
+    * permet d'accéder à la partie en train d'être jouée
+    *
+    * @return le jeu en train d'être jouée */
     public Jeu getJeu() {
         return jeu;
     }

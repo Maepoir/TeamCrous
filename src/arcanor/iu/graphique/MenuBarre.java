@@ -39,6 +39,13 @@ public class MenuBarre extends JPanel {
     //Revelation de ce que contient le pion
     private JButton revelation;
 
+    /**
+    * Constructeur
+    *
+    * @param infos la barre d'info du jeu
+    * @param jeu le jeu à jouer sur l'interface
+    * @param menu la fenetre permettant d'afficher l'interface
+    */
     MenuBarre(InfoBarre infos, Jeu jeu, MenuFen menu) {
         this.infos = infos;
         this.jeu = jeu;
@@ -46,6 +53,9 @@ public class MenuBarre extends JPanel {
         initComposants();
     }
 
+    /**
+    * permet d'initialiser les composants
+    */
     private void initComposants() {
 
         this.sauvegarder = new JButton("Sauvegarder");
@@ -141,66 +151,139 @@ public class MenuBarre extends JPanel {
         add(quitter);
     }
 
+    /**
+    * permet d'accéder au bouton sauvegarder
+    *
+    * @return le JButton sauvegarder */
     public JButton getSauvegarder() {
         return sauvegarder;
     }
 
+    /**
+    * permet d'accéder au chemin de sauvegarde saisi par l'utilisateur
+    *
+    * @return le JTextField avec le chemin
+    */
     public JTextField getChemin() {
         return chemin;
     }
 
+    /**
+    * permet d'accéder au bouton quitter
+    *
+    * @return le JButton quitter
+    */
     public JButton getQuitter() {
         return quitter;
     }
 
+    /**
+    * permet d'accéder au choix de l'utilisateur sur la libération d'un pion
+    *
+    * @return la JCheckBox liberer
+    */
     public JCheckBox getLiberer() {
         return liberer;
     }
 
+    /**
+    * permet d'accéder à la barre d'informations
+    *
+    * @return la barre d'informations InfoBarre
+    */
     public InfoBarre getInfos() {
         return infos;
     }
 
+    /**
+    * permet de savoir si le joueur veut aller à droite
+    *
+    * @return le bouton de déplacement à droite*/
     public BasicArrowButton getDroite() {
         return droite;
     }
 
+    /**
+    * permet de savoir si le joueur veut aller en haut
+    *
+    * @return le bouton de déplacement en haut*/
     public BasicArrowButton getHaut() {
         return haut;
     }
 
+    /**
+    * permet de savoir si le joueur veut aller en haut à droite
+    *
+    * @return le bouton de déplacement en haut à droite*/
     public BasicArrowButton getHautDroite() {
         return hautDroite;
     }
 
+    /**
+    * permet de savoir si le joueur veut aller en haut à gauche
+    *
+    * @return le bouton de déplacement en haut à gauche*/
     public BasicArrowButton getHautGauche() {
         return hautGauche;
     }
 
+    /**
+    * permet de savoir si le joueur veut aller en bas
+    *
+    * @return le bouton de déplacement en bas
+    */
     public BasicArrowButton getBas() {
         return bas;
     }
 
+    /**
+    * permet de savoir si le joueur veut aller en bas à droite
+    *
+    * @return le bouton de déplacement en bas à droite
+    */
     public BasicArrowButton getBasDroite() {
         return basDroite;
     }
 
+    /**
+    * permet de savoir si le joueur veut aller en bas à gauche
+    *
+    * @return le bouton de déplacement en bas à gauche
+    */
     public BasicArrowButton getBasGauche() {
         return basGauche;
     }
 
+    /**
+    * permet de savoir si le joueur veut aller à gauche
+    *
+    * @return le bouton de déplacement à gauche
+    */
     public BasicArrowButton getGauche() {
         return gauche;
     }
 
+    /**
+    * permet d'accéder au bouton de validation
+    *
+    * @return le bouton "valider"
+    */
     public JButton getValider() {
         return this.valider;
     }
 
+    /**
+    * permet de savoir si le joueur veut voir ce qu'il y a sous ses pions
+    *
+    * @return le bouton de revelation des pions
+    */
     public JButton getRevelation() {
         return this.revelation;
     }
 
+    /**
+    * permet de gérer si le joueur choisit un déplacement non valide
+    */
     public void deplacer() {
         if (!this.jeu.deplacement()) {
             this.infos.setText("Veuillez jouer un coup correct");

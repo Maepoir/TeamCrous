@@ -8,15 +8,24 @@ import java.awt.*;
 /**
  * represente graphiquement le plateau de jeu
  *
- * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
+ * @author M.Poiré, S.Bay
  */
 class Plateau extends JPanel {
 
+    /**
+    * Constructeur
+    */
     Plateau(arcanor.modele.Plateau plateau, MenuFen menu) {
-        initComposantes(plateau, menu);
+        initComposants(plateau, menu);
     }
 
-    private void initComposantes(arcanor.modele.Plateau plateau, MenuFen menu) {
+    /**
+    * permet d'initialiser les composants du plateau de jeu
+    *
+    * @param plateau le plateau de jeu du modèle avec le placement des pions
+    * @param menu la fenetre qui permettra d'afficher le plateau
+    */
+    private void initComposants(arcanor.modele.Plateau plateau, MenuFen menu) {
         setLayout(new GridLayout(8, 7, 0, 0));
         for (int i = 0; i < 8; i++) {
             JPanel pan = new JPanel();

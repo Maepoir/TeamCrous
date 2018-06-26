@@ -11,9 +11,9 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * represente graphiquement un pion du jeu
+ * represente graphiquement une case du jeu
  *
- * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
+ * @author M.Poiré, S.Bay
  */
 public class Case extends JPanel {
 
@@ -32,6 +32,7 @@ public class Case extends JPanel {
 
     /**
      * Constructeur pour une case avec un pion
+     *
      * @param lePion le pion présent dans la case
      */
     public Case(arcanor.modele.Pion lePion) {

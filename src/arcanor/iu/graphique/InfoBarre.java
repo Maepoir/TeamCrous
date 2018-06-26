@@ -9,7 +9,7 @@ import java.awt.*;
 /**
  * represente graphiquement une barre d'info pour savoir qui à la main sur le jeu
  *
- * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
+ * @author M.Poiré, S.Bay
  */
 public class InfoBarre extends JPanel {
 
@@ -19,14 +19,18 @@ public class InfoBarre extends JPanel {
 
     /**
      * Constructeur de la barre d'info présente en bas de la fenetre de jeu
+     *
      * @param jeu Le jeu sur lequel la barre donne ses infos
      */
     InfoBarre(Jeu jeu) {
         this.jeu = jeu;
-        initComposantes();
+        initComposants();
     }
 
-    private void initComposantes() {
+    /**
+    * permet d'initialiser tous les composants du panel graphique
+    */
+    private void initComposants() {
         setLayout(new GridLayout(2, 1));
 
         nomJoueurs = new JLabel();
@@ -38,14 +42,26 @@ public class InfoBarre extends JPanel {
         add(joueurActuel);
     }
 
+    /**
+    * permet de modifier le texte de la barre d'état
+    *
+    * @param j le joueur qui prend la main sur le jeu */
     public void setText(Joueur j) {
         this.joueurActuel.setText("C'est au tour de " + j.getNom() + " de jouer !");
     }
 
+    /**
+    * permet de modifier le texte de la barre d'état
+    *
+    * @param msg le nouveau message à afficher sur la barre */
     public void setText(String msg) {
         this.joueurActuel.setText(msg);
     }
 
+    /**
+    * permet d'afficher le message de victoire
+    *
+    * @param j le joueur qui a gagné */
     public void messageVictoire(Joueur j) {
         remove(this.nomJoueurs);
         this.joueurActuel.setText("Victoire de " + j.getNom() + " !");

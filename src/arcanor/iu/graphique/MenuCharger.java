@@ -8,8 +8,10 @@ import java.awt.*;
 public class MenuCharger extends JPanel {
 
     private JTextField text;
+    private MenuFen menu;
 
-    MenuCharger() {
+    MenuCharger(MenuFen menu) {
+        this.menu = menu;
         initComposantes();
     }
 
@@ -35,5 +37,9 @@ public class MenuCharger extends JPanel {
 
     public JTextField getNomSauv() {
         return this.text;
+    }
+
+    public MenuFen getMenu (){
+        return this.menu;
     }
 }

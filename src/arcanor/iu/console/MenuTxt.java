@@ -38,7 +38,7 @@ public class MenuTxt {
             System.out.println("Saisir nom du joueur 1 :");
             String nom1 = sc.next();
             JoueurHumain j1 = new JoueurHumain(nom1, Couleur.BLANC);
-            System.out.println("Jouer contre un IA ?(o/n)");
+            System.out.println("\nJouer contre un IA ?(o/n)");
             Joueur j2;
 
             ia = sc.nextLine();
@@ -48,12 +48,12 @@ public class MenuTxt {
             }
 
             if (ia.equals("o")) {
-                System.out.println("Saisir nom de l'IA : ");
+                System.out.println("\nSaisir nom de l'IA : ");
                 String nom2 = sc.nextLine();
                 j2 = new IA(nom2, Couleur.NOIR, 1);
                 iaPresente = true;
             } else {
-                System.out.println("Saisir nom du joueur 2 : ");
+                System.out.println("\nSaisir nom du joueur 2 : ");
                 String nom2 = sc.nextLine();
                 j2 = new JoueurHumain(nom2, Couleur.NOIR);
             }
@@ -69,7 +69,7 @@ public class MenuTxt {
             Jeu jeu = Jeu.chargerJeu();
             jeu.debutPartie(jeu.getIAPresente());
         } else {
-            System.out.println("Merci d'avoir lance Arcanor, a bientot ! <3");
+            System.out.println("\nMerci d'avoir lance Arcanor, a bientot ! <3");
             System.exit(0);
         }
     }

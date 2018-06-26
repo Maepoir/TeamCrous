@@ -22,6 +22,7 @@ public class MenuFen extends JFrame {
 
     //affichage si le joueur va sur nouvelle partie
     private MenuJoueur menuJoueur;
+    private JPanel panPropre;
 
     //composants de la fenêtre de jeu
     private Plateau fenetreJeu;
@@ -48,26 +49,24 @@ public class MenuFen extends JFrame {
         Font f = new Font("Courier", Font.PLAIN, 60);
         JLabel titreJeu = new JLabel("ARCANOR", SwingConstants.CENTER);
         titreJeu.setFont(f);
+        getContentPane().setBackground(new Color(45,80,150));
 
         this.nouvPartie = new JButton("Nouvelle Partie");
         this.charger = new JButton("Charger");
         this.quitter = new JButton("Quitter :'( ");
 
-        JPanel vide = new JPanel();
-        JPanel vide2 = new JPanel();
-        JPanel vide3 = new JPanel();
         getContentPane().setLayout(new BorderLayout());
         this.sousPan = new JPanel();
         this.sousPan.setLayout(new GridLayout(5, 1, 20, 20));
-        this.sousPan.add(vide);
+        this.sousPan.add(new JPanel());
         this.sousPan.add(nouvPartie);
         this.sousPan.add(charger);
         this.sousPan.add(quitter);
         add(titreJeu, "North");
         add(sousPan, "Center");
-        add(vide, "East");
-        add(vide2, "West");
-        add(vide3, "South");
+        add(new JPanel(), "East");
+        add(new JPanel(), "West");
+        add(new JPanel(), "South");
         setSize(500, 450);
 
         this.nouvPartie.addActionListener(new MenuFenEcout(this));
@@ -81,7 +80,11 @@ public class MenuFen extends JFrame {
     public void actionJoueur() {
         remove(this.sousPan);
         this.menuJoueur = new MenuJoueur(this);
-        add(this.menuJoueur, "Center");
+        panPropre = new JPanel();
+        panPropre.setLayout(new BorderLayout());
+        panPropre.add(new JPanel(), "North");
+        panPropre.add(this.menuJoueur, "Center");
+        add(panPropre, "Center");
         repaint();
         revalidate();
         pack();
@@ -96,7 +99,7 @@ public class MenuFen extends JFrame {
         this.fenetreJeu = new Plateau(jeu.getLePlateau(), this);
         this.barreInfo = new InfoBarre(jeu);
         MenuBarre menuBarre = new MenuBarre(this.barreInfo, this.jeu, this);
-        remove(this.menuJoueur);
+        remove(this.panPropre);
         add(this.barreInfo, "South");
         add(menuBarre, "East");
         add(this.fenetreJeu, "Center");
@@ -137,7 +140,7 @@ public class MenuFen extends JFrame {
     public void actionChargement() {
         remove(this.sousPan);
         //composants du menu si le joueur va sur charger
-        MenuCharger menuCharger = new MenuCharger();
+        MenuCharger menuCharger = new MenuCharger(this);
         add(menuCharger, "Center");
         repaint();
         revalidate();

@@ -2,6 +2,7 @@ package arcanor;
 
 import arcanor.iu.console.MenuTxt;
 import arcanor.iu.graphique.MenuFen;
+import arcanor.modele.Jeu;
 
 import java.awt.*;
 import java.util.Scanner;
@@ -20,9 +21,10 @@ public class Partie {
      * @param args tableau de chaine de caractères
      */
     public static void main(String[] args) {
+        Jeu.blanc();
         System.out.println("Lancement d'une fantastique partie d'Arcanor !");
 
-        System.out.println("Voulez vous jouez avec l'interface graphique active ? (oui/non)");
+        System.out.println("\nVoulez vous jouez avec l'interface graphique active ? (oui/non)");
         Scanner sc = new Scanner(System.in);
         String rep = sc.nextLine();
         boolean mode = false;

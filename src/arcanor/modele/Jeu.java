@@ -171,7 +171,7 @@ public class Jeu implements Serializable {
 
             tutoriel();
 
-            System.out.println("== Debut de partie ==");
+            System.out.println("\n\n== Debut de partie ==");
 
             PlateauTxt.afficherPlateau(this.lePlateau);
             while (!partieGagne) {
@@ -184,24 +184,24 @@ public class Jeu implements Serializable {
 
                 if (!partieGagne) {
                     changerMain();
-                    System.out.println("Voulez vous sauvegarder la partie ? (o/n)");
+                    System.out.println("\nVoulez vous sauvegarder la partie ? (o/n)");
                     sauvegarder = sc.nextLine();
                     while (!sauvegarder.equals("o") && !sauvegarder.equals("n")) {
                         System.out.println("Veuillez realiser une saisie correcte.");
                         sauvegarder = sc.nextLine();
                     }
                     if (sauvegarder.equals("o")) {
-                        System.out.println("Entrer le nom de votre fichier");
+                        System.out.println("\nEntrer le nom de votre fichier");
                         String chemin = sc.nextLine();
                         sauvegarderJeu(chemin);
-                        System.out.println("Partie sauvegardee avec succes. Nous esperons vous revoir bientot !");
+                        System.out.println("\nPartie sauvegardee avec succes. Nous esperons vous revoir bientot !");
                         System.exit(0);
                     }
 
                 }
                 deplacementFait = false;
             }
-            System.out.println("Fin du jeu ! Victoire de " + this.aLaMain.getNom() + " !! :)");
+            System.out.println("\nFin du jeu ! Victoire de " + this.aLaMain.getNom() + " !! :)");
         }
     }
 
@@ -217,7 +217,7 @@ public class Jeu implements Serializable {
         boolean verif = false;
 
         if (!ia || aLaMain.equals(joueur1)) {
-            System.out.println("Veuillez choisir le pion que vous souhaitez deplacer.");
+            System.out.println("\nVeuillez choisir le pion que vous souhaitez deplacer.");
             while (!verif) {
                 ret = sc.nextInt();
                 if (this.aLaMain.equals(joueur1)) {
@@ -279,7 +279,7 @@ public class Jeu implements Serializable {
         int tirageAuSort;
 
         if ((!ia) || (aLaMain.equals(joueur1))) {
-            System.out.println("Voulez vous liberer le pion situe sous celui que vous deplacez ? (o/n)");
+            System.out.println("\nVoulez vous liberer le pion situe sous celui que vous deplacez ? (o/n)");
             libere = sc.next();
 
             while (!libere.equals("o") && !libere.equals("n")) {
@@ -400,7 +400,7 @@ public class Jeu implements Serializable {
             pionChoisi = choixPion(ia, graphique);
             aDeplacer = lePlateau.getPion(pionChoisi);
             if(!ia || aLaMain.equals(joueur1)){
-                System.out.println("Voulez vous reveler ce qui se trouve sous votre pion ? (o/n)");
+                System.out.println("\nVoulez vous reveler ce qui se trouve sous votre pion ? (o/n)");
                 Scanner sc = new Scanner(System.in);
                 String saisie = sc.nextLine();
                 while (!saisie.equals("o") && !saisie.equals("n")){

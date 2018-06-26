@@ -7,6 +7,8 @@ import arcanor.modele.Jeu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static arcanor.modele.Jeu.chargerJeu;
+
 /**
  * Ecouteur gérant le chargement d'une partie
  *
@@ -33,6 +35,7 @@ public class MenuChargerEcout implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String nomSauv;
         nomSauv = menuC.getNomSauv().getText();
-        Jeu.chargerJeu(nomSauv);
+        Jeu jeu = Jeu.chargerJeu(nomSauv);
+        menuC.getMenu().actionNouvPartie(jeu.getJoueur1(),jeu.getJoueur2(),jeu.getIAPresente());
     }
 }

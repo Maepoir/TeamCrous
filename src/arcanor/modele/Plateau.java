@@ -11,6 +11,9 @@ import java.util.ArrayList;
  */
 public class Plateau implements Serializable {
 
+    //Constante de score
+    private final int SCORE = 12;
+
     //la grille de jeu
     private Joueur j1;
     private Joueur j2;
@@ -242,7 +245,7 @@ public class Plateau implements Serializable {
         Pion ret = null;
         for (Pion p : this.lesPions) {
             if ( x == p.getX() && y == p.getY() ) {
-                    if(ret == null || (ret != null && ret.getTAILLE() < p.getTAILLE())) {
+                    if(ret == null || ret.getTAILLE() < p.getTAILLE()) {
                         ret = p;
                     }
             }
@@ -272,7 +275,7 @@ public class Plateau implements Serializable {
                 }
             }
         }
-        if (score >= 12) {
+        if (score >= this.SCORE) {
             ret = true;
         }
 

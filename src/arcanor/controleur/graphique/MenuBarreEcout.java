@@ -26,7 +26,7 @@ public class MenuBarreEcout implements ActionListener {
      * Constructeur
      *
      * @param mB  Le menu latéral à écouter
-     * @param jeu
+     * @param jeu le jeu à modifier en fonction des choix de jeu
      */
     public MenuBarreEcout(MenuBarre mB, Jeu jeu) {
         this.menuBarre = mB;

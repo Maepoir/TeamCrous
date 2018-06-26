@@ -12,25 +12,32 @@ import arcanor.modele.*;
  *
  * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
  */
-class Plateau extends JPanel {
+public class Plateau extends JPanel {
 
     private Pion lePionChoisi;
     private boolean etat = false;
 
-    Plateau(arcanor.modele.Plateau plateau) {
-        initComponents(plateau);
+    Plateau(arcanor.modele.Plateau plateau, MenuFen menu) {
+        initComponents(plateau, menu);
     }
 
-    private void initComponents(arcanor.modele.Plateau plateau) {
+    private void initComponents(arcanor.modele.Plateau plateau, MenuFen menu) {
         setLayout(new GridLayout(8,7));
         for (int i = 0; i < 8; i++) {
+            JPanel pan = new JPanel();
+            pan.setLayout(new FlowLayout(0,0,0));
             for (int j = 0; j < 7; j++) {
+                JPanel sousPan = new JPanel();
+                sousPan.setLayout(new FlowLayout(0,0,0));
                 if (plateau.getPion(i,j) == null) {
-                    this.add(new Case(i,j, plateau));
+                    sousPan.add(new Case(i,j, plateau, menu));
                 } else {
-                    this.add(new Case(plateau.getPion(i,j), plateau));
+                    sousPan.add(new Case(plateau.getPion(i,j), plateau, menu));
                 }
+                sousPan.setEnabled(true);
+                pan.add(sousPan);
             }
+            add(pan);
         }
 
 

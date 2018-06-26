@@ -38,6 +38,10 @@ public class InfoBarre extends JPanel {
         this.joueurActuel.setText("C'est au tour de " + j.getNom() + "de joueur !");
     }
 
+    public void setText(String msg){
+        this.joueurActuel.setText(msg);
+    }
+
     public void messageVictoire (Joueur j){
         remove(this.nomJoueurs);
         this.joueurActuel.setText("Victoire de " + j.getNom() + " !");

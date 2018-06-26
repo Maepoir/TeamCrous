@@ -93,9 +93,9 @@ public class MenuFen extends JFrame {
     /** s'actionne pour afficher le plateau de jeu */
     public void actionNouvPartie(Joueur j1, Joueur j2) {
         this.jeu = new Jeu(j1, j2, true, this);
-        this.fenetreJeu = new Plateau(jeu.getLePlateau());
+        this.fenetreJeu = new Plateau(jeu.getLePlateau(), this);
         this.barreInfo = new InfoBarre(jeu);
-        this.menuBarre = new MenuBarre(this.barreInfo);
+        this.menuBarre = new MenuBarre(this.barreInfo, this.jeu);
         remove(this.menuJoueur);
         add(this.fenetreJeu, "Center");
         add(this.barreInfo, "South");
@@ -115,6 +115,15 @@ public class MenuFen extends JFrame {
 
     public Plateau getFenetreJeu () {
         return this.fenetreJeu;
+    }
+
+    public void actualise (arcanor.modele.Plateau plateau){
+        remove(this.fenetreJeu);
+        this.fenetreJeu = new Plateau(jeu.getLePlateau(), this);
+        add(this.fenetreJeu,"Center");
+        repaint();
+        revalidate();
+        pack();
     }
 
 }

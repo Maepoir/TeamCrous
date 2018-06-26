@@ -116,8 +116,28 @@ public class MenuFen extends JFrame {
         this.jeu.getaLaMain();
     }
 
-    public Plateau getFenetreJeu () {
-        return this.fenetreJeu;
+    /**permet d'accéder au bouton de nouvelle partie */
+    public JButton getNouvPartie() {return this.nouvPartie;}
+
+    /**permet d'accéder au bouton pour l'écouteur */
+    public JButton getCharger(){return this.charger;}
+
+    /**permet d'accéder au bouton pour l'écouteur */
+    public JButton getQuitter(){return this.quitter;}
+
+
+    /**s'actionne lorsque l'utilisateur appuie sur charger une partie */
+    public void actionChargement(){
+      remove(this.sousPan);
+      this.menuCharger = new MenuCharger(this);
+      add(this.menuCharger,"Center");
+      repaint();
+      revalidate();
+      setSize(400,300);
+    }
+
+    public Plateau getFenetreJeu(){
+      return this.fenetreJeu;
     }
 
     public void actualise (arcanor.modele.Plateau plateau){

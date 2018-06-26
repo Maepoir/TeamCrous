@@ -23,10 +23,13 @@ public class MenuJoueurEcout implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(this.joueurs.getValider())) {
+        if (e.getSource().equals(this.joueurs.getIAoui())) {
+            this.joueurIA = true;
+        } else if (e.getSource().equals(this.joueurs.getIAnon())) {
+            this.joueurIA = false;
+        } else if (e.getSource().equals(this.joueurs.getValider())) {
             this.joueurs.setNomJoueur1(this.joueurs.getJ1().getText());
             this.joueurs.setNomJoueur2(this.joueurs.getJ2().getText());
-
             Joueur j1 = new JoueurHumain(this.joueurs.getNomJoueur1(), Couleur.BLANC);
             Joueur j2;
             if (joueurIA) {
@@ -35,10 +38,6 @@ public class MenuJoueurEcout implements ActionListener {
                 j2 = new JoueurHumain(this.joueurs.getNomJoueur2(), Couleur.NOIR);
             }
             this.menu.actionNouvPartie(j1, j2, joueurIA);
-        } else if (e.getSource().equals(this.joueurs.getIAoui())) {
-            this.joueurIA = true;
-        } else if (e.getSource().equals(this.joueurs.getIAnon())) {
-            this.joueurIA = false;
         }
     }
 

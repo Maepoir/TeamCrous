@@ -181,7 +181,7 @@ public class Jeu implements Serializable {
             while (!partieGagne) {
                 System.out.println("C'est au tour de " + this.aLaMain.getNom());
 
-                deplacementAFaire(ia, deplacementFait);
+                deplacementAFaire(ia, deplacementFait, false);
                 Jeu.blanc();
                 PlateauTxt.afficherPlateau(this.getLePlateau());
                 partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
@@ -215,7 +215,7 @@ public class Jeu implements Serializable {
      * @param ia permet de savoir si un joueur est un ia
      * @return le nombre du pion à bouger
      */
-    private int choixPion(boolean ia) {
+    private int choixPion(boolean ia, boolean g) {
         Scanner sc = new Scanner(System.in);
         int ret = -1;
         boolean verif = false;
@@ -262,7 +262,9 @@ public class Jeu implements Serializable {
             }
         }
 
-        System.out.println("Le pion choisi est le " + ret);
+        if(!g) {
+            System.out.println("Le pion choisi est le " + ret);
+        }
 
         return ret;
     }
@@ -371,7 +373,7 @@ public class Jeu implements Serializable {
         boolean deplacementFait = false;
 
         if (this.deplacement != -1 && this.lePion != null) {
-            ret = this.lePlateau.deplacerPion(this.lePion, this.deplacement, this.etat);
+            ret = this.lePlateau.deplacerPion(this.lePion, this.deplacement, this.etat, true);
             if (ret) {
                 partieGagne = this.lePlateau.verifVictoire(this.aLaMain);
                 if (partieGagne) {
@@ -379,7 +381,8 @@ public class Jeu implements Serializable {
                 } else {
                     changerMain();
                     if (ia) {
-                        deplacementAFaire(ia, deplacementFait);
+                        deplacementAFaire(ia, deplacementFait, true);
+                        changerMain();
                     }
                     this.fenMenu.getBarreInfo().setText(this.aLaMain);
                     this.fenMenu.repaint();
@@ -395,17 +398,17 @@ public class Jeu implements Serializable {
         return ret;
     }
 
-    private void deplacementAFaire(boolean ia, boolean deplacementFait) {
+    private void deplacementAFaire(boolean ia, boolean deplacementFait,boolean graphique ) {
         int pionChoisi;
         Pion aDeplacer;
         int placement;
         boolean libererPion;
         while (!deplacementFait) {
-            pionChoisi = choixPion(ia);
+            pionChoisi = choixPion(ia, graphique);
             aDeplacer = lePlateau.getPion(pionChoisi);
             placement = this.aLaMain.jouer();
             libererPion = libererPion(ia, aDeplacer);
-            deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement, libererPion);
+            deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement, libererPion, graphique);
         }
     }
 

@@ -13,7 +13,6 @@ import java.awt.*;
  */
 public class MenuJoueur extends JPanel {
 
-    private JLabel titreJeu;
     private JLabel nomJ1;
     private JLabel nomJ2;
     private JTextField j1;
@@ -30,25 +29,28 @@ public class MenuJoueur extends JPanel {
 
     private MenuFen menu;
 
+    private MenuJoueurEcout ecouteur;
+
     MenuJoueur(MenuFen menu) {
         this.menu = menu;
         initComponents();
     }
 
     private void initComponents() {
+        ecouteur = new MenuJoueurEcout(this.menu, this);
         this.nomJ1 = new JLabel("Nom du joueur 1 :", SwingConstants.CENTER);
         this.nomJ2 = new JLabel("Nom du joueur 2 :", SwingConstants.CENTER);
 
         this.j1 = new JTextField();
         this.j1.addActionListener(new MenuJoueurEcout(this.menu, this));
         this.j2 = new JTextField();
-        this.j2.addActionListener(new MenuJoueurEcout(this.menu, this));
+        this.j2.addActionListener(ecouteur);
 
         this.choixIA = new JLabel("Jouer contre l'IA ?", SwingConstants.CENTER);
         this.IAoui = new JRadioButton("oui");
-        this.IAoui.addActionListener(new MenuJoueurEcout(this.menu, this));
+        this.IAoui.addActionListener(ecouteur);
         this.IAnon = new JRadioButton("non");
-        this.IAnon.addActionListener(new MenuJoueurEcout(this.menu, this));
+        this.IAnon.addActionListener(ecouteur);
         this.IAnon.doClick();
 
         ButtonGroup bg = new ButtonGroup();
@@ -68,7 +70,7 @@ public class MenuJoueur extends JPanel {
         this.boutons.add(this.choixBouton);
 
         this.valider = new JButton("Valider");
-        this.valider.addActionListener(new MenuJoueurEcout(this.menu, this));
+        this.valider.addActionListener(ecouteur);
 
         setLayout(new BorderLayout());
         add(boutons, "Center");
@@ -110,4 +112,5 @@ public class MenuJoueur extends JPanel {
     public JRadioButton getIAnon() {
         return IAnon;
     }
+
 }

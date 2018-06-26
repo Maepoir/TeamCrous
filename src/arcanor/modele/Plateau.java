@@ -68,7 +68,7 @@ public class Plateau implements Serializable {
      * @param i      le numéro du déplacement a effectuer
      * @param libere true si on libère le pion caché, faux sinon
      */
-    public boolean deplacerPion(Pion lePion, int i, boolean libere) {
+    public boolean deplacerPion(Pion lePion, int i, boolean libere, boolean g) {
         boolean ret = false;
 
         int x = deplacementPossibles(lePion)[i][0];
@@ -86,12 +86,16 @@ public class Plateau implements Serializable {
                     lePion.getAMange().setXY(x, y);
                 }
             } else {
-                System.out.println("Vous ne pouvez pas manger un pion plus gros !");
+                if(!g) {
+                    System.out.println("Vous ne pouvez pas manger un pion plus gros !");
+                }
             }
 
 
         } else {
-            System.out.println("Déplacement hors des limites, veuillez choisir un autre déplacement s'il vous plait.");
+            if(!g) {
+                System.out.println("Deplacement hors des limites, veuillez choisir un autre deplacement s'il vous plait.");
+            }
         }
 
         return ret;
@@ -257,24 +261,6 @@ public class Plateau implements Serializable {
     }
 
     /**
-     * permet de connaitre le joueur 1
-     *
-     * @return le joueur 1
-     */
-    public Joueur getJ1() {
-        return this.j1;
-    }
-
-    /**
-     * permet de connaitre le joueur 2
-     *
-     * @return le joueur 2
-     */
-    public Joueur getJ2() {
-        return this.j2;
-    }
-
-    /**
      * permet de savoir si une case possède un pion ou non
      *
      * @param x la première coordonnées
@@ -286,14 +272,5 @@ public class Plateau implements Serializable {
             ret = false;
         }
         return ret;
-    }
-
-    /**
-     * permet d'accéder à la liste de tous les pions
-     *
-     * @return la liste de tous les pions
-     */
-    public ArrayList<Pion> getPions() {
-        return this.lesPions;
     }
 }

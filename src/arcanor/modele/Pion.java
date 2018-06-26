@@ -40,6 +40,7 @@ public class Pion implements Serializable {
      *
      * @param taille la taille du pion
      * @param estManger permet de savoir si le pion est mangé par un autre
+     * @param aManger le pion manger par ce pion
      * @param x coordonnées en abcisse
      * @param y coordonnées en ordonnée
      * @param leJoueur le joueur a qui appartient le pion

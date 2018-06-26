@@ -42,7 +42,5 @@ public class Partie {
         } else {
             EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
         }
-        //commentaire car méthode non écrite, elle permettra de lancer la partie
-        //jeu.start();
     }
 }

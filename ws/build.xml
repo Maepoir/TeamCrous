@@ -4,6 +4,8 @@
     <property name="class.dir" value="class"/>
     <property name="jar.dir"     value="jar"/>
     <property name="lib.dir"     value="lib"/>
+    <property name="doc.dir"     value="doc"/>
+    <property name="save.dir"     value="sauvegarde"/>
     <property name="report.dir"  value="junitReport"/>
     <property name="main-class"  value="arcanor.Partie"/>
     <property name="javadoc.dir" value="javadoc"/>

@@ -24,7 +24,6 @@ public class MenuFen extends JFrame {
     private MenuCharger menuC;
 
     //affichage si le joueur va sur nouvelle partie
-    private MenuJoueur menuJoueur;
     private JPanel panPropre;
 
     //composants de la fenêtre de jeu
@@ -82,11 +81,11 @@ public class MenuFen extends JFrame {
      */
     public void actionJoueur() {
         remove(this.sousPan);
-        this.menuJoueur = new MenuJoueur(this);
+        MenuJoueur menuJoueur = new MenuJoueur(this);
         panPropre = new JPanel();
         panPropre.setLayout(new BorderLayout());
         panPropre.add(new JPanel(), "North");
-        panPropre.add(this.menuJoueur, "Center");
+        panPropre.add(menuJoueur, "Center");
         add(panPropre, "Center");
         repaint();
         revalidate();

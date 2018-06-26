@@ -16,8 +16,6 @@ public class MenuBarre extends JPanel {
     private Jeu jeu;
     private MenuFen menu;
 
-    //Liberation du pion
-    private JLabel libere;
     private JCheckBox liberer;
 
     //Boutons de déplacements
@@ -29,19 +27,18 @@ public class MenuBarre extends JPanel {
     private BasicArrowButton bas;
     private BasicArrowButton basGauche;
     private BasicArrowButton gauche;
-    private ButtonGroup deplacements;
 
     //Validation du mouvement
     private JButton valider;
 
-    public MenuBarre (InfoBarre infos, Jeu jeu, MenuFen menu){
+    MenuBarre(InfoBarre infos, Jeu jeu, MenuFen menu){
         this.infos = infos;
         this.jeu = jeu;
         this.menu = menu;
         initComposants();
     }
 
-    public void initComposants (){
+    private void initComposants(){
         setLayout(new GridLayout(5,1));
 
         this.sauvegarder = new JButton("Sauvegarder");
@@ -57,52 +54,53 @@ public class MenuBarre extends JPanel {
 
         JPanel panelDeplacements = new JPanel();
         panelDeplacements.setLayout(new GridLayout(3,3));
-        this.deplacements = new ButtonGroup();
+        ButtonGroup deplacements = new ButtonGroup();
 
         this.hautGauche = new BasicArrowButton(SwingConstants.NORTH_WEST);
-        this.deplacements.add(this.hautGauche);
+        deplacements.add(this.hautGauche);
         panelDeplacements.add(this.hautGauche);
         this.hautGauche.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.haut = new BasicArrowButton(SwingConstants.NORTH);
-        this.deplacements.add(this.haut);
+        deplacements.add(this.haut);
         panelDeplacements.add(this.haut);
         this.haut.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.hautDroite = new BasicArrowButton(SwingConstants.NORTH_EAST);
-        this.deplacements.add(this.hautDroite);
+        deplacements.add(this.hautDroite);
         panelDeplacements.add(this.hautDroite);
         this.hautDroite.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.gauche = new BasicArrowButton(SwingConstants.WEST);
-        this.deplacements.add(this.gauche);
+        deplacements.add(this.gauche);
         panelDeplacements.add(this.gauche);
         this.gauche.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         panelDeplacements.add(new JPanel());
 
         this.droite = new BasicArrowButton(SwingConstants.EAST);
-        this.deplacements.add(this.droite);
+        deplacements.add(this.droite);
         panelDeplacements.add(this.droite);
         this.droite.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.basGauche = new BasicArrowButton(SwingConstants.SOUTH_EAST);
-        this.deplacements.add(this.basGauche);
+        deplacements.add(this.basGauche);
         panelDeplacements.add(this.basGauche);
         this.basGauche.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.bas = new BasicArrowButton(SwingConstants.SOUTH);
-        this.deplacements.add(this.bas);
+        deplacements.add(this.bas);
         panelDeplacements.add(this.bas);
         this.bas.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.basDroite = new BasicArrowButton(SwingConstants.SOUTH_WEST);
-        this.deplacements.add(this.basDroite);
+        deplacements.add(this.basDroite);
         panelDeplacements.add(this.basDroite);
         this.basDroite.addActionListener(new MenuBarreEcout(this, this.jeu));
 
 
-        this.libere = new JLabel("Liberer un pion ?");
+        //Liberation du pion
+        JLabel libere = new JLabel("Liberer un pion ?");
         this.liberer = new JCheckBox();
         this.liberer.addActionListener(new MenuBarreEcout(this, this.jeu));
 
@@ -191,7 +189,7 @@ public class MenuBarre extends JPanel {
             this.infos.setText("Veuillez jouer un coup correct");
         }
         else{
-            this.menu.actualise(this.jeu.getLePlateau());
+            this.menu.actualise();
         }
     }
 }

@@ -266,7 +266,7 @@ public class Plateau implements Serializable {
      * @param x la première coordonnées
      * @param y la deuxième coordonnée
      */
-    public boolean estLibre(int x, int y) {
+    private boolean estLibre(int x, int y) {
         boolean ret = true;
         if (getPion(x, y) != null) {
             ret = false;

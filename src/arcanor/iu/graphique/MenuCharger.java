@@ -7,21 +7,16 @@ import java.awt.*;
 
 public class MenuCharger extends JPanel {
 
-    private MenuFen menu;
-
-    private JLabel nomS;
     private JTextField text;
-    private JButton valider;
 
-    public MenuCharger(MenuFen menu) {
-        this.menu = menu;
+    MenuCharger() {
         initComponents();
     }
 
-    public void initComponents() {
-        this.nomS = new JLabel("Entrer le nom de la sauvegarde :", SwingConstants.CENTER);
+    private void initComponents() {
+        JLabel nomS = new JLabel("Entrer le nom de la sauvegarde :", SwingConstants.CENTER);
         this.text = new JTextField();
-        this.valider = new JButton("Valider");
+        JButton valider = new JButton("Valider");
         JPanel vide = new JPanel();
         JPanel vide2 = new JPanel();
         JPanel demande = new JPanel();
@@ -35,11 +30,7 @@ public class MenuCharger extends JPanel {
         add(demande, "Center");
         add(valider, "South");
 
-        valider.addActionListener(new MenuChargerEcout(this.menu, this));
-    }
-
-    public JButton getValid() {
-        return this.valider;
+        valider.addActionListener(new MenuChargerEcout(this));
     }
 
     public JTextField getNomSauv() {

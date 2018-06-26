@@ -1,7 +1,6 @@
 package arcanor.iu.graphique;
 
 import arcanor.controleur.graphique.PlateauEcout;
-import arcanor.modele.Pion;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,10 +10,7 @@ import java.awt.*;
  *
  * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
  */
-public class Plateau extends JPanel {
-
-    private Pion lePionChoisi;
-    private boolean etat = false;
+class Plateau extends JPanel {
 
     Plateau(arcanor.modele.Plateau plateau, MenuFen menu) {
         initComponents(plateau, menu);
@@ -24,15 +20,15 @@ public class Plateau extends JPanel {
         setLayout(new GridLayout(8, 7, 0, 0));
         for (int i = 0; i < 8; i++) {
             JPanel pan = new JPanel();
-            pan.setLayout(new FlowLayout(0, 0, 0));
+            pan.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
             for (int j = 0; j < 7; j++) {
                 JPanel sousPan = new JPanel();
-                sousPan.setLayout(new FlowLayout(0, 0, 0));
+                sousPan.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
                 if (plateau.getPion(i, j) == null) {
-                    sousPan.add(new Case(i, j, plateau));
+                    sousPan.add(new Case());
                 } else {
-                    sousPan.add(new Case(plateau.getPion(i, j), plateau));
-                    sousPan.addMouseListener(new PlateauEcout(plateau, menu, plateau.getPion(i, j)));
+                    sousPan.add(new Case(plateau.getPion(i, j)));
+                    sousPan.addMouseListener(new PlateauEcout(menu, plateau.getPion(i, j)));
                 }
                 sousPan.setEnabled(true);
                 pan.add(sousPan);

@@ -14,8 +14,6 @@ import java.awt.*;
  */
 public class MenuFen extends JFrame {
 
-    private JLabel titreJeu;
-
     //composants du premier menu
     private JPanel sousPan;
     private JButton nouvPartie;
@@ -25,13 +23,9 @@ public class MenuFen extends JFrame {
     //affichage si le joueur va sur nouvelle partie
     private MenuJoueur menuJoueur;
 
-    //composants du menu si le joueur va sur charger
-    private MenuCharger menuCharger;
-
     //composants de la fenêtre de jeu
     private Plateau fenetreJeu;
     private InfoBarre barreInfo;
-    private MenuBarre menuBarre;
 
     //Partie
     private Jeu jeu;
@@ -52,8 +46,8 @@ public class MenuFen extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         Font f = new Font("Courier", Font.PLAIN, 60);
-        this.titreJeu = new JLabel("ARCANOR", SwingConstants.CENTER);
-        this.titreJeu.setFont(f);
+        JLabel titreJeu = new JLabel("ARCANOR", SwingConstants.CENTER);
+        titreJeu.setFont(f);
 
         this.nouvPartie = new JButton("Nouvelle Partie");
         this.charger = new JButton("Charger");
@@ -102,10 +96,10 @@ public class MenuFen extends JFrame {
         this.jeu = new Jeu(j1, j2, true, ia, this);
         this.fenetreJeu = new Plateau(jeu.getLePlateau(), this);
         this.barreInfo = new InfoBarre(jeu);
-        this.menuBarre = new MenuBarre(this.barreInfo, this.jeu, this);
+        MenuBarre menuBarre = new MenuBarre(this.barreInfo, this.jeu, this);
         remove(this.menuJoueur);
         add(this.barreInfo, "South");
-        add(this.menuBarre, "East");
+        add(menuBarre, "East");
         add(this.fenetreJeu, "Center");
         repaint();
         revalidate();
@@ -114,10 +108,6 @@ public class MenuFen extends JFrame {
 
     public InfoBarre getBarreInfo() {
         return this.barreInfo;
-    }
-
-    public void deplacerPion() {
-        this.jeu.getaLaMain();
     }
 
     /**
@@ -147,18 +137,15 @@ public class MenuFen extends JFrame {
      */
     public void actionChargement() {
         remove(this.sousPan);
-        this.menuCharger = new MenuCharger(this);
-        add(this.menuCharger, "Center");
+        //composants du menu si le joueur va sur charger
+        MenuCharger menuCharger = new MenuCharger();
+        add(menuCharger, "Center");
         repaint();
         revalidate();
         setSize(400, 300);
     }
 
-    public Plateau getFenetreJeu() {
-        return this.fenetreJeu;
-    }
-
-    public void actualise(arcanor.modele.Plateau plateau) {
+    void actualise() {
         remove(this.fenetreJeu);
         this.fenetreJeu = new Plateau(jeu.getLePlateau(), this);
         add(this.fenetreJeu, "Center");

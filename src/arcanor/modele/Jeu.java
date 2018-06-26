@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class Jeu implements Serializable {
 
     //Pour la sauvegarde
-    boolean ia;
+    private boolean ia;
     private Plateau lePlateau;
     //le premier joueur
     private Joueur joueur1;
@@ -163,17 +163,13 @@ public class Jeu implements Serializable {
     public void debutPartie(boolean ia) {
         boolean deplacementFait = false;
         boolean partieGagne = false;
-        boolean libererPion;
-        Pion aDeplacer;
-        int placement;
-        int choixPion;
         String sauvegarder;
         Scanner sc = new Scanner(System.in);
         this.ia = ia;
 
         if (!this.modeGraphique) {
 
-//            tutoriel();
+            tutoriel();
 
             System.out.println("== Debut de partie ==");
 
@@ -262,7 +258,7 @@ public class Jeu implements Serializable {
             }
         }
 
-        if(!g) {
+        if (!g) {
             System.out.println("Le pion choisi est le " + ret);
         }
 
@@ -348,11 +344,7 @@ public class Jeu implements Serializable {
     }
 
     public void setEtat() {
-        if (etat) {
-            this.etat = false;
-        } else {
-            this.etat = true;
-        }
+        this.etat = !etat;
     }
 
     public void setLePion(Pion lePion) {
@@ -398,11 +390,12 @@ public class Jeu implements Serializable {
         return ret;
     }
 
-    private void deplacementAFaire(boolean ia, boolean deplacementFait,boolean graphique ) {
+    private void deplacementAFaire(boolean ia, boolean deplacementFait, boolean graphique) {
         int pionChoisi;
         Pion aDeplacer;
         int placement;
         boolean libererPion;
+
         while (!deplacementFait) {
             pionChoisi = choixPion(ia, graphique);
             aDeplacer = lePlateau.getPion(pionChoisi);

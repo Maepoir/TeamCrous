@@ -11,17 +11,12 @@ import java.awt.event.MouseListener;
 
 public class PlateauEcout implements MouseListener {
 
-
-    private Plateau plateau;
-
     private MenuFen menu;
 
     private Pion lePion;
 
 
-    public PlateauEcout(Plateau plateau, MenuFen menu, Pion lePion) {
-
-        this.plateau = plateau;
+    public PlateauEcout(MenuFen menu, Pion lePion) {
 
         this.menu = menu;
 

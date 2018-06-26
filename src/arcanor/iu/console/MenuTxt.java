@@ -16,7 +16,7 @@ public class MenuTxt {
      */
     public static void afficherMenu() {
         boolean iaPresente = false;
-        String ia = "";
+        String ia;
         Scanner sc = new Scanner(System.in);
 
         Jeu.blanc();
@@ -69,7 +69,7 @@ public class MenuTxt {
             Jeu jeu = Jeu.chargerJeu();
             jeu.debutPartie(jeu.getIAPresente());
         } else {
-            System.out.println("Merci d'avoir lancé Arcanor, à bientôt ! <3");
+            System.out.println("Merci d'avoir lance Arcanor, a bientot ! <3");
             System.exit(0);
         }
     }

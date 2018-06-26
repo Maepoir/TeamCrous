@@ -17,26 +17,17 @@ import java.io.IOException;
  */
 public class Case extends JPanel {
 
-    private int x;
-    private int y;
-    private Plateau plateau;
-
-    Case(int i, int j, Plateau p) {
-        this.plateau = p;
+    Case() {
         try {
-            setLayout(new FlowLayout(0, 0, 0));
+            setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
             BufferedImage caseM = ImageIO.read(new File("../doc/caseM.png"));
             add(new JLabel(new ImageIcon(caseM)));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        this.x = i;
-        this.y = j;
     }
 
-    Case(arcanor.modele.Pion lePion, Plateau p) {
-        this.plateau = p;
-
+    Case(arcanor.modele.Pion lePion) {
         try {
             setLayout(new FlowLayout(FlowLayout.TRAILING, 0, 0));
             BufferedImage blanc1 = ImageIO.read(new File("../doc/blanc1.png"));
@@ -81,16 +72,5 @@ public class Case extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        this.x = lePion.getX();
-        this.y = lePion.getY();
     }
-
-    public int getLeX() {
-        return this.x;
-    }
-
-    public int getLeY() {
-        return this.y;
-    }
-
 }

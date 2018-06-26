@@ -9,17 +9,15 @@ import java.awt.event.ActionListener;
 
 public class MenuChargerEcout implements ActionListener {
 
-    private MenuFen menu;
     private MenuCharger menuC;
 
-    public MenuChargerEcout(MenuFen menu, MenuCharger menuC) {
-        this.menu = menu;
+    public MenuChargerEcout(MenuCharger menuC) {
         this.menuC = menuC;
     }
 
     public void actionPerformed(ActionEvent e) {
         String nomSauv;
         nomSauv = menuC.getNomSauv().getText();
-        Jeu jeu = Jeu.chargerJeu(nomSauv);
+        Jeu.chargerJeu(nomSauv);
     }
 }

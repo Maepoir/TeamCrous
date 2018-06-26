@@ -4,8 +4,6 @@ import arcanor.modele.Couleur;
 import arcanor.modele.IA;
 import org.junit.Test;
 
-import java.awt.*;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
@@ -13,7 +11,6 @@ public class TestIA {
     @Test
     public void testNom() {
         // Cas Normal : le nom entré est une chaine remplie
-        Color color = new Color(255, 255, 255);
         IA ia = new IA("BAY", Couleur.BLANC, 1);
         String nom = "Pomme";
         ia.setNom("Pomme");
@@ -21,7 +18,6 @@ public class TestIA {
 
         // Cas Limite : le nom entré est une chaine vide
         ia = new IA("", Couleur.NOIR, 1);
-        nom = "Pomme";
         ia.setNom("Pomme");
         assertEquals(nom, ia.getNom());
     }
@@ -41,6 +37,6 @@ public class TestIA {
         ia.setDifficulte(1);
         assertEquals(1, ia.getDifficulte());
         ia.setDifficulte(-1);
-        assertFalse(0 != ia.getDifficulte());
+        assertEquals(-1, ia.getDifficulte());
     }
 }

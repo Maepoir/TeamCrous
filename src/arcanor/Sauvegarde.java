@@ -8,16 +8,17 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * Rôle :  Cette classe permet de modéliser une sauvegarde au cours de partie
+ * Cette classe permet de créer une sauvegarde au cours de partie
  *
- * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
+ * @author M.Poiré, S.Bay
  */
 public class Sauvegarde {
 
     /**
-     * Rôle : créer un fichier de sauvegarde en format binaire
+     * Crée un fichier de sauvegarde en format binaire
      *
      * @param chemin le nom du fichier qui va contenir la sauvegarde
+     * @param jeu le jeu qui doit être sauvegarder
      */
     public static void sauvegarder(String chemin, Jeu jeu) {
         try {
@@ -34,7 +35,7 @@ public class Sauvegarde {
     }
 
     /**
-     * Rôle : permet d'importer un fichier de sauvegarde en format de binaire
+     * Permet d'importer un fichier de sauvegarde en format de binaire
      * pour permettre à l'utilisateur de charger une partie sauvegardée et de
      * reprendre le jeu.
      *

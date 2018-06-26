@@ -8,15 +8,15 @@ import java.awt.*;
 import java.util.Scanner;
 
 /**
- * Rôle :  Cette classe permet de lancer une partie d'Arcanor
+ * Cette classe permet de lancer une partie d'Arcanor
  *
- * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
+ * @author M.Poiré, S.Bay
  */
 public class Partie {
 
 
     /**
-     * Rôle : lance Arcanor
+     * Lance Arcanor
      *
      * @param args tableau de chaine de caractères
      */

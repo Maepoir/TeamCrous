@@ -31,7 +31,7 @@ public class MenuFen extends JFrame {
     private Jeu jeu;
 
     public MenuFen() {
-        initComponents();
+        initComposantes();
     }
 
     public static void main(String args[]) {
@@ -41,7 +41,7 @@ public class MenuFen extends JFrame {
     /**
      * affichage du premier menu
      */
-    private void initComponents() {
+    private void initComposantes() {
         setTitle("<3 Arcanor <3");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 

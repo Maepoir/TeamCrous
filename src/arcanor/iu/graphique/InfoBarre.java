@@ -19,10 +19,10 @@ public class InfoBarre extends JPanel {
 
     InfoBarre(Jeu jeu) {
         this.jeu = jeu;
-        initComponents();
+        initComposantes();
     }
 
-    private void initComponents() {
+    private void initComposantes() {
         setLayout(new GridLayout(2, 1));
 
         nomJoueurs = new JLabel();

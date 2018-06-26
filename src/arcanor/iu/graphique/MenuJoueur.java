@@ -26,10 +26,10 @@ public class MenuJoueur extends JPanel {
 
     MenuJoueur(MenuFen menu) {
         this.menu = menu;
-        initComponents();
+        initComposantes();
     }
 
-    private void initComponents() {
+    private void initComposantes() {
         MenuJoueurEcout ecouteur = new MenuJoueurEcout(this.menu, this);
         JLabel nomJ1 = new JLabel("Nom du joueur 1 :", SwingConstants.CENTER);
         JLabel nomJ2 = new JLabel("Nom du joueur 2 :", SwingConstants.CENTER);

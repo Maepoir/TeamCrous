@@ -10,10 +10,10 @@ public class MenuCharger extends JPanel {
     private JTextField text;
 
     MenuCharger() {
-        initComponents();
+        initComposantes();
     }
 
-    private void initComponents() {
+    private void initComposantes() {
         JLabel nomS = new JLabel("Entrer le nom de la sauvegarde :", SwingConstants.CENTER);
         this.text = new JTextField();
         JButton valider = new JButton("Valider");

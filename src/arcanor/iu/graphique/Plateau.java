@@ -13,10 +13,10 @@ import java.awt.*;
 class Plateau extends JPanel {
 
     Plateau(arcanor.modele.Plateau plateau, MenuFen menu) {
-        initComponents(plateau, menu);
+        initComposantes(plateau, menu);
     }
 
-    private void initComponents(arcanor.modele.Plateau plateau, MenuFen menu) {
+    private void initComposantes(arcanor.modele.Plateau plateau, MenuFen menu) {
         setLayout(new GridLayout(8, 7, 0, 0));
         for (int i = 0; i < 8; i++) {
             JPanel pan = new JPanel();

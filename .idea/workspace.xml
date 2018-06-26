@@ -3,36 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8543929a-2f63-48a1-aa1d-dea73a472cf0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/arcanor/controleur/graphique/MenuChargerEcout.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/controleur/graphique/MenuChargerEcout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/arcanor/controleur/graphique/PlateauEcout.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/controleur/graphique/PlateauEcout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/console/MenuTxt.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/console/MenuTxt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/Case.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/Case.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuBarre.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuBarre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuCharger.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuCharger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuFen.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuFen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuJoueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/MenuJoueur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/arcanor/iu/graphique/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/iu/graphique/Plateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Jeu.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Jeu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/arcanor/modele/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/arcanor/modele/Plateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/test/TestIA.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/test/TestIA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/test/TestPlateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/test/TestPlateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/test/TestSauvegarde.class" beforeDir="false" afterPath="$PROJECT_DIR$/class/test/TestSauvegarde.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sauvegarde/save1" beforeDir="false" afterPath="$PROJECT_DIR$/sauvegarde/save1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/controleur/graphique/MenuChargerEcout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/controleur/graphique/MenuChargerEcout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/controleur/graphique/PlateauEcout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/controleur/graphique/PlateauEcout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/iu/console/MenuTxt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/iu/console/MenuTxt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/iu/graphique/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/iu/graphique/Case.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuBarre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuBarre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuCharger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuCharger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuJoueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuJoueur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/iu/graphique/Plateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/modele/Couleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/modele/Couleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/modele/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/modele/Jeu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arcanor/modele/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arcanor/modele/Plateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/TestIA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestIA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/TestPlateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestPlateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/TestSauvegarde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestSauvegarde.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -410,12 +380,12 @@
       <workItem from="1529909584815" duration="196000" />
       <workItem from="1529915723891" duration="25157000" />
       <workItem from="1529951782251" duration="4702000" />
-      <workItem from="1530003690610" duration="16698000" />
+      <workItem from="1530003690610" duration="17298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112000000" />
+    <option name="totallyTimeSpent" value="112600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />

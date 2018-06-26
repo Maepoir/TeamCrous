@@ -94,6 +94,10 @@ public class MenuFen extends JFrame {
 
     /**
      * s'actionne pour afficher le plateau de jeu
+     *
+     * @param j1 le premier joueur
+     * @param j2 le deuxième joueur
+     * @param ia permet de savoir si l'IA est présente ou non
      */
     public void actionNouvPartie(Joueur j1, Joueur j2, boolean ia) {
         this.jeu = new Jeu(j1, j2, true, ia, this);
@@ -111,6 +115,8 @@ public class MenuFen extends JFrame {
 
     /**
      * s'actionne pour afficher le plateau de jeu lors d'un chargement de partie
+     *
+     * @param jeu le jeu à afficher
      */
     public void actionNouvPartie(Jeu jeu){
         this.jeu = jeu;

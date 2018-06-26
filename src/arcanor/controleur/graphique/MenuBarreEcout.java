@@ -7,6 +7,7 @@ import arcanor.iu.graphique.MenuFen;
 import arcanor.modele.Jeu;
 
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -65,16 +66,24 @@ public class MenuBarreEcout implements ActionListener {
             this.menuBarre.deplacer();
         } else if(e.getSource().equals(this.menuBarre.getRevelation())){
             JFrame fenetrePion = new JFrame();
-            fenetrePion.setTitle("Ce qui se trouve sous votre pion :");
+            fenetrePion.setTitle("");
             fenetrePion.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-            fenetrePion.getContentPane().setLayout(new GridLayout(2,1));
-            fenetrePion.add(new JPanel());
+            fenetrePion.getContentPane().setLayout(new BorderLayout());
+            JLabel label = new JLabel();
+            label.setText("Voici ce qui se trouve sous votre pion :");
+            fenetrePion.add(label, "North");
             if(this.jeu.getLePion() != null){
                 if(this.jeu.getLePion().getAMange() != null) {
-                    fenetrePion.add(new Case(this.jeu.getLePion().getAMange()));
+                    JPanel pan = new JPanel();
+                    pan.setLayout(new FlowLayout(FlowLayout.CENTER));
+                    pan.add(new Case(this.jeu.getLePion().getAMange()), BorderLayout.CENTER);
+                    fenetrePion.add(pan);
                 }
             } else {
-                fenetrePion.add(new Case());
+                JPanel pan = new JPanel();
+                pan.setLayout(new FlowLayout(FlowLayout.CENTER));
+                pan.add(new Case(), BorderLayout.CENTER);
+                fenetrePion.add(pan);
             }
             fenetrePion.pack();
             fenetrePion.setVisible(true);

@@ -125,16 +125,17 @@ public class MenuBarre extends JPanel {
         sousPan2.add(liberation, "Center");
         sousPan2.add(this.valider, "South");
 
-        setLayout(new GridLayout(8, 1));
-
-        this.revelation = new JButton("Reveler ce que contient le pion selectionne.");
+        this.revelation = new JButton("Reveler ce que contient le pion selectionne");
         this.revelation.addActionListener(new MenuBarreEcout(this, this.jeu));
+
+        setLayout(new GridLayout(9, 1));
 
         add(sousPan);
         add(new JPanel());
         add(panelDeplacements);
         add(new JPanel());
         add(sousPan2);
+        add(new JPanel());
         add(this.revelation);
         add(new JPanel());
         add(quitter);

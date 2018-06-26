@@ -33,7 +33,7 @@ public class PlateauEcout implements MouseListener {
     }
 
     /**
-     * Permet de sélectionner un pion
+     * Permet de sélectionner un pion lorsque l'on clique dessus
      *
      * @param e l'évènement à gérer
      */

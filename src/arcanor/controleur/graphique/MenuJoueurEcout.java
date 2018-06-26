@@ -18,12 +18,22 @@ public class MenuJoueurEcout implements ActionListener {
     private MenuJoueur joueurs;
     private boolean joueurIA;
 
+    /**
+    * Constructeur
+    *
+    * @param menu le menu de lancement du jeu
+    * @param joueurs le menu à gérer
+    */
     public MenuJoueurEcout(MenuFen menu, MenuJoueur joueurs) {
         this.menu = menu;
         this.joueurs = joueurs;
         this.joueurIA = false;
     }
 
+    /**
+    * permet de définir l'action à faire selon le bouton qui a été cliqué
+    * @param e la nature de l'action
+    */
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(this.joueurs.getIAoui())) {
             this.joueurIA = true;

@@ -20,7 +20,7 @@ public class Case extends JPanel {
     /**
      * Constructeur pour une case vide
      */
-    Case() {
+    public Case() {
         try {
             setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
             BufferedImage caseM = ImageIO.read(new File("../doc/caseM.png"));
@@ -34,7 +34,7 @@ public class Case extends JPanel {
      * Constructeur pour une case avec un pion
      * @param lePion le pion présent dans la case
      */
-    Case(arcanor.modele.Pion lePion) {
+    public Case(arcanor.modele.Pion lePion) {
         try {
             setLayout(new FlowLayout(FlowLayout.TRAILING, 0, 0));
             BufferedImage blanc1 = ImageIO.read(new File("../doc/blanc1.png"));

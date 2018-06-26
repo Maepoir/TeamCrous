@@ -36,6 +36,6 @@ public class MenuChargerEcout implements ActionListener {
         String nomSauv;
         nomSauv = menuC.getNomSauv().getText();
         Jeu jeu = Jeu.chargerJeu(nomSauv);
-        menuC.getMenu().actionNouvPartie(jeu.getJoueur1(),jeu.getJoueur2(),jeu.getIAPresente());
+        menuC.getMenu().actionNouvPartie(jeu);
     }
 }

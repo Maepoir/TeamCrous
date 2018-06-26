@@ -1,9 +1,13 @@
 package arcanor.controleur.graphique;
 
 import arcanor.Sauvegarde;
+import arcanor.iu.graphique.Case;
 import arcanor.iu.graphique.MenuBarre;
+import arcanor.iu.graphique.MenuFen;
 import arcanor.modele.Jeu;
 
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -59,6 +63,21 @@ public class MenuBarreEcout implements ActionListener {
             this.jeu.setDeplacement(7);
         } else if (e.getSource().equals(this.menuBarre.getValider())) {
             this.menuBarre.deplacer();
+        } else if(e.getSource().equals(this.menuBarre.getRevelation())){
+            JFrame fenetrePion = new JFrame();
+            fenetrePion.setTitle("Ce qui se trouve sous votre pion :");
+            fenetrePion.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+            fenetrePion.getContentPane().setLayout(new GridLayout(2,1));
+            fenetrePion.add(new JPanel());
+            if(this.jeu.getLePion() != null){
+                if(this.jeu.getLePion().getAMange() != null) {
+                    fenetrePion.add(new Case(this.jeu.getLePion().getAMange()));
+                }
+            } else {
+                fenetrePion.add(new Case());
+            }
+            fenetrePion.pack();
+            fenetrePion.setVisible(true);
         }
     }
 

@@ -1,12 +1,17 @@
 package arcanor.iu.graphique;
+
 import arcanor.controleur.graphique.MenuBarreEcout;
 import arcanor.modele.Jeu;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicArrowButton;
 import java.awt.*;
-/** represente la barre de menu permettant de faire des choix de jeu
-* @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet */
+
+/**
+ * represente la barre de menu permettant de faire des choix de jeu
+ *
+ * @author G.Renault, M.Poiré, S.Bay, M.Racinne-Divet
+ */
 public class MenuBarre extends JPanel {
 
     private JButton sauvegarder;
@@ -31,20 +36,23 @@ public class MenuBarre extends JPanel {
     //Validation du mouvement
     private JButton valider;
 
-    MenuBarre(InfoBarre infos, Jeu jeu, MenuFen menu){
+    //Revelation de ce que contient le pion
+    private JButton revelation;
+
+    MenuBarre(InfoBarre infos, Jeu jeu, MenuFen menu) {
         this.infos = infos;
         this.jeu = jeu;
         this.menu = menu;
         initComposants();
     }
 
-    private void initComposants(){
+    private void initComposants() {
 
         this.sauvegarder = new JButton("Sauvegarder");
         this.sauvegarder.addActionListener(new MenuBarreEcout(this, this.jeu));
         this.chemin = new JTextField("Chemin de la sauvegarde");
         JPanel sousPan = new JPanel();
-        sousPan.setLayout(new GridLayout(1,2));
+        sousPan.setLayout(new GridLayout(1, 2));
         sousPan.add(chemin);
         sousPan.add(sauvegarder);
 
@@ -52,7 +60,7 @@ public class MenuBarre extends JPanel {
         this.quitter.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         JPanel panelDeplacements = new JPanel();
-        panelDeplacements.setLayout(new GridLayout(3,3));
+        panelDeplacements.setLayout(new GridLayout(3, 3));
         ButtonGroup deplacements = new ButtonGroup();
 
         this.hautGauche = new BasicArrowButton(SwingConstants.NORTH_WEST);
@@ -117,13 +125,17 @@ public class MenuBarre extends JPanel {
         sousPan2.add(liberation, "Center");
         sousPan2.add(this.valider, "South");
 
-        setLayout(new GridLayout(7,1));
+        setLayout(new GridLayout(8, 1));
+
+        this.revelation = new JButton("Reveler ce que contient le pion selectionne.");
+        this.revelation.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         add(sousPan);
         add(new JPanel());
         add(panelDeplacements);
         add(new JPanel());
         add(sousPan2);
+        add(this.revelation);
         add(new JPanel());
         add(quitter);
     }
@@ -180,15 +192,18 @@ public class MenuBarre extends JPanel {
         return gauche;
     }
 
-    public JButton getValider (){
+    public JButton getValider() {
         return this.valider;
     }
 
-    public void deplacer(){
-        if(!this.jeu.deplacement()){
+    public JButton getRevelation() {
+        return this.revelation;
+    }
+
+    public void deplacer() {
+        if (!this.jeu.deplacement()) {
             this.infos.setText("Veuillez jouer un coup correct");
-        }
-        else{
+        } else {
             this.menu.actualise();
         }
     }

@@ -347,6 +347,10 @@ public class Jeu implements Serializable {
         this.etat = !etat;
     }
 
+    public void setEtat(boolean etat){
+        this.etat = etat;
+    }
+
     public void setLePion(Pion lePion) {
         if (lePion.getLeJoueur().equals(this.aLaMain)) {
             this.lePion = lePion;
@@ -424,6 +428,14 @@ public class Jeu implements Serializable {
             libererPion = libererPion(ia, aDeplacer);
             deplacementFait = this.lePlateau.deplacerPion(aDeplacer, placement, libererPion, graphique);
         }
+    }
+
+    /**
+     * Accesseur pour récuperer le pion
+     * @return le pion choisi en graphique
+     */
+    public Pion getLePion() {
+        return lePion;
     }
 
 }

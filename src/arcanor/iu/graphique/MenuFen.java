@@ -20,6 +20,9 @@ public class MenuFen extends JFrame {
     private JButton charger;
     private JButton quitter;
 
+    //Composants de la fenetre du chargement
+    private MenuCharger menuC;
+
     //affichage si le joueur va sur nouvelle partie
     private MenuJoueur menuJoueur;
     private JPanel panPropre;
@@ -108,6 +111,21 @@ public class MenuFen extends JFrame {
         pack();
     }
 
+    public void actionNouvPartie(Jeu jeu){
+        this.jeu = jeu;
+        this.jeu.setEtat(false);
+        this.fenetreJeu = new Plateau(jeu.getLePlateau(), this);
+        this.barreInfo = new InfoBarre(jeu);
+        MenuBarre menuBarre = new MenuBarre(this.barreInfo, this.jeu, this);
+        remove(this.menuC);
+        add(this.barreInfo, "South");
+        add(menuBarre, "East");
+        add(this.fenetreJeu, "Center");
+        repaint();
+        revalidate();
+        pack();
+    }
+
     public InfoBarre getBarreInfo() {
         return this.barreInfo;
     }
@@ -140,8 +158,8 @@ public class MenuFen extends JFrame {
     public void actionChargement() {
         remove(this.sousPan);
         //composants du menu si le joueur va sur charger
-        MenuCharger menuCharger = new MenuCharger(this);
-        add(menuCharger, "Center");
+        menuC = new MenuCharger(this);
+        add(menuC, "Center");
         repaint();
         revalidate();
         setSize(400, 300);

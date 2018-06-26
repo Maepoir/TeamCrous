@@ -23,7 +23,7 @@ public class Case extends JPanel {
     public Case() {
         try {
             setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-            BufferedImage caseM = ImageIO.read(new File("../doc/caseM.png"));
+            BufferedImage caseM = ImageIO.read(new File("doc/caseM.png"));
             add(new JLabel(new ImageIcon(caseM)));
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,14 +38,14 @@ public class Case extends JPanel {
     public Case(arcanor.modele.Pion lePion) {
         try {
             setLayout(new FlowLayout(FlowLayout.TRAILING, 0, 0));
-            BufferedImage blanc1 = ImageIO.read(new File("../doc/blanc1.png"));
-            BufferedImage blanc2 = ImageIO.read(new File("../doc/blanc2.png"));
-            BufferedImage blanc3 = ImageIO.read(new File("../doc/blanc3.png"));
-            BufferedImage blanc4 = ImageIO.read(new File("../doc/blanc4.png"));
-            BufferedImage noir1 = ImageIO.read(new File("../doc/noir1.png"));
-            BufferedImage noir2 = ImageIO.read(new File("../doc/noir2.png"));
-            BufferedImage noir3 = ImageIO.read(new File("../doc/noir3.png"));
-            BufferedImage noir4 = ImageIO.read(new File("../doc/noir4.png"));
+            BufferedImage blanc1 = ImageIO.read(new File("doc/blanc1.png"));
+            BufferedImage blanc2 = ImageIO.read(new File("doc/blanc2.png"));
+            BufferedImage blanc3 = ImageIO.read(new File("doc/blanc3.png"));
+            BufferedImage blanc4 = ImageIO.read(new File("doc/blanc4.png"));
+            BufferedImage noir1 = ImageIO.read(new File("doc/noir1.png"));
+            BufferedImage noir2 = ImageIO.read(new File("doc/noir2.png"));
+            BufferedImage noir3 = ImageIO.read(new File("doc/noir3.png"));
+            BufferedImage noir4 = ImageIO.read(new File("doc/noir4.png"));
             if (lePion.getLeJoueur().getColor().equals(Couleur.BLANC)) {
                 switch (lePion.getTAILLE()) {
                     case 1:

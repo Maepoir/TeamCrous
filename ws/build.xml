@@ -5,7 +5,7 @@
     <property name="jar.dir"     value="jar"/>
     <property name="lib.dir"     value="lib"/>
     <property name="doc.dir"     value="doc"/>
-    <property name="save.dir"     value="sauvegarde"/>
+    <property name="save.dir"   value="sauvegarde"/>
     <property name="report.dir"  value="junitReport"/>
     <property name="main-class"  value="arcanor.Partie"/>
     <property name="javadoc.dir" value="javadoc"/>
@@ -18,13 +18,13 @@
     <path id="application" location="${jar.dir}/${ant.project.name}.jar"/>
 
     <target name="clean">
-        <delete dir="${class.dir}"/>
+        <delete dir="${class.dir}/arcanor ${class.dir}/test"/>
         <delete dir="${jar.dir}"/>
     </target>
 
     <target name="compile">
         <mkdir dir="${class.dir}"/>
-        <javac srcdir="${src.dir}" destdir="${class.dir}" classpathref="classpath"/>
+        <javac srcdir="${src.dir}" destdir="${class.dir}" classpathref="classpath" includeantruntime="true"/>
         <copy todir="${class.dir}">
             <fileset dir="${src.dir}" excludes="**/*.java"/>
         </copy>
@@ -59,9 +59,9 @@
         </junitreport>
     </target>
 
-    <target name="jar" depends="test">
+    <target name="jar" depends="compile, clean">
         <mkdir dir="${jar.dir}"/>
-        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${class.dir}" excludes="**/*Test.class">
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${class.dir}" excludes="**/*Test*" >
             <manifest>
                 <attribute name="Main-Class" value="${main-class}"/>
             </manifest>

@@ -10,6 +10,8 @@ import java.io.FileReader;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
+import java.awt.event.*;
+import java.awt.*;
 
 /**
  * Role :  Cette classe permet de modeliser le jeu d'Arcanor
@@ -73,6 +75,7 @@ public class Jeu implements Serializable {
 
     /**
      * Role : Cette methode permet de charger une partie
+     * @return le fichier chargé
      */
 
     public static Jeu chargerJeu() {
@@ -90,6 +93,20 @@ public class Jeu implements Serializable {
         }
 
         return ret;
+    }
+
+    /** cette méthode permet de charger une partie en passant le nom en parametre
+    * @param chemin le chemin jusqu'à la sauvegarde
+    * @return le fichier chargé */
+    public static Jeu chargerJeu(String chemin){
+      Jeu ret = null;
+      if(Sauvegarde.charger(chemin) != null){
+        ret = Sauvegarde.charger(chemin);
+      }
+      else{
+        EventQueue.invokeLater(() -> new MenuFen().setVisible(true));
+      }
+      return ret;
     }
 
     /**
@@ -180,7 +197,7 @@ public class Jeu implements Serializable {
                     System.out.println("Voulez vous sauvegarder la partie ? (o/n)");
                     sauvegarder = sc.nextLine();
                     while (!sauvegarder.equals("o") && !sauvegarder.equals("n")) {
-                        System.out.println("Veuillez realiser une saise correcte.");
+                        System.out.println("Veuillez realiser une saisie correcte.");
                         sauvegarder = sc.nextLine();
                     }
                     if (sauvegarder.equals("o")) {
@@ -213,7 +230,6 @@ public class Jeu implements Serializable {
 
             }
             this.fenMenu.getBarreInfo().messageVictoire(aLaMain);
-
         }
     }
 

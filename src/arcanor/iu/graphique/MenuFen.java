@@ -26,7 +26,7 @@ public class MenuFen extends JFrame {
     private MenuJoueur menuJoueur;
 
     //composants du menu si le joueur va sur charger
-    //private MenuCharger menuCharger;
+    private MenuCharger menuCharger;
 
     //composants de la fenêtre de jeu
     private Plateau fenetreJeu;
@@ -51,26 +51,34 @@ public class MenuFen extends JFrame {
         setTitle("<3 Arcanor <3");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        Font f = new Font("Arial", Font.PLAIN, 60);
+        Font f = new Font("Courier", Font.PLAIN, 60);
         this.titreJeu = new JLabel("ARCANOR", SwingConstants.CENTER);
         this.titreJeu.setFont(f);
 
         this.nouvPartie = new JButton("Nouvelle Partie");
-        this.nouvPartie.addActionListener(new MenuFenEcout(this));
         this.charger = new JButton("Charger");
         this.quitter = new JButton("Quitter :'( ");
 
         JPanel vide = new JPanel();
+        JPanel vide2 = new JPanel();
+        JPanel vide3 = new JPanel();
         getContentPane().setLayout(new BorderLayout());
         this.sousPan = new JPanel();
-        this.sousPan.setLayout(new GridLayout(5, 1));
+        this.sousPan.setLayout(new GridLayout(5, 1, 20, 20));
         this.sousPan.add(vide);
         this.sousPan.add(nouvPartie);
         this.sousPan.add(charger);
         this.sousPan.add(quitter);
         add(titreJeu, "North");
         add(sousPan, "Center");
-        setSize(800, 800);
+        add(vide, "East");
+        add(vide2, "West");
+        add(vide3, "South");
+        setSize(500, 450);
+
+        this.nouvPartie.addActionListener(new MenuFenEcout(this));
+        this.charger.addActionListener(new MenuFenEcout(this));
+        this.quitter.addActionListener(new MenuFenEcout(this));
     }
 
     /**
@@ -85,10 +93,6 @@ public class MenuFen extends JFrame {
         pack();
     }
 
-    /**permet d'accéder au bouton de nouvelle partie */
-    public JButton getNouvPartie() {
-        return this.nouvPartie;
-    }
 
     /** s'actionne pour afficher le plateau de jeu */
     public void actionNouvPartie(Joueur j1, Joueur j2) {
@@ -99,7 +103,6 @@ public class MenuFen extends JFrame {
         remove(this.menuJoueur);
         add(this.fenetreJeu, "Center");
         add(this.barreInfo, "South");
-        add(this.menuBarre,"East");
         repaint();
         revalidate();
         pack();

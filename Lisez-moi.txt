@@ -1,0 +1,18 @@
+====================================================================================
+============================ Notice d'installation==================================
+====================================================================================
+Groupe B6 : Simon Bay, Maëlys Poiré
+
+Pour jouer à Arcanor, vous devez :
+1) télécharger le zip avec tous les documents
+2) décompresser le tout
+3) ouvrir la console
+4) se placer dans le ws de l'application Arcanor
+5) taper "ant compile" puis "java arcanor.Partie"
+6) le jar se lance alors, vous pouvez jouer comme bon vous semble
+
+NB : pour une première utilisation, lire le manuel utilisateur situé dans le dossier doc.
+NB2 : notre jar se crée mais ne fonctionne pas correctement (mauvais import des images) et donc non fonctionnel. C'est pour cela qu'on 
+ne lance pas une partie avec.
+
+Bon jeu !

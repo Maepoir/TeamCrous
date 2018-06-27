@@ -61,10 +61,7 @@
 
     <target name="jar" depends="compile, clean">
         <mkdir dir="${jar.dir}"/>
-        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${class.dir}" excludes="**">
-            
-            <fileset dir="ws" excludes="build.xml" includes="**"/>
-            <fileset dir="class" excludes="**/*Test*"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${class.dir}" excludes="**/*Test*">
 
             <manifest>
                 <attribute name="Main-Class" value="${main-class}"/>
@@ -73,7 +70,7 @@
         </jar>
     </target>
 
-    <target name="run" depends="clean-build">
+    <target name="run" depends="compile">
         <java fork="true" classname="${main-class}">
             <classpath>
                 <path refid="classpath"/>

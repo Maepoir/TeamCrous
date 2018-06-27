@@ -151,7 +151,7 @@ public class Jeu implements Serializable {
      */
     private void tutoriel() {
         try {
-            Scanner sc = new Scanner(new FileReader("Tuto.txt"));
+            Scanner sc = new Scanner(new FileReader("../doc/Tuto.txt"));
             while (sc.hasNextLine()) {
                 System.out.println(sc.nextLine());
             }

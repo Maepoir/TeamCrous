@@ -61,7 +61,7 @@
 
     <target name="jar" depends="compile, clean">
         <mkdir dir="${jar.dir}"/>
-        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${class.dir}" excludes="**/*Test*" >
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="." excludes="**/*Test*" >
             <manifest>
                 <attribute name="Main-Class" value="${main-class}"/>
             </manifest>

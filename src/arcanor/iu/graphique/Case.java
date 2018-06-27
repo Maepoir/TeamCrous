@@ -1,7 +1,6 @@
 package arcanor.iu.graphique;
 
 import arcanor.modele.Couleur;
-import arcanor.modele.Plateau;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

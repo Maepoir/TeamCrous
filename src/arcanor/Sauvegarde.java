@@ -22,16 +22,13 @@ public class Sauvegarde {
      */
     public static void sauvegarder(String chemin, Jeu jeu) {
         try {
-            ObjectOutputStream fichier = new ObjectOutputStream(new FileOutputStream("../sauvegarde/" + chemin));
-            ObjectOutputStream fichierDocs = new ObjectOutputStream(new FileOutputStream("../docs/sauvegarde/" + chemin));
+            ObjectOutputStream fichier = new ObjectOutputStream(new FileOutputStream(chemin));
             if (jeu != null) {
                 fichier.writeObject(jeu);
-                fichierDocs.writeObject(jeu);
             } else {
                 System.out.println("Pb de sauvegarde");
             }
             fichier.close();
-            fichierDocs.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -47,7 +44,7 @@ public class Sauvegarde {
     public static Jeu charger(String chemin) {
         Jeu jeu = null;
         try {
-            ObjectInputStream fichier = new ObjectInputStream(new FileInputStream("../sauvegarde/" + chemin));
+            ObjectInputStream fichier = new ObjectInputStream(new FileInputStream(chemin));
             jeu = (Jeu) fichier.readObject();
         } catch (Exception e) {
             System.out.println(e.getMessage());

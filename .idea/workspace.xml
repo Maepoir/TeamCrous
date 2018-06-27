@@ -16,11 +16,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Case.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Case.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Case.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="17">
+              <caret line="24" column="57" lean-forward="true" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -28,8 +31,32 @@
       <file leaf-file-name="Sauvegarde.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/arcanor/Sauvegarde.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="49" column="86" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
+            <state relative-caret-position="150">
+              <caret line="24" column="85" lean-forward="true" selection-start-line="24" selection-start-column="85" selection-end-line="24" selection-end-column="85" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuFen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-258">
+              <caret line="66" column="18" lean-forward="true" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Jeu.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Jeu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="153" column="53" selection-start-line="153" selection-start-column="53" selection-end-line="153" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,14 +148,14 @@
         <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuCharger.java" />
         <option value="$PROJECT_DIR$/src/arcanor/controleur/graphique/MenuJoueurEcout.java" />
         <option value="$PROJECT_DIR$/src/arcanor/controleur/graphique/MenuChargerEcout.java" />
-        <option value="$PROJECT_DIR$/src/arcanor/modele/Jeu.java" />
         <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuBarre.java" />
         <option value="$PROJECT_DIR$/src/arcanor/controleur/graphique/MenuBarreEcout.java" />
         <option value="$PROJECT_DIR$/src/arcanor/modele/JoueurHumain.java" />
         <option value="$PROJECT_DIR$/src/arcanor/Partie.java" />
-        <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java" />
         <option value="$PROJECT_DIR$/src/arcanor/Sauvegarde.java" />
         <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/Case.java" />
+        <option value="$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java" />
+        <option value="$PROJECT_DIR$/src/arcanor/modele/Jeu.java" />
       </list>
     </option>
   </component>
@@ -375,7 +402,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131915000" />
+    <option name="totallyTimeSpent" value="134641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -445,6 +472,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="9" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -609,16 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2298">
-          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/modele/JoueurHumain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -640,16 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="30" column="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Jeu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6358">
-          <caret line="468" column="55" selection-start-line="468" selection-start-column="55" selection-end-line="468" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -693,8 +703,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/Sauvegarde.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="49" column="86" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
+        <state relative-caret-position="150">
+          <caret line="24" column="85" lean-forward="true" selection-start-line="24" selection-start-column="85" selection-end-line="24" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -703,8 +713,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/Case.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="17">
+          <caret line="24" column="57" lean-forward="true" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/iu/graphique/MenuFen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-258">
+          <caret line="66" column="18" lean-forward="true" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/arcanor/modele/Jeu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="153" column="53" selection-start-line="153" selection-start-column="53" selection-end-line="153" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

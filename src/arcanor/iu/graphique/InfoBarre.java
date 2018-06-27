@@ -40,6 +40,7 @@ public class InfoBarre extends JPanel {
         joueurActuel.setText("C'est au tour de " + this.jeu.getaLaMain().getNom() + " de jouer !");
         add(nomJoueurs);
         add(joueurActuel);
+        setBackground(new Color(45,80,150));
     }
 
     /**

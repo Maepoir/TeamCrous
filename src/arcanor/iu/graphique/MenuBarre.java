@@ -57,7 +57,6 @@ public class MenuBarre extends JPanel {
     * permet d'initialiser les composants
     */
     private void initComposants() {
-
         this.sauvegarder = new JButton("Sauvegarder");
         this.sauvegarder.addActionListener(new MenuBarreEcout(this, this.jeu));
         this.chemin = new JTextField("Chemin de la sauvegarde");
@@ -74,43 +73,53 @@ public class MenuBarre extends JPanel {
         ButtonGroup deplacements = new ButtonGroup();
 
         this.hautGauche = new BasicArrowButton(SwingConstants.NORTH_WEST);
+        this.hautGauche.setBackground(new Color(10,180,250));
         deplacements.add(this.hautGauche);
         panelDeplacements.add(this.hautGauche);
         this.hautGauche.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.haut = new BasicArrowButton(SwingConstants.NORTH);
+        this.haut.setBackground(new Color(10,180,250));
         deplacements.add(this.haut);
         panelDeplacements.add(this.haut);
         this.haut.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.hautDroite = new BasicArrowButton(SwingConstants.NORTH_EAST);
+        this.hautDroite.setBackground(new Color(10,180,250));
         deplacements.add(this.hautDroite);
         panelDeplacements.add(this.hautDroite);
         this.hautDroite.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.gauche = new BasicArrowButton(SwingConstants.WEST);
+        this.gauche.setBackground(new Color(10,180,250));
         deplacements.add(this.gauche);
         panelDeplacements.add(this.gauche);
         this.gauche.addActionListener(new MenuBarreEcout(this, this.jeu));
 
-        panelDeplacements.add(new JPanel());
+        JPanel vide = new JPanel();
+        vide.setBackground(new Color(192,192,192));
+        panelDeplacements.add(vide);
 
         this.droite = new BasicArrowButton(SwingConstants.EAST);
+        this.droite.setBackground(new Color(10,180,250));
         deplacements.add(this.droite);
         panelDeplacements.add(this.droite);
         this.droite.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.basGauche = new BasicArrowButton(SwingConstants.SOUTH_EAST);
+        this.basGauche.setBackground(new Color(10,180,250));
         deplacements.add(this.basGauche);
         panelDeplacements.add(this.basGauche);
         this.basGauche.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.bas = new BasicArrowButton(SwingConstants.SOUTH);
+        this.bas.setBackground(new Color(10,180,250));
         deplacements.add(this.bas);
         panelDeplacements.add(this.bas);
         this.bas.addActionListener(new MenuBarreEcout(this, this.jeu));
 
         this.basDroite = new BasicArrowButton(SwingConstants.SOUTH_WEST);
+        this.basDroite.setBackground(new Color(10,180,250));
         deplacements.add(this.basDroite);
         panelDeplacements.add(this.basDroite);
         this.basDroite.addActionListener(new MenuBarreEcout(this, this.jeu));
@@ -126,6 +135,7 @@ public class MenuBarre extends JPanel {
 
         liberation.add(libere);
         liberation.add(liberer);
+        liberation.setBackground(new Color(192,192,192));
 
         this.valider = new JButton("Valider");
         this.valider.addActionListener(new MenuBarreEcout(this, this.jeu));
@@ -138,17 +148,31 @@ public class MenuBarre extends JPanel {
         this.revelation = new JButton("Reveler ce que contient le pion selectionne");
         this.revelation.addActionListener(new MenuBarreEcout(this, this.jeu));
 
+        panelDeplacements.setBackground(new Color(10,180,250));
+        sousPan2.setBackground(new Color(10,180,250));
+        this.revelation.setBackground(new Color(10,180,250));
+        this.valider.setBackground(new Color(10,180,250));
         setLayout(new GridLayout(9, 1));
 
+        JPanel vide1 = new JPanel();
+        JPanel vide2 = new JPanel();
+        JPanel vide3 = new JPanel();
+        JPanel vide4 = new JPanel();
+        vide1.setBackground(new Color(192,192,192));
+        vide2.setBackground(new Color(192,192,192));
+        vide3.setBackground(new Color(192,192,192));
+        vide4.setBackground(new Color(192,192,192));
+
         add(sousPan);
-        add(new JPanel());
+        add(vide1);
         add(panelDeplacements);
-        add(new JPanel());
+        add(vide2);
         add(sousPan2);
-        add(new JPanel());
+        add(vide3);
         add(this.revelation);
-        add(new JPanel());
+        add(vide4);
         add(quitter);
+
     }
 
     /**
